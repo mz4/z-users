@@ -1,5 +1,4 @@
-.primaryButton {
-  background-color: #EA4C89;
+.button {
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
@@ -22,9 +21,25 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  
+  width: 140px;
+}
+
+.primary {
+  @extend .button;
+  background-color: #EA4C89;
+
   &:hover,
   &:focus {
     background-color: #F082AC;
+  }
+}
+
+.secondary {
+  @extend .button;
+  background-color: #4c96ea;
+
+  &:hover,
+  &:focus {
+    background-color: #82bff0;
   }
 }
