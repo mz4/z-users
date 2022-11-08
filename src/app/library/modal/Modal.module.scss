@@ -1,0 +1,25 @@
+.modalContainer {
+  position: fixed;
+  inset: 0;
+  background-color: #f3f3f321;
+  display: flex;
+  justify-content: right;
+  z-index: 2;
+  .modalBody {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    max-width: 800px;
+    width: 100%;
+    overflow-y: auto;
+    padding: 48px;
+  }
+}
+
+.bodyContainer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  grid-auto-rows: minmax(1fr, auto);
+  grid-gap: 10px;
+  height: 100%;
+}

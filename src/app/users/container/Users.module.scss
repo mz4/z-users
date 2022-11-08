@@ -1,0 +1,40 @@
+:root {
+  --small-green-circle: #78eea6;
+  --main-accent-color: #9b45e4;
+  --secondary-accent-color: #e13a9d;
+}
+
+.pageContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .pageOptions {
+    color: #ccc;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: left;
+  }
+  
+  .usersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+    gap: 24px 24px;
+    padding-top: 32px;
+  }
+  
+  .usersContainer > div {
+    text-align: center;
+  }
+  
+  img {
+    display: inline-block;
+    max-width: 100%;
+  }
+}
+
+.marginTop24 {
+  margin-top: 24px;
+}
