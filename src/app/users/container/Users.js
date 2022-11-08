@@ -7,7 +7,8 @@ import { useFetch, useSort } from "../../hooks/index";
 import styles from "./Users.module.scss";
 
 const Users = () => {
-  const endpoint = "https://reqres.in/api/users?per_page=30";
+  //const endpoint = "https://reqres.in/api/users?per_page=30";
+  const endpoint = "https://u60psg-3001.preview.csb.app/userslist";
   const [user, setUser] = useState({});
   const [users, setUsers] = useState([]);
   const [profileDetails, setProfileDetails] = useState(false);
