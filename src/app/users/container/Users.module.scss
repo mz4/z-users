@@ -8,13 +8,18 @@
   max-width: 1200px;
   margin: 0 auto;
 
-  .pageOptions {
+  .headOptionsContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .headOptions {
     color: #ccc;
     font-size: 1.4rem;
     font-weight: 400;
     text-align: left;
   }
-  
+
   .usersContainer {
     display: flex;
     flex-wrap: wrap;
@@ -24,11 +29,11 @@
     gap: 24px 24px;
     padding-top: 32px;
   }
-  
-  .usersContainer > div {
+
+  .usersContainer>div {
     text-align: center;
   }
-  
+
   img {
     display: inline-block;
     max-width: 100%;
