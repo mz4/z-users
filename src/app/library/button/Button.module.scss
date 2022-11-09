@@ -2,7 +2,7 @@
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
   font-size: 14px;
@@ -26,11 +26,11 @@
 
 .primary {
   @extend .button;
-  background-color: #EA4C89;
+  background-color: #ea4c89;
 
   &:hover,
   &:focus {
-    background-color: #F082AC;
+    background-color: #f082ac;
   }
 }
 

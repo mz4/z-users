@@ -7,7 +7,7 @@ import {
   PolarRadiusAxis,
   Radar,
   RadarChart,
-  ResponsiveContainer
+  ResponsiveContainer,
 } from "recharts";
 import { dataA, dataB } from "../../../data";
 import { Avatar, Subtitle, Text, Title } from "../../../library/index";
