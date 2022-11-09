@@ -30,7 +30,8 @@
   "scripts": {
     "client": "react-scripts start",
     "server": "json-server --watch db.json --port 3001 && nodemon server",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc.json"
   },
   "browserslist": [
     ">0.2%",

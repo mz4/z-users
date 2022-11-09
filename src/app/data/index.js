@@ -1,3 +1,3 @@
-import { dataA, dataB } from "./data";
+import { dataA, dataB } from './data';
 
 export { dataA, dataB };

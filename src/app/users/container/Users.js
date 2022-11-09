@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import classnames from "classnames";
-import User from "../components/user/User";
-import Details from "../components/details/Details";
-import { Button, Title, Modal } from "../../library/index";
-import { useFetch, useSort } from "../../hooks/index";
-import { USERS_ENDPOINT } from "../../constants/constants";
-import styles from "./Users.module.scss";
+import classnames from 'classnames';
+import { useEffect, useState } from 'react';
+import { USERS_ENDPOINT } from '../../constants/constants';
+import { useFetch, useSort } from '../../hooks/index';
+import { Button, Modal, Title } from '../../library/index';
+import Details from '../components/details/Details';
+import User from '../components/user/User';
+import styles from './Users.module.scss';
 
 const Users = () => {
   const [user, setUser] = useState({});
@@ -47,8 +47,8 @@ const Users = () => {
           styles.marginTop24
         )}
       >
-        <Button actionButton={sortUsers} text={"Sort By Name"} type="primary" />
-        <Button actionButton={addNewUser} text={"Add new"} type="secondary" />
+        <Button actionButton={sortUsers} text={'Sort By Name'} type="primary" />
+        <Button actionButton={addNewUser} text={'Add new'} type="secondary" />
       </div>
       {loading ? (
         <div>Loading...</div>

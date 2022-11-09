@@ -1,4 +1,4 @@
-import styles from "./Text.module.scss";
+import styles from './Text.module.scss';
 
 export const Text = ({ text }) => {
   return (
