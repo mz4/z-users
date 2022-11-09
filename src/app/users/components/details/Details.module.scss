@@ -5,23 +5,25 @@
   grid-auto-rows: minmax(1fr, auto);
   grid-gap: 10px;
   height: 100%;
-  
+
   .title {
     grid-column: span 12;
   }
-  
+
   .avatar {
     padding: 8px;
   }
-  
-  .details, .orders, .chart {
+
+  .details,
+  .orders,
+  .chart {
     padding: 8px;
   }
 
   .box {
-    background-color: #F3F3F3;
+    background-color: #f3f3f3;
     @media (min-width: 320px) and (max-width: 767px) {
-      background-color: #f3AAf3;
+      background-color: #f3aaf3;
     }
   }
 
@@ -76,5 +78,4 @@
   .orderValue {
     font-size: 2rem;
   }
-
 }

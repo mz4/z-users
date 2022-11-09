@@ -40,7 +40,13 @@ const Users = () => {
   return (
     <div className={styles.pageContainer}>
       <Title text="Users List" />
-      <div className={classnames(styles.headOptionsContainer, styles.headOptions, styles.marginTop24)}>
+      <div
+        className={classnames(
+          styles.headOptionsContainer,
+          styles.headOptions,
+          styles.marginTop24
+        )}
+      >
         <Button actionButton={sortUsers} text={"Sort By Name"} type="primary" />
         <Button actionButton={addNewUser} text={"Add new"} type="secondary" />
       </div>
