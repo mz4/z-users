@@ -1,13 +1,11 @@
-import classnames from 'classnames';
 import { useEffect, useState } from 'react';
 import { USERS_ENDPOINT } from '../../constants/constants';
 import { useFetch, useSort } from '../../hooks/index';
-import { Button, Modal, Title } from '../../library/index';
-import Details from '../components/details/Details';
-import User from '../components/user/User';
-import styles from './Users.module.scss';
+import { Button, Modal, Title, Loader } from '../../library/index';
+import { Details, Header, Users } from '../components/index';
+import styles from './UsersManagement.module.scss';
 
-const Users = () => {
+const UsersManagement = () => {
   const [user, setUser] = useState({});
   const [users, setUsers] = useState([]);
   const [profileDetails, setProfileDetails] = useState(false);
@@ -40,31 +38,14 @@ const Users = () => {
   return (
     <div className={styles.pageContainer}>
       <Title text="Users List" />
-      <div
-        className={classnames(
-          styles.headOptionsContainer,
-          styles.headOptions,
-          styles.marginTop24
-        )}
-      >
+      <Header>
         <Button actionButton={sortUsers} text={'Sort By Name'} type="primary" />
         <Button actionButton={addNewUser} text={'Add new'} type="secondary" />
-      </div>
+      </Header>
       {loading ? (
-        <div>Loading...</div>
+        <Loader />
       ) : (
-        <div className={styles.usersContainer}>
-          {users.length &&
-            users.map((user) => {
-              return (
-                <User
-                  user={user}
-                  showProfileDetails={showProfileDetails}
-                  key={user.id}
-                />
-              );
-            })}
-        </div>
+        <Users users={users} showProfileDetails={showProfileDetails} />
       )}
       {profileDetails && (
         <Modal action={hideProfileDetails}>
@@ -79,4 +60,4 @@ const Users = () => {
     </div>
   );
 };
-export default Users;
+export default UsersManagement;

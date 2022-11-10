@@ -1,5 +1,5 @@
-import styles from './User.module.scss';
 import { Avatar } from '../../../library/index';
+import styles from './User.module.scss';
 
 const User = ({ user, showProfileDetails }) => {
   return (
