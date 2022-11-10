@@ -1,4 +1,4 @@
-import classnames from "classnames";
+import classnames from 'classnames';
 import {
   Bar,
   BarChart,
@@ -7,11 +7,11 @@ import {
   PolarRadiusAxis,
   Radar,
   RadarChart,
-  ResponsiveContainer,
-} from "recharts";
-import { dataA, dataB } from "../../../data";
-import { Avatar, Subtitle, Text, Title } from "../../../library/index";
-import styles from "./Details.module.scss";
+  ResponsiveContainer
+} from 'recharts';
+import { dataA, dataB } from '../../../data';
+import { Avatar, Subtitle, Text, Title } from '../../../library/index';
+import styles from './Details.module.scss';
 
 const Details = ({ user }) => {
   const { first_name, avatar } = user;

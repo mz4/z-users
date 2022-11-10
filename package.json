@@ -15,9 +15,11 @@
     "prettier": "^2.7.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-redux": "^8.0.5",
     "react-scripts": "4.0.0",
     "react-test-renderer": "18.1.0",
     "recharts": "2.1.16",
+    "redux": "^4.2.0",
     "sass": "^1.56.0",
     "scss": "0.2.4",
     "typescript": "^4.8.4",
@@ -30,7 +32,8 @@
   "scripts": {
     "client": "react-scripts start",
     "server": "json-server --watch db.json --port 3001 && nodemon server",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc.json"
   },
   "browserslist": [
     ">0.2%",

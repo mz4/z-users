@@ -1,5 +1,5 @@
-import styles from "./User.module.scss";
-import { Avatar } from "../../../library/index";
+import { Avatar } from '../../../library/index';
+import styles from './User.module.scss';
 
 const User = ({ user, showProfileDetails }) => {
   return (
@@ -22,9 +22,9 @@ const User = ({ user, showProfileDetails }) => {
         </div>
         <div className={styles.footerProfile}>
           <div className={styles.cardFooter}>
-            <i className={"fa-regular fa-envelope"}></i>
-            <i className={"fa-regular fa-star"}></i>
-            <i className={"fa-brands fa-whatsapp"}></i>
+            <i className={'fa-regular fa-envelope'}></i>
+            <i className={'fa-regular fa-star'}></i>
+            <i className={'fa-brands fa-whatsapp'}></i>
           </div>
         </div>
       </div>

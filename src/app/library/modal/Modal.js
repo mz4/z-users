@@ -1,6 +1,6 @@
-import { useRef } from "react";
-import { useClickOutside } from "../../hooks/index";
-import styles from "./Modal.module.scss";
+import { useRef } from 'react';
+import { useClickOutside } from '../../hooks/index';
+import styles from './Modal.module.scss';
 
 export const Modal = ({ action, children }) => {
   const modalRef = useRef();
