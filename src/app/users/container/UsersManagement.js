@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { USERS_ENDPOINT } from '../../constants/constants';
 import { useFetch, useSort } from '../../hooks/index';
 import { Button, Modal, Title, Loader } from '../../library/index';
@@ -6,6 +7,7 @@ import { Details, Header, Users } from '../components/index';
 import styles from './UsersManagement.module.scss';
 
 const UsersManagement = () => {
+  const amount = useSelector((state) => state.amount);
   const [user, setUser] = useState({});
   const [users, setUsers] = useState([]);
   const [profileDetails, setProfileDetails] = useState(false);
