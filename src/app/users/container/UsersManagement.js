@@ -5,12 +5,11 @@ import { USERS_ENDPOINT } from '../../constants/constants';
 import { Button, Modal, Title, Loader } from '../../library/index';
 import { Details, Header, Users } from '../components/index';
 import styles from './UsersManagement.module.scss';
-import { usersList, usersListSort } from '../../store/users/usersSlice';
+import { usersList, usersListSort, getUsers} from '../../store/users/usersSlice';
 
 const UsersManagement = () => {
-  const usersSlice = useSelector((state) => state.users);
-  const { users } = usersSlice;
   const dispatch = useDispatch();
+  const users = useSelector(getUsers);
   const [user, setUser] = useState({});
   const [profileDetails, setProfileDetails] = useState(false);
   const [newUser, setNewUser] = useState(false);

@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice,  createSelector} from '@reduxjs/toolkit';
 
 const initialState = {
   users: []
@@ -19,3 +19,17 @@ const usersSlice = createSlice({
 
 export const { usersList, usersListSort } = usersSlice.actions;
 export default usersSlice.reducer;
+
+export const getUsers = createSelector(
+  (state) => state.users.users,
+  (users) => {
+    return users;
+  }
+)
+
+export const getTotalUsers = createSelector(
+  (state) => state.users.users,
+  (users) => {
+    return users.length;
+  }
+)
