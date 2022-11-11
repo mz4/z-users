@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react';
-import { USERS_ENDPOINT } from '../../constants/constants';
+import { useSelector, useDispatch } from 'react-redux';
 import { useFetch, useSort } from '../../hooks/index';
+import { USERS_ENDPOINT } from '../../constants/constants';
 import { Button, Modal, Title, Loader } from '../../library/index';
 import { Details, Header, Users } from '../components/index';
 import styles from './UsersManagement.module.scss';
+import { usersList, usersListSort } from '../../store/users/usersSlice';
 
 const UsersManagement = () => {
+  const usersSlice = useSelector((state) => state.users);
+  const { users } = usersSlice;
+  const dispatch = useDispatch();
   const [user, setUser] = useState({});
-  const [users, setUsers] = useState([]);
   const [profileDetails, setProfileDetails] = useState(false);
   const [newUser, setNewUser] = useState(false);
   const [data, loading] = useFetch(USERS_ENDPOINT);
@@ -24,7 +28,7 @@ const UsersManagement = () => {
 
   const sortUsers = () => {
     const dataSorted = sortByName(users);
-    setUsers(dataSorted);
+    dispatch(usersListSort(dataSorted));
   };
 
   const addNewUser = () => {
@@ -32,8 +36,8 @@ const UsersManagement = () => {
   };
 
   useEffect(() => {
-    setUsers(data);
-  }, [data]);
+    dispatch(usersList(data));
+  }, [data, dispatch]);
 
   return (
     <div className={styles.pageContainer}>
