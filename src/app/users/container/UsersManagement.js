@@ -6,7 +6,7 @@ import { USERS_ENDPOINT } from '../../constants/constants';
 import { Button, Modal, Title, Loader } from '../../library/index';
 import { Details, Header, Users } from '../components/index';
 import styles from './UsersManagement.module.scss';
-import { usersList, usersListSort, getUsers} from '../../store/users/usersSlice';
+import { usersList, usersListSort, getUsers} from '../store/usersSlice';
 
 const UsersManagement = () => {
   const dispatch = useDispatch();
