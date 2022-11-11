@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useFetch, useSort } from '../../hooks/index';
@@ -15,6 +16,7 @@ const UsersManagement = () => {
   const [newUser, setNewUser] = useState(false);
   const [data, loading] = useFetch(USERS_ENDPOINT);
   const [sortByName] = useSort(USERS_ENDPOINT);
+
 
   const showProfileDetails = (user) => {
     setUser(user);
