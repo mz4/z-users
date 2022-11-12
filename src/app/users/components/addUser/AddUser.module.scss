@@ -1,0 +1,80 @@
+.userProfile {
+  padding: 1em;
+  border-radius: 0.8em;
+  background-color: #fefefe;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+    rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+    rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  position: relative;
+  width: 23%;
+  min-width: 240px;
+  height: 320px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  /* Grow */
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+
+  .userProfileContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    .imageProfile {
+      .image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+    }
+
+    .textProfile {
+      .cardName {
+        margin: 0.8rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #6f6f6f;
+      }
+      .cardText {
+        margin: 0.8rem;
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: #999;
+      }
+    }
+
+    .footerProfile {
+      .cardFooter {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 8px;
+      }
+    }
+  }
+}
+
+.userProfile:after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--small-green-circle);
+  top: 25px;
+  right: 85px;
+  border: 2px solid white;
+}
+
+.userProfile:hover,
+.userProfile:focus,
+.userProfile:active {
+  transform: scale(1.1);
+}
