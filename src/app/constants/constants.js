@@ -1,2 +1,2 @@
-export const BASE_ENDPOINT = 'https://u60psg-3001.preview.csb.app/';
+export const BASE_ENDPOINT = 'http://localhost:3001/';
 export const USERS_ENDPOINT = BASE_ENDPOINT + 'users';
