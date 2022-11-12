@@ -1,5 +1,5 @@
 import { useForm, FormProvider } from 'react-hook-form';
-import { Title, Label, Input } from '../../../library/index';
+import { Title, Label, Input, Button } from '../../../library/index';
 import { EMAIL, FIRST_NAME, LAST_NAME } from '../../../constants/constants';
 import styles from './AddUser.module.scss';
 
@@ -15,7 +15,12 @@ const AddUser = () => {
     }
   });
 
-  const { control, errors } = methods;
+  const { control, errors, handleSubmit, getValues } = methods;
+
+  const onSubmit = () => {
+    const data = getValues();
+    console.log('dataform: ', JSON.stringify(data));
+  };
 
   return (
     <FormProvider {...methods}>
@@ -55,6 +60,11 @@ const AddUser = () => {
           disabled={false}
         />
       </div>
+      <Button
+        type="tertiary"
+        text="Submit"
+        actionButton={handleSubmit(onSubmit)}
+      />
     </FormProvider>
   );
 };

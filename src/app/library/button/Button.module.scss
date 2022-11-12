@@ -43,3 +43,13 @@
     background-color: #82bff0;
   }
 }
+
+.tertiary {
+  @extend .button;
+  background-color: #4cea61;
+
+  &:hover,
+  &:focus {
+    background-color: #c1ffce;
+  }
+}
