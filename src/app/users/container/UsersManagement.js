@@ -1,12 +1,11 @@
-
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useFetch, useSort } from '../../hooks/index';
 import { USERS_ENDPOINT } from '../../constants/constants';
 import { Button, Modal, Title, Loader } from '../../library/index';
-import { Details, Header, Users } from '../components/index';
+import { Details, Header, Users, AddUser } from '../components/index';
 import styles from './UsersManagement.module.scss';
-import { usersList, usersListSort, getUsers} from '../store/usersSlice';
+import { usersList, usersListSort, getUsers } from '../store/usersSlice';
 
 const UsersManagement = () => {
   const dispatch = useDispatch();
@@ -17,7 +16,6 @@ const UsersManagement = () => {
   const [data, loading] = useFetch(USERS_ENDPOINT);
   const [sortByName] = useSort(USERS_ENDPOINT);
 
-
   const showProfileDetails = (user) => {
     setUser(user);
     setProfileDetails(true);
@@ -25,6 +23,10 @@ const UsersManagement = () => {
 
   const hideProfileDetails = () => {
     setProfileDetails(false);
+  };
+
+  const hideNewUser = () => {
+    setNewUser(false);
   };
 
   const sortUsers = () => {
@@ -58,8 +60,8 @@ const UsersManagement = () => {
         </Modal>
       )}
       {newUser && (
-        <Modal action={hideProfileDetails}>
-          <div>Add new user</div>
+        <Modal action={hideNewUser}>
+          <AddUser />
         </Modal>
       )}
     </div>

@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { useClickOutside } from '../../hooks/index';
+import { Button } from '../index';
 import styles from './Modal.module.scss';
 
 export const Modal = ({ action, children }) => {
@@ -8,6 +9,9 @@ export const Modal = ({ action, children }) => {
   return (
     <div className={styles.modalContainer}>
       <div ref={modalRef} className={styles.modalBody}>
+        <div className={styles.header}>
+          <Button type="secondary" text="Close" actionButton={action} />
+        </div>
         {children}
       </div>
     </div>
