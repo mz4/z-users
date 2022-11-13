@@ -7,5 +7,17 @@ import { Title } from './typography/Title';
 import { Text } from './typography/Text';
 import { Label } from './typography/Label';
 import { Input } from './form/Input';
+import { Field } from './form/Field';
 
-export { Avatar, Button, Modal, Text, Title, Subtitle, Loader, Label, Input };
+export {
+  Avatar,
+  Button,
+  Modal,
+  Text,
+  Title,
+  Subtitle,
+  Loader,
+  Label,
+  Input,
+  Field
+};

@@ -1,5 +1,5 @@
 import { useForm, FormProvider } from 'react-hook-form';
-import { Title, Label, Input, Button } from '../../../library/index';
+import { Title, Label, Input, Button, Field } from '../../../library/index';
 import { EMAIL, FIRST_NAME, LAST_NAME } from '../../../constants/constants';
 import styles from './AddUser.module.scss';
 
@@ -27,7 +27,7 @@ const AddUser = () => {
       <div className={styles.title}>
         <Title text="Add User" />
       </div>
-      <div className={styles.field}>
+      <Field>
         <Label text="email" />
         <Input
           control={control}
@@ -37,8 +37,8 @@ const AddUser = () => {
           errors={errors}
           disabled={false}
         />
-      </div>
-      <div className={styles.field}>
+      </Field>
+      <Field>
         <Label text="First Name" />
         <Input
           control={control}
@@ -48,8 +48,8 @@ const AddUser = () => {
           errors={errors}
           disabled={false}
         />
-      </div>
-      <div className={styles.field}>
+      </Field>
+      <Field>
         <Label text="Last Name" />
         <Input
           control={control}
@@ -59,7 +59,7 @@ const AddUser = () => {
           errors={errors}
           disabled={false}
         />
-      </div>
+      </Field>
       <Button
         type="tertiary"
         text="Submit"
