@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { USERS_ENDPOINT, POST } from '../../constants/constants';
 import { useFetch, useSort } from '../../hooks/index';
-import { USERS_ENDPOINT } from '../../constants/constants';
-import { Button, Modal, Title, Loader } from '../../library/index';
-import { Details, Header, Users, AddUser } from '../components/index';
+import { Button, Loader, Modal, Title } from '../../library/index';
+import { Request } from '../../service/request';
+import { AddUser, Details, Header, Users } from '../components/index';
+import { getUsers, usersList, usersListSort } from '../store/usersSlice';
 import styles from './UsersManagement.module.scss';
-import { usersList, usersListSort, getUsers } from '../store/usersSlice';
 
 const UsersManagement = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const UsersManagement = () => {
   const [user, setUser] = useState({});
   const [profileDetails, setProfileDetails] = useState(false);
   const [newUser, setNewUser] = useState(false);
-  const [data, loading] = useFetch(USERS_ENDPOINT);
+  const [getData, data, loading] = useFetch(USERS_ENDPOINT);
   const [sortByName] = useSort(USERS_ENDPOINT);
 
   const showProfileDetails = (user) => {
@@ -36,6 +37,14 @@ const UsersManagement = () => {
 
   const addNewUser = () => {
     setNewUser(true);
+  };
+
+  const submit = (data) => {
+    const submitPost = new Request(data, USERS_ENDPOINT, POST);
+    submitPost.post().then(() => {
+      hideNewUser();
+      getData(USERS_ENDPOINT);
+    });
   };
 
   useEffect(() => {
@@ -61,7 +70,7 @@ const UsersManagement = () => {
       )}
       {newUser && (
         <Modal action={hideNewUser}>
-          <AddUser />
+          <AddUser submit={submit} />
         </Modal>
       )}
     </div>
