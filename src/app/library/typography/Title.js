@@ -1,8 +1,9 @@
+import classNames from 'classnames';
 import styles from './Title.module.scss';
 
-export const Title = ({ text }) => {
+export const Title = ({ text, customClassName = '' }) => {
   return (
-    <div className={styles.pageTitle}>
+    <div className={classNames(styles.pageTitle, customClassName)}>
       <span>{text}</span>
     </div>
   );
