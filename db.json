@@ -83,6 +83,18 @@
       "first_name": "Rachel",
       "last_name": "Howell",
       "avatar": "https://reqres.in/img/faces/12-image.jpg"
+    },
+    {
+      "email": "matteozaratti@gmail.com",
+      "firstName": "Matteo",
+      "lastName": "Zaratti",
+      "id": 13
+    },
+    {
+      "email": "patricia.bermejo.cacho@gmail.com",
+      "firstName": "Patricia",
+      "lastName": "Cacho",
+      "id": 14
     }
   ]
 }
