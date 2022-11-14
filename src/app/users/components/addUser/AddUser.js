@@ -3,7 +3,7 @@ import { Title, Label, Input, Button, Field } from '../../../library/index';
 import { EMAIL, FIRST_NAME, LAST_NAME } from '../../../constants/constants';
 import styles from './AddUser.module.scss';
 
-const AddUser = () => {
+const AddUser = ({ submit }) => {
   const methods = useForm({
     mode: 'all',
     reValidateMode: 'onSubmit',
@@ -19,8 +19,37 @@ const AddUser = () => {
 
   const onSubmit = () => {
     const data = getValues();
-    console.log('dataform: ', JSON.stringify(data));
+    submit(data);
   };
+
+  /*   const onSubmit = async () => {
+    const data = getValues();
+    const newUser = {
+      id: 100,
+      email: data.email,
+      first_name: data.firstName,
+      last_name: data.lastName,
+      avatar: 'https://reqres.in/img/faces/1-image.jpg'
+    };
+    const settings = {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newUser)
+    };
+    try {
+      await fetch('http://localhost:3001/users', settings).then((res) =>
+        res.json().then((res) => {
+          console.log('done: ', res);
+        })
+      );
+    } catch (e) {
+      return e;
+    }
+  };
+ */
 
   return (
     <FormProvider {...methods}>

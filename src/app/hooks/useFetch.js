@@ -1,3 +1,5 @@
+import { Request } from '../service/request';
+import { GET } from '../constants/constants';
 import { useEffect, useState } from 'react';
 
 export const useFetch = (endpoint) => {
@@ -5,22 +7,23 @@ export const useFetch = (endpoint) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const getData = async (endpoint) => {
-      setLoading(true);
-      try {
-        await fetch(endpoint)
-          .then((res) => res.json())
-          .then((res) => {
-            setData(res);
-            setLoading(false);
-          });
-      } catch (e) {
-        setError(e.message);
+  const getData = async (endpoint) => {
+    setLoading(true);
+    const submitRequest = new Request(null, endpoint, GET);
+    submitRequest.get().then(
+      (value) => {
+        setData(value);
+        setLoading(false);
+      },
+      (reason) => {
+        setError(reason);
       }
-    };
+    );
+  };
+
+  useEffect(() => {
     getData(endpoint);
   }, [endpoint]);
 
-  return [data, loading, error];
+  return [getData, data, loading, error];
 };
