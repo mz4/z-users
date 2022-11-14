@@ -17,4 +17,5 @@ const Users = ({ users, showProfileDetails }) => {
     </div>
   );
 };
+
 export default Users;
