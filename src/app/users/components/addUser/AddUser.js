@@ -1,13 +1,13 @@
-import { useForm, FormProvider } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { Title, Label, Input, Button, Field } from '../../../library/index';
 import { EMAIL, FIRST_NAME, LAST_NAME } from '../../../constants/constants';
+import { AddUserSchema } from './Schema';
 import styles from './AddUser.module.scss';
 
 const AddUser = ({ submit }) => {
   const methods = useForm({
-    mode: 'all',
-    reValidateMode: 'onSubmit',
-    criteriaMode: 'all',
+    resolver: yupResolver(AddUserSchema),
     defaultValues: {
       [EMAIL]: '',
       [FIRST_NAME]: '',
@@ -15,49 +15,22 @@ const AddUser = ({ submit }) => {
     }
   });
 
-  const { control, errors, handleSubmit, getValues } = methods;
+  const {
+    control,
+    formState: { errors },
+    handleSubmit,
+    getValues
+  } = methods;
 
   const onSubmit = () => {
-    const data = getValues();
-    submit(data);
+    submit(getValues());
   };
-
-  /*   const onSubmit = async () => {
-    const data = getValues();
-    const newUser = {
-      id: 100,
-      email: data.email,
-      first_name: data.firstName,
-      last_name: data.lastName,
-      avatar: 'https://reqres.in/img/faces/1-image.jpg'
-    };
-    const settings = {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newUser)
-    };
-    try {
-      await fetch('http://localhost:3001/users', settings).then((res) =>
-        res.json().then((res) => {
-          console.log('done: ', res);
-        })
-      );
-    } catch (e) {
-      return e;
-    }
-  };
- */
 
   return (
-    <FormProvider {...methods}>
-      <div className={styles.title}>
-        <Title text="Add User" />
-      </div>
+    <>
+      <Title text="Add User" customClassName={styles.title} />
       <Field>
-        <Label text="email" />
+        <Label text="Email" />
         <Input
           control={control}
           defaultValue=""
@@ -94,7 +67,7 @@ const AddUser = ({ submit }) => {
         text="Submit"
         actionButton={handleSubmit(onSubmit)}
       />
-    </FormProvider>
+    </>
   );
 };
 export default AddUser;
