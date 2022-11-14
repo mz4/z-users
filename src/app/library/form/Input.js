@@ -29,8 +29,10 @@ export const Input = ({
           />
         )}
       />
-      {errors[name] && (
+      {errors[name] ? (
         <div className={styles.error}>{errors[name].message}</div>
+      ) : (
+        <div className={styles.emptyError} />
       )}
     </div>
   );
