@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It renders a button component Create a snapshot of the button 1`] = `
+<button
+  className="secondary"
+  onClick={[MockFunction]}
+>
+  submit
+</button>
+`;

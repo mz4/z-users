@@ -40,7 +40,13 @@ const UsersManagement = () => {
   };
 
   const submit = (data) => {
-    const submitPost = new Request(data, USERS_ENDPOINT, POST);
+    const neUser = {
+      email: data.email,
+      first_name: data.firstName,
+      last_name: data.lastName,
+      avatar: 'https://reqres.in/img/faces/12-image.jpg'
+    };
+    const submitPost = new Request(neUser, USERS_ENDPOINT, POST);
     submitPost.post().then(() => {
       hideNewUser();
       getData(USERS_ENDPOINT);
