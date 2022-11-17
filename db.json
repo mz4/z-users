@@ -83,6 +83,27 @@
       "first_name": "Rachel",
       "last_name": "Howell",
       "avatar": "https://reqres.in/img/faces/12-image.jpg"
+    },
+    {
+      "email": "matteozaratti@gmail.com",
+      "first_name": "Matteo",
+      "last_name": "Zaratti",
+      "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
+      "id": 13
+    },
+    {
+      "email": "patricia.bermejo.cacho@gmail.com",
+      "first_name": "Patricia",
+      "last_name": "Cacho",
+      "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
+      "id": 14
+    },
+    {
+      "email": "matteozaratti@gmail.com",
+      "first_name": "Matteo",
+      "last_name": "Zaratti",
+      "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
+      "id": 15
     }
   ]
 }
