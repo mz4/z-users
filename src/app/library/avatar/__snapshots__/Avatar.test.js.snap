@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Avatar component Create a snapshot 1`] = `
+<img
+  alt="avataralt"
+  className="imageProfile"
+  src="avatarsrc"
+/>
+`;

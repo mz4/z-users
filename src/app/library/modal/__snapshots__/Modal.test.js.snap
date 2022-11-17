@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render modal component Create a snapshot 1`] = `
+<div
+  className="modalContainer"
+>
+  <div
+    className="modalBody"
+  >
+    <div
+      className="header"
+    >
+      <button
+        className="secondary"
+        onClick={[MockFunction]}
+      >
+        Close
+      </button>
+    </div>
+    <div
+      className={
+        <div
+          className="modalBodyChildren"
+        >
+          modal body
+        </div>
+      }
+    >
+      modal body
+    </div>
+  </div>
+</div>
+`;

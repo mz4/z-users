@@ -12,10 +12,8 @@ describe('It renders a button component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Render button with submit text', () => {
-    const { getByText, getByRole, debug, container } = render(btn);
+    const { getByText, getByRole, container } = render(btn);
     const element = container.getElementsByClassName('secondary');
-
-    console.log(debug());
     expect(element.length).toBe(1);
     expect(getByText('submit')).toBeTruthy();
     expect(getByRole('button')).toBeEnabled();
