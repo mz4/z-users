@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { USERS_ENDPOINT, POST } from '../../constants/constants';
 import { useFetch, useSort } from '../../hooks/index';
 import { Button, Loader, Modal, Title } from '../../library/index';
-import { Request } from '../../service/request';
+import Request from '../../service/request';
 import { AddUser, Details, Header, Users } from '../components/index';
 import { getUsers, usersList, usersListSort } from '../store/usersSlice';
 import styles from './UsersManagement.module.scss';

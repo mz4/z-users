@@ -1,4 +1,4 @@
-import { Request } from '../service/request';
+import Request from '../service/request';
 import { GET } from '../constants/constants';
 import { useEffect, useState } from 'react';
 
