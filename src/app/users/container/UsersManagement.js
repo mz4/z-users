@@ -14,8 +14,8 @@ const UsersManagement = () => {
   const [user, setUser] = useState({});
   const [profileDetails, setProfileDetails] = useState(false);
   const [newUser, setNewUser] = useState(false);
-  const [getData, data, loading] = useFetch(USERS_ENDPOINT);
-  const [sortByName] = useSort(USERS_ENDPOINT);
+  const { getData, data, loading } = useFetch(USERS_ENDPOINT);
+  const { sortByName } = useSort(USERS_ENDPOINT);
 
   const showProfileDetails = (user) => {
     setUser(user);

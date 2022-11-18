@@ -25,5 +25,5 @@ export const useFetch = (endpoint) => {
     getData(endpoint);
   }, [endpoint]);
 
-  return [getData, data, loading, error];
+  return { getData, data, loading, error };
 };

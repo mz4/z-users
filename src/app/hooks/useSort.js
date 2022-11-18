@@ -6,5 +6,5 @@ export const useSort = () => {
     return dataSorted;
   };
 
-  return [sortByName];
+  return { sortByName };
 };
