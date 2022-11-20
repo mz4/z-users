@@ -10,72 +10,23 @@
     grid-column: span 12;
   }
 
-  .avatar {
-    padding: 8px;
-  }
-
-  .details,
-  .orders,
-  .chart {
-    padding: 8px;
-  }
-
-  .box {
-    background-color: #f3f3f3;
-    @media (min-width: 320px) and (max-width: 767px) {
-      background-color: #f3aaf3;
-    }
-  }
-
   .box1 {
     grid-column: span 2;
     margin-bottom: 24px;
+    padding: 8px;
     @media (min-width: 320px) and (max-width: 767px) {
       grid-column: span 12;
+      padding: 8px;
     }
   }
 
   .box2 {
     grid-column: span 10;
     margin-bottom: 48px;
+    padding: 8px;
     @media (min-width: 320px) and (max-width: 767px) {
       grid-column: span 12;
+      padding: 8px;
     }
-  }
-
-  .box3 {
-    grid-column: span 4;
-    margin-bottom: 48px;
-    @media (min-width: 320px) and (max-width: 767px) {
-      grid-column: span 12;
-    }
-  }
-
-  .box4 {
-    grid-column: span 6;
-    width: 300px;
-    height: 150px;
-    @media (min-width: 320px) and (max-width: 767px) {
-      grid-column: span 12;
-    }
-  }
-
-  .detailsContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    .description {
-      grid-column: span 2;
-    }
-  }
-  .itemLabel {
-    font-size: 1rem;
-    font-weight: 600;
-  }
-  .itemValue {
-    font-size: 1.2rem;
-  }
-  .orderValue {
-    font-size: 2rem;
   }
 }
