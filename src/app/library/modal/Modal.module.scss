@@ -8,13 +8,28 @@
   .modalBody {
     background-color: #ffffff;
     border: 1px solid #ddd;
-    max-width: 800px;
-    width: 100%;
     overflow-y: auto;
     padding: 48px;
+    transition: 0.5s;
     .header {
       margin-bottom: 24px;
       text-align: right;
     }
+  }
+}
+
+.primary {
+  @extend .modalContainer;
+  .modalBody {
+    max-width: 800px;
+    width: 100%;
+  }
+}
+
+.secondary {
+  @extend .modalContainer;
+  .modalBody {
+    max-width: 500px;
+    width: 100%;
   }
 }

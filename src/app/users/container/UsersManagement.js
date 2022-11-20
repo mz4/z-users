@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { USERS_ENDPOINT, POST } from '../../constants/constants';
+import {
+  USERS_ENDPOINT,
+  POST,
+  PRIMARY,
+  SECONDARY,
+  AVATAR_LINK
+} from '../../constants/constants';
 import { useFetch, useSort } from '../../hooks/index';
 import { Button, Loader, Modal, Title } from '../../library/index';
 import Request from '../../service/request';
@@ -44,7 +50,7 @@ const UsersManagement = () => {
       email: data.email,
       first_name: data.firstName,
       last_name: data.lastName,
-      avatar: 'https://xsgames.co/randomusers/avatar.php?g=male'
+      avatar: AVATAR_LINK
     };
     const submitPost = new Request(newUser, USERS_ENDPOINT, POST);
     submitPost.post().then(() => {
@@ -70,12 +76,12 @@ const UsersManagement = () => {
         <Users users={users} showProfileDetails={showProfileDetails} />
       )}
       {profileDetails && (
-        <Modal action={hideProfileDetails}>
+        <Modal action={hideProfileDetails} modalType={PRIMARY}>
           <Details user={user} />
         </Modal>
       )}
       {newUser && (
-        <Modal action={hideNewUser}>
+        <Modal action={hideNewUser} modalType={SECONDARY}>
           <AddUser submit={submit} />
         </Modal>
       )}
