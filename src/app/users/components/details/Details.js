@@ -10,45 +10,45 @@ import {
   ResponsiveContainer
 } from 'recharts';
 import { dataA, dataB } from '../../../data';
-import { Avatar, Subtitle, Text, Title } from '../../../library/index';
+import { Avatar, Subtitle, Text, Title, Item } from '../../../library/index';
 import styles from './Details.module.scss';
 
 const Details = ({ user }) => {
   const { first_name, avatar } = user;
   return (
     <div className={styles.bodyContainer}>
-      <div className={classnames(styles.title)}>
-        <Title text="User Details" />
-      </div>
+      <Title text="User Details" customClassName={styles.title} />
       <div className={classnames(styles.box1, styles.avatar)}>
         <Avatar alt={first_name} src={avatar} />
       </div>
       <div className={classnames(styles.box2, styles.details)}>
         <div className={styles.detailsContainer}>
-          <div className={classnames(styles.item)}>
+          <Item>
             <Subtitle text="Name" />
             <Text text={first_name} />
-          </div>
-          <div className={classnames(styles.item)}>
+          </Item>
+          <Item>
             <Subtitle text="Request No." />
             <Text text="2000839625936" />
-          </div>
-          <div className={classnames(styles.item)}>
+          </Item>
+          <Item>
             <Subtitle text="Connection Name" />
             <Text text="Angela Valdez" />
-          </div>
-          <div className={classnames(styles.item)}>
+          </Item>
+          <Item>
             <Subtitle text="Date Request" />
             <Text text="23/10/2021" />
-          </div>
-          <div className={classnames(styles.item, styles.description)}>
-            <Subtitle text="Description" />
-            <Text
-              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </Item>
+          <div className={styles.description}>
+            <Item>
+              <Subtitle text="Description" />
+              <Text
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Integer ac ante varius, vestibulum urna id, tincidunt enim.
                   Vestibulum maximus risus dolor, dapibus finibus velit euismod
                   eget."
-            />
+              />
+            </Item>
           </div>
         </div>
       </div>

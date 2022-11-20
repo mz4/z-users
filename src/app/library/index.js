@@ -8,6 +8,7 @@ import { Text } from './typography/Text';
 import { Label } from './typography/Label';
 import { Input } from './form/Input';
 import { Field } from './form/Field';
+import { Item } from './details/Item';
 
 export {
   Avatar,
@@ -19,5 +20,6 @@ export {
   Loader,
   Label,
   Input,
-  Field
+  Field,
+  Item
 };
