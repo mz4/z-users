@@ -1,4 +1,4 @@
-import UsersManagement from './users/container/UsersManagement';
+import UsersManagement from './users/containers/usersManagement/UsersManagement';
 import styles from './App.module.scss';
 
 export default function App() {

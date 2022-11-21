@@ -6,12 +6,12 @@ import {
   PRIMARY,
   SECONDARY,
   AVATAR_LINK
-} from '../../constants/constants';
-import { useFetch, useSort } from '../../hooks/index';
-import { Button, Loader, Modal, Title } from '../../library/index';
-import Request from '../../service/request';
-import { AddUser, Details, Header, Users } from '../components/index';
-import { getUsers, usersList, usersListSort } from '../store/usersSlice';
+} from '../../../constants/constants';
+import { useFetch, useSort } from '../../../hooks/index';
+import { Button, Loader, Modal, Title } from '../../../library/index';
+import Request from '../../../service/request';
+import { AddUser, Details, Header, Users } from '../../components/index';
+import { getUsers, usersList, usersListSort } from '../../store/usersSlice';
 import styles from './UsersManagement.module.scss';
 
 const UsersManagement = () => {
@@ -32,17 +32,13 @@ const UsersManagement = () => {
     setProfileDetails(false);
   };
 
-  const hideNewUser = () => {
-    setNewUser(false);
+  const toggleNewUser = (isNewUser) => {
+    setNewUser(isNewUser);
   };
 
   const sortUsers = () => {
     const dataSorted = sortByName(users);
     dispatch(usersListSort(dataSorted));
-  };
-
-  const addNewUser = () => {
-    setNewUser(true);
   };
 
   const submit = (data) => {
@@ -54,7 +50,7 @@ const UsersManagement = () => {
     };
     const submitPost = new Request(newUser, USERS_ENDPOINT, POST);
     submitPost.post().then(() => {
-      hideNewUser();
+      toggleNewUser(false);
       getData(USERS_ENDPOINT);
     });
   };
@@ -68,7 +64,11 @@ const UsersManagement = () => {
       <Title text="Users List" />
       <Header>
         <Button actionButton={sortUsers} text={'Sort By Name'} type="primary" />
-        <Button actionButton={addNewUser} text={'Add new'} type="secondary" />
+        <Button
+          actionButton={() => toggleNewUser(true)}
+          text={'Add new'}
+          type="secondary"
+        />
       </Header>
       {loading ? (
         <Loader />
@@ -81,7 +81,7 @@ const UsersManagement = () => {
         </Modal>
       )}
       {newUser && (
-        <Modal action={hideNewUser} modalType={SECONDARY}>
+        <Modal action={() => toggleNewUser(false)} modalType={SECONDARY}>
           <AddUser submit={submit} />
         </Modal>
       )}

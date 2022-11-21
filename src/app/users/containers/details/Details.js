@@ -1,13 +1,13 @@
 import { Avatar, Title } from '../../../library/index';
-import Charts from './Charts';
+import Charts from '../../components/details/Charts';
 import styles from './Details.module.scss';
-import Orders from './Orders';
-import Personal from './Personal';
+import Orders from '../../components/details/Orders';
+import Personal from '../../components/details/Personal';
 
 const Details = ({ user }) => {
   const { first_name, avatar } = user;
   return (
-    <div className={styles.bodyContainer}>
+    <div className={styles.container}>
       <Title text="User Details" customClassName={styles.title} />
       <div className={styles.avatar}>
         <Avatar alt={first_name} src={avatar} />
