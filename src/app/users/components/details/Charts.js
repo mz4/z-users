@@ -15,7 +15,7 @@ import styles from './Charts.module.scss';
 const Charts = () => {
   return (
     <>
-      <div className={styles.box4}>
+      <div className={styles.charts}>
         <Subtitle text="Chart Area" />
         <ResponsiveContainer width="100%" height="100%">
           <BarChart width={150} height={40} data={dataA}>
@@ -23,7 +23,7 @@ const Charts = () => {
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <div className={styles.box4}>
+      <div className={styles.charts}>
         <Subtitle text="Chart Billing" />
         <ResponsiveContainer width="100%" height="100%">
           <RadarChart cx="50%" cy="50%" outerRadius="80%" data={dataB}>
