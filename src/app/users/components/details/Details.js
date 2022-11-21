@@ -10,7 +10,7 @@ const Details = ({ user }) => {
     <div className={styles.bodyContainer}>
       <Title text="User Details" customClassName={styles.title} />
       <div className={styles.box1}>
-        <Avatar alt={first_name} src={avatar} classnames={styles.box1} />
+        <Avatar alt={first_name} src={avatar} />
       </div>
       <div className={styles.box2}>
         <Personal user={user} />
