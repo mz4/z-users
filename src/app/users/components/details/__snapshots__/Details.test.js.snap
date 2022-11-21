@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render component Create a snapshot 1`] = `
+<div
+  className="bodyContainer"
+>
+  <div
+    className="pageTitle title"
+  >
+    <span>
+      User Details
+    </span>
+  </div>
+  <div
+    className="box1"
+  >
+    <img
+      alt="Mark"
+      className="imageProfile"
+      src="https://reqres.in/img/faces/1-image.jpg"
+    />
+  </div>
+  <div
+    className="box2"
+  >
+    <div
+      className="detailsContainer"
+    >
+      <div>
+        <div
+          className="pageSubTitle"
+        >
+          <span>
+            Name
+          </span>
+        </div>
+        <div
+          className="text"
+        >
+          <span>
+            Mark
+          </span>
+        </div>
+      </div>
+      <div>
+        <div
+          className="pageSubTitle"
+        >
+          <span>
+            Request No.
+          </span>
+        </div>
+        <div
+          className="text"
+        >
+          <span>
+            2000839625936
+          </span>
+        </div>
+      </div>
+      <div>
+        <div
+          className="pageSubTitle"
+        >
+          <span>
+            Connection Name
+          </span>
+        </div>
+        <div
+          className="text"
+        >
+          <span>
+            Angela Valdez
+          </span>
+        </div>
+      </div>
+      <div>
+        <div
+          className="pageSubTitle"
+        >
+          <span>
+            Date Request
+          </span>
+        </div>
+        <div
+          className="text"
+        >
+          <span>
+            23/10/2021
+          </span>
+        </div>
+      </div>
+      <div
+        className="description"
+      >
+        <div>
+          <div
+            className="pageSubTitle"
+          >
+            <span>
+              Description
+            </span>
+          </div>
+          <div
+            className="text"
+          >
+            <span>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac ante varius, vestibulum urna id, tincidunt enim. Vestibulum maximus risus dolor, dapibus finibus velit euismod eget.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="box"
+  >
+    <div
+      className="pageSubTitle"
+    >
+      <span>
+        Total Orders Today
+      </span>
+    </div>
+    <div
+      className="orderValue"
+    >
+      12.450 $
+    </div>
+  </div>
+  <div
+    className="box"
+  >
+    <div
+      className="pageSubTitle"
+    >
+      <span>
+        Total Clients Today
+      </span>
+    </div>
+    <div
+      className="orderValue"
+    >
+      25
+    </div>
+  </div>
+  <div
+    className="box"
+  >
+    <div
+      className="pageSubTitle"
+    >
+      <span>
+        Revenue Day Ratio
+      </span>
+    </div>
+    <div
+      className="orderValue"
+    >
+      25%
+    </div>
+  </div>
+  <div
+    className="box4"
+  >
+    <div
+      className="pageSubTitle"
+    >
+      <span>
+        Chart Area
+      </span>
+    </div>
+    <div
+      className="recharts-responsive-container"
+      style={
+        Object {
+          "height": "100%",
+          "maxHeight": undefined,
+          "minHeight": undefined,
+          "minWidth": undefined,
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="box4"
+  >
+    <div
+      className="pageSubTitle"
+    >
+      <span>
+        Chart Billing
+      </span>
+    </div>
+    <div
+      className="recharts-responsive-container"
+      style={
+        Object {
+          "height": "100%",
+          "maxHeight": undefined,
+          "minHeight": undefined,
+          "minWidth": undefined,
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+</div>
+`;

@@ -1,11 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Title } from './Title';
+import Charts from './Charts';
 
-describe('Render title component', () => {
+describe('Render component', () => {
   it('Create a snapshot', () => {
-    const title = <Title />;
-    const component = renderer.create(title);
+    const charts = <Charts />;
+    const component = renderer.create(charts);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });
