@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render title component Create a snapshot 1`] = `
+<div
+  className="headOptionsContainer headOptions marginTop24"
+>
+  <div>
+    child component
+  </div>
+</div>
+`;

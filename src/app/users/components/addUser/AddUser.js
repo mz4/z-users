@@ -23,7 +23,6 @@ const AddUser = ({ submit }) => {
   } = methods;
 
   const onSubmit = () => {
-    console.log('onSubmit');
     submit(getValues());
   };
 
