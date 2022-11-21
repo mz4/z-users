@@ -1,20 +1,8 @@
-import classnames from 'classnames';
-import {
-  Bar,
-  BarChart,
-  PolarAngleAxis,
-  PolarGrid,
-  PolarRadiusAxis,
-  Radar,
-  RadarChart,
-  ResponsiveContainer
-} from 'recharts';
-import { dataA, dataB } from '../../../data';
-import { Avatar, Subtitle, Text, Title, Item } from '../../../library/index';
-import Personal from './Personal';
-import Orders from './Orders';
+import { Avatar, Title } from '../../../library/index';
 import Charts from './Charts';
 import styles from './Details.module.scss';
+import Orders from './Orders';
+import Personal from './Personal';
 
 const Details = ({ user }) => {
   const { first_name, avatar } = user;

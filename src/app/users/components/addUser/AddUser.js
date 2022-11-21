@@ -23,6 +23,7 @@ const AddUser = ({ submit }) => {
   } = methods;
 
   const onSubmit = () => {
+    console.log('onSubmit');
     submit(getValues());
   };
 
@@ -66,6 +67,7 @@ const AddUser = ({ submit }) => {
         type="tertiary"
         text="Submit"
         actionButton={handleSubmit(onSubmit)}
+        dataTestId="submitForm"
       />
     </>
   );
