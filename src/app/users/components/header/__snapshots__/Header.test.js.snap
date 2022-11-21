@@ -2,7 +2,7 @@
 
 exports[`Render title component Create a snapshot 1`] = `
 <div
-  className="headOptionsContainer headOptions marginTop24"
+  className="header"
 >
   <div>
     child component

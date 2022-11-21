@@ -12,7 +12,7 @@ exports[`Render component Create a snapshot 1`] = `
     </span>
   </div>
   <div
-    className="box1"
+    className="avatar"
   >
     <img
       alt="Mark"
@@ -21,7 +21,7 @@ exports[`Render component Create a snapshot 1`] = `
     />
   </div>
   <div
-    className="box2"
+    className="personal"
   >
     <div
       className="detailsContainer"
@@ -161,7 +161,7 @@ exports[`Render component Create a snapshot 1`] = `
     </div>
   </div>
   <div
-    className="box4"
+    className="charts"
   >
     <div
       className="pageSubTitle"
@@ -184,7 +184,7 @@ exports[`Render component Create a snapshot 1`] = `
     />
   </div>
   <div
-    className="box4"
+    className="charts"
   >
     <div
       className="pageSubTitle"
