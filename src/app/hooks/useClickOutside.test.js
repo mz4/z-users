@@ -1,7 +1,7 @@
 import { createRef } from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { useClickOutside } from './useClickOutside';
+import useClickOutside from './useClickOutside';
 
 describe('Test useClickOutside custom hook', () => {
   it('Call handler', () => {

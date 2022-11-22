@@ -2,7 +2,7 @@ import Request from '../service/request';
 import { GET } from '../constants/constants';
 import { useEffect, useState } from 'react';
 
-export const useFetch = (endpoint) => {
+const useFetch = (endpoint) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -27,3 +27,5 @@ export const useFetch = (endpoint) => {
 
   return { getData, data, loading, error };
 };
+
+export default useFetch;

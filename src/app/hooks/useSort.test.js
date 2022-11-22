@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { useSort } from './useSort';
+import useSort from './useSort';
 
 describe('Test useSort custom hook', () => {
   const data = [

@@ -1,6 +1,6 @@
 import Request from '../service/request';
 import { renderHook, act } from '@testing-library/react-hooks';
-import { useFetch } from './useFetch';
+import useFetch from './useFetch';
 
 jest.mock('../service/request');
 
