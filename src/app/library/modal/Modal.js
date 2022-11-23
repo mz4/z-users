@@ -11,10 +11,15 @@ export const Modal = ({ action, children, modalType }) => {
   const modalRef = useRef();
   useClickOutside(modalRef, action);
   return (
-    <div className={type[modalType]}>
+    <div className={type[modalType]} data-testid="modal">
       <div ref={modalRef} className={styles.modalBody}>
         <div className={styles.header}>
-          <Button type="secondary" text="Close" actionButton={action} />
+          <Button
+            type="secondary"
+            text="Close"
+            actionButton={action}
+            dataTestId="btnClose"
+          />
         </div>
         {children}
       </div>
