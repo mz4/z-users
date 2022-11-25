@@ -7,6 +7,7 @@ import styles from './AddUser.module.scss';
 
 const AddUser = ({ submit }) => {
   const methods = useForm({
+    mode: 'all',
     resolver: yupResolver(AddUserSchema),
     defaultValues: {
       [EMAIL]: '',
@@ -38,6 +39,7 @@ const AddUser = ({ submit }) => {
           name={EMAIL}
           errors={errors}
           disabled={false}
+          dataTestId={EMAIL}
         />
       </Field>
       <Field>
@@ -49,6 +51,7 @@ const AddUser = ({ submit }) => {
           name={FIRST_NAME}
           errors={errors}
           disabled={false}
+          dataTestId={FIRST_NAME}
         />
       </Field>
       <Field>
@@ -60,6 +63,7 @@ const AddUser = ({ submit }) => {
           name={LAST_NAME}
           errors={errors}
           disabled={false}
+          dataTestId={LAST_NAME}
         />
       </Field>
       <Button

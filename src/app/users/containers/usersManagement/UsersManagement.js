@@ -63,11 +63,17 @@ const UsersManagement = () => {
     <div className={styles.pageContainer}>
       <Title text="Users List" />
       <Header>
-        <Button actionButton={sortUsers} text={'Sort By Name'} type="primary" />
+        <Button
+          actionButton={sortUsers}
+          text={'Sort By Name'}
+          type="primary"
+          dataTestId="btnSort"
+        />
         <Button
           actionButton={() => toggleNewUser(true)}
           text={'Add new'}
           type="secondary"
+          dataTestId="btnNew"
         />
       </Header>
       {loading ? (

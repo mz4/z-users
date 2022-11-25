@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render modal component Create a snapshot 1`] = `
-<div>
+<div
+  data-testid="modal"
+>
   <div
     className="modalBody"
   >
@@ -10,6 +12,7 @@ exports[`Render modal component Create a snapshot 1`] = `
     >
       <button
         className="secondary"
+        data-testid="btnClose"
         onClick={[MockFunction]}
       >
         Close

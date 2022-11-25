@@ -1,7 +1,7 @@
 const userDetails = '[data-testid="userDetails"]';
-const usersList = '[data-testid="usersList"]';
 const modal = '[data-testid="modal"]';
 const btnClose = '[data-testid="btnClose"]';
+const btnSort = '[data-testid="btnSort"]';
 
 describe('Users list', () => {
   before(() => {
@@ -10,8 +10,10 @@ describe('Users list', () => {
   it('Load page successfully', () => {
     cy.get(userDetails).should('have.length', 15);
   });
-  it('Users are sorted', () => {
+  it('sort users', () => {
     cy.get(userDetails).first().contains('Georgie');
+    cy.get(btnSort).click();
+    cy.get(userDetails).first().contains('Byron');
   });
   it('open and close side panel details', () => {
     cy.get(userDetails).first().click();
