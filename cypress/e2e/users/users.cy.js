@@ -1,7 +1,4 @@
-const userDetails = '[data-testid="userDetails"]';
-const modal = '[data-testid="modal"]';
-const btnClose = '[data-testid="btnClose"]';
-const btnSort = '[data-testid="btnSort"]';
+import { userDetails, modal, btnClose, btnSort } from '../../fixtures/user';
 
 describe('Users list', () => {
   before(() => {

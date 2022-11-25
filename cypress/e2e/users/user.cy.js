@@ -1,10 +1,13 @@
-const userDetails = '[data-testid="userDetails"]';
-const btnClose = '[data-testid="btnClose"]';
-const btnNew = '[data-testid="btnNew"]';
-const btnSubmit = '[data-testid="submitForm"]';
-const inputEmail = '[data-testid="email"]';
-const inputFirstName = '[data-testid="firstName"]';
-const inputLastName = '[data-testid="lastName"]';
+import user from '../../fixtures/user.json';
+import {
+  userDetails,
+  btnClose,
+  btnNew,
+  btnSubmit,
+  inputEmail,
+  inputFirstName,
+  inputLastName
+} from '../../fixtures/user';
 
 describe('Add a new user ', () => {
   before(() => {
@@ -12,33 +15,32 @@ describe('Add a new user ', () => {
   });
   it('Show error in the email field', () => {
     cy.get(btnNew).click();
-    cy.get(inputEmail).type(`mark.knop.com`);
-    cy.contains('Please insert a valid email');
+    cy.get(inputEmail).type(user.email1);
+    cy.contains(user.emailError1);
     cy.get(inputEmail).clear();
-    cy.contains('email is required');
+    cy.contains(user.emailError2);
     cy.get(btnClose).click();
   });
   it('Show error in first name field', () => {
     cy.get(btnNew).click();
-    cy.get(inputFirstName).type(`mark`);
+    cy.get(inputFirstName).type(user.firstName1);
     cy.get(inputFirstName).clear();
-    cy.contains('Please enter first name');
+    cy.contains(user.firstNameError1);
     cy.get(btnClose).click();
   });
   it('Show error in last name field', () => {
     cy.get(btnNew).click();
-    cy.get(inputLastName).type(`knop`);
+    cy.get(inputLastName).type(user.lastName1);
     cy.get(inputLastName).clear();
-    cy.contains('Please enter last name');
+    cy.contains(user.lastNameError1);
     cy.get(btnClose).click();
   });
   it('Submit new user form', () => {
     cy.get(btnNew).click();
-    cy.get(inputEmail).type(`mark.knop@gmail.com`);
-    cy.get(inputFirstName).type(`mark`);
-    cy.get(inputLastName).type(`knop`);
+    cy.get(inputEmail).type(user.email2);
+    cy.get(inputFirstName).type(user.firstName1);
+    cy.get(inputLastName).type(user.lastName1);
     cy.get(btnSubmit).click();
-    cy.get(userDetails).should('have.length', 15);
-    cy.get(userDetails).last().contains('mark');
+    cy.get(userDetails).last().contains(user.firstName1);
   });
 });
