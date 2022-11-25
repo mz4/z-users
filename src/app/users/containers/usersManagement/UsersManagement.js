@@ -1,11 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { USERS_ENDPOINT, POST } from '../../constants/constants';
-import { useFetch, useSort } from '../../hooks/index';
-import { Button, Loader, Modal, Title } from '../../library/index';
-import { Request } from '../../service/request';
-import { AddUser, Details, Header, Users } from '../components/index';
-import { getUsers, usersList, usersListSort } from '../store/usersSlice';
+import {
+  USERS_ENDPOINT,
+  POST,
+  PRIMARY,
+  SECONDARY,
+  AVATAR_LINK
+} from '../../../constants/constants';
+import { useFetch, useSort } from '../../../hooks/index';
+import { Button, Loader, Modal, Title } from '../../../library/index';
+import Request from '../../../service/request';
+import { AddUser, Details, Header, Users } from '../../components/index';
+import { getUsers, usersList, usersListSort } from '../../store/usersSlice';
 import styles from './UsersManagement.module.scss';
 
 const UsersManagement = () => {
@@ -14,8 +20,8 @@ const UsersManagement = () => {
   const [user, setUser] = useState({});
   const [profileDetails, setProfileDetails] = useState(false);
   const [newUser, setNewUser] = useState(false);
-  const [getData, data, loading] = useFetch(USERS_ENDPOINT);
-  const [sortByName] = useSort(USERS_ENDPOINT);
+  const { getData, data, loading } = useFetch(USERS_ENDPOINT);
+  const { sortByName } = useSort(USERS_ENDPOINT);
 
   const showProfileDetails = (user) => {
     setUser(user);
@@ -26,8 +32,8 @@ const UsersManagement = () => {
     setProfileDetails(false);
   };
 
-  const hideNewUser = () => {
-    setNewUser(false);
+  const toggleNewUser = (isNewUser) => {
+    setNewUser(isNewUser);
   };
 
   const sortUsers = () => {
@@ -35,14 +41,16 @@ const UsersManagement = () => {
     dispatch(usersListSort(dataSorted));
   };
 
-  const addNewUser = () => {
-    setNewUser(true);
-  };
-
   const submit = (data) => {
-    const submitPost = new Request(data, USERS_ENDPOINT, POST);
+    const newUser = {
+      email: data.email,
+      first_name: data.firstName,
+      last_name: data.lastName,
+      avatar: AVATAR_LINK
+    };
+    const submitPost = new Request(newUser, USERS_ENDPOINT, POST);
     submitPost.post().then(() => {
-      hideNewUser();
+      toggleNewUser(false);
       getData(USERS_ENDPOINT);
     });
   };
@@ -55,8 +63,18 @@ const UsersManagement = () => {
     <div className={styles.pageContainer}>
       <Title text="Users List" />
       <Header>
-        <Button actionButton={sortUsers} text={'Sort By Name'} type="primary" />
-        <Button actionButton={addNewUser} text={'Add new'} type="secondary" />
+        <Button
+          actionButton={sortUsers}
+          text={'Sort By Name'}
+          type="primary"
+          dataTestId="btnSort"
+        />
+        <Button
+          actionButton={() => toggleNewUser(true)}
+          text={'Add new'}
+          type="secondary"
+          dataTestId="btnNew"
+        />
       </Header>
       {loading ? (
         <Loader />
@@ -64,12 +82,12 @@ const UsersManagement = () => {
         <Users users={users} showProfileDetails={showProfileDetails} />
       )}
       {profileDetails && (
-        <Modal action={hideProfileDetails}>
+        <Modal action={hideProfileDetails} modalType={PRIMARY}>
           <Details user={user} />
         </Modal>
       )}
       {newUser && (
-        <Modal action={hideNewUser}>
+        <Modal action={() => toggleNewUser(false)} modalType={SECONDARY}>
           <AddUser submit={submit} />
         </Modal>
       )}

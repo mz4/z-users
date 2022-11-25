@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render field component Create a snapshot 1`] = `
+<div
+  className="inputContainer"
+>
+  <input
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="testplaceholder"
+    type="text"
+    value="one"
+  />
+  <div
+    className="emptyError"
+  />
+</div>
+`;

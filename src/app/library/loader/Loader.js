@@ -1,3 +1,3 @@
-export const Loader = () => {
-  return <div>Loading...</div>;
-};
+import React from 'react';
+
+export const Loader = () => <div>Loading...</div>;

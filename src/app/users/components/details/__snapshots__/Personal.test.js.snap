@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render component Create a snapshot 1`] = `
+<div
+  className="detailsContainer"
+>
+  <div>
+    <div
+      className="pageSubTitle"
+    >
+      <span>
+        Name
+      </span>
+    </div>
+    <div
+      className="text"
+    >
+      <span>
+        Mark
+      </span>
+    </div>
+  </div>
+  <div>
+    <div
+      className="pageSubTitle"
+    >
+      <span>
+        Request No.
+      </span>
+    </div>
+    <div
+      className="text"
+    >
+      <span>
+        2000839625936
+      </span>
+    </div>
+  </div>
+  <div>
+    <div
+      className="pageSubTitle"
+    >
+      <span>
+        Connection Name
+      </span>
+    </div>
+    <div
+      className="text"
+    >
+      <span>
+        Angela Valdez
+      </span>
+    </div>
+  </div>
+  <div>
+    <div
+      className="pageSubTitle"
+    >
+      <span>
+        Date Request
+      </span>
+    </div>
+    <div
+      className="text"
+    >
+      <span>
+        23/10/2021
+      </span>
+    </div>
+  </div>
+  <div
+    className="description"
+  >
+    <div>
+      <div
+        className="pageSubTitle"
+      >
+        <span>
+          Description
+        </span>
+      </div>
+      <div
+        className="text"
+      >
+        <span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac ante varius, vestibulum urna id, tincidunt enim. Vestibulum maximus risus dolor, dapibus finibus velit euismod eget.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

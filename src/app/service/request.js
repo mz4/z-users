@@ -1,4 +1,4 @@
-export class Request {
+export default class Request {
   constructor(data, endpoint, method) {
     this.data = data;
     this.endpoint = endpoint;
@@ -12,7 +12,7 @@ export class Request {
       body: JSON.stringify(this.data)
     };
   }
-  post = async () => {
+  async post() {
     try {
       const response = await fetch(this.endpoint, this.settings);
       const responseJSON = await response.json();
@@ -20,8 +20,8 @@ export class Request {
     } catch (e) {
       return e;
     }
-  };
-  get = async () => {
+  }
+  async get() {
     try {
       const response = await fetch(this.endpoint);
       const responseJSON = await response.json();
@@ -29,5 +29,5 @@ export class Request {
     } catch (e) {
       return e.message;
     }
-  };
+  }
 }

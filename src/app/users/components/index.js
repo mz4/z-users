@@ -1,4 +1,4 @@
-import Details from './details/Details';
+import Details from '../containers/details/Details';
 import Header from './header/Header';
 import User from './user/User';
 import Users from './users/Users';

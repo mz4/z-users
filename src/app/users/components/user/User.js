@@ -6,18 +6,16 @@ const User = ({ user, showProfileDetails }) => {
     <div
       className={styles.userProfile}
       onClick={() => showProfileDetails(user)}
+      data-testid="userDetails"
     >
       <div className={styles.userProfileContainer}>
         <div>
           <Avatar alt={user.first_name} src={user.avatar} />
-
           <div className={styles.textProfile}>
             <div className={styles.cardName}>
               {user.first_name} {user.last_name}
             </div>
-            <div className={styles.cardText}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </div>
+            <div className={styles.cardText}>{user.description}</div>
           </div>
         </div>
         <div className={styles.footerProfile}>

@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render component Create a snapshot 1`] = `
+Array [
+  <div
+    className="charts"
+  >
+    <div
+      className="pageSubTitle"
+    >
+      <span>
+        Chart Area
+      </span>
+    </div>
+    <div
+      className="recharts-responsive-container"
+      style={
+        Object {
+          "height": "100%",
+          "maxHeight": undefined,
+          "minHeight": undefined,
+          "minWidth": undefined,
+          "width": "100%",
+        }
+      }
+    />
+  </div>,
+  <div
+    className="charts"
+  >
+    <div
+      className="pageSubTitle"
+    >
+      <span>
+        Chart Billing
+      </span>
+    </div>
+    <div
+      className="recharts-responsive-container"
+      style={
+        Object {
+          "height": "100%",
+          "maxHeight": undefined,
+          "minHeight": undefined,
+          "minWidth": undefined,
+          "width": "100%",
+        }
+      }
+    />
+  </div>,
+]
+`;

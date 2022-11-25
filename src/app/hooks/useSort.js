@@ -1,4 +1,4 @@
-export const useSort = () => {
+const useSort = () => {
   const sortByName = (data) => {
     const dataSorted = data
       .slice()
@@ -6,5 +6,7 @@ export const useSort = () => {
     return dataSorted;
   };
 
-  return [sortByName];
+  return { sortByName };
 };
+
+export default useSort;

@@ -3,7 +3,7 @@ import styles from './Users.module.scss';
 
 const Users = ({ users, showProfileDetails }) => {
   return (
-    <div className={styles.usersContainer}>
+    <div className={styles.usersContainer} data-testid="usersList">
       {users.length &&
         users.map((user) => {
           return (

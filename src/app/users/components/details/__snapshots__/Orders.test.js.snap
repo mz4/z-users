@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render component Create a snapshot 1`] = `
+Array [
+  <div
+    className="box"
+  >
+    <div
+      className="pageSubTitle"
+    >
+      <span>
+        Total Orders Today
+      </span>
+    </div>
+    <div
+      className="orderValue"
+    >
+      12.450 $
+    </div>
+  </div>,
+  <div
+    className="box"
+  >
+    <div
+      className="pageSubTitle"
+    >
+      <span>
+        Total Clients Today
+      </span>
+    </div>
+    <div
+      className="orderValue"
+    >
+      25
+    </div>
+  </div>,
+  <div
+    className="box"
+  >
+    <div
+      className="pageSubTitle"
+    >
+      <span>
+        Revenue Day Ratio
+      </span>
+    </div>
+    <div
+      className="orderValue"
+    >
+      25%
+    </div>
+  </div>,
+]
+`;

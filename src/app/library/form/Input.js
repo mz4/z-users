@@ -8,7 +8,8 @@ export const Input = ({
   placeholder,
   name,
   errors,
-  disabled
+  disabled,
+  dataTestId
 }) => {
   return (
     <div className={styles.inputContainer}>
@@ -26,6 +27,7 @@ export const Input = ({
               return onChange(evt);
             }}
             onBlur={onBlur}
+            data-testid={dataTestId}
           />
         )}
       />
