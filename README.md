@@ -1,17 +1,13 @@
 
-# Project Title
+# Users
 
 Sample React app, with unit tests and e2e tests.
-
-
-
 
 ## Features
 
 - Display a list of users
 - Sort list
 - Add new users
-
 
 ## Run project
 
@@ -33,7 +29,6 @@ To run this project
     - Run Cypress tests
     yarn cypress:open
 ```
-
 
 ## License
 
