@@ -13,7 +13,7 @@ Sample React app, with unit tests and e2e tests.
 - Add new users
 
 
-## How to run install it
+## Run project
 
 To run this project
 
