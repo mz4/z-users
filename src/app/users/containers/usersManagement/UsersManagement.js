@@ -41,6 +41,11 @@ const UsersManagement = () => {
     dispatch(usersListSort(dataSorted));
   };
 
+  const handleDelete = (e) => {
+    e.stopPropagation();
+    alert('delete');
+  };
+
   const submit = (data) => {
     const newUser = {
       email: data.email,
@@ -79,7 +84,11 @@ const UsersManagement = () => {
       {loading ? (
         <Loader />
       ) : (
-        <Users users={users} showProfileDetails={showProfileDetails} />
+        <Users
+          users={users}
+          showProfileDetails={showProfileDetails}
+          handleDelete={handleDelete}
+        />
       )}
       {profileDetails && (
         <Modal action={hideProfileDetails} modalType={PRIMARY}>

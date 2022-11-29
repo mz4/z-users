@@ -1,7 +1,7 @@
 import User from '../user/User';
 import styles from './Users.module.scss';
 
-const Users = ({ users, showProfileDetails }) => {
+const Users = ({ users, showProfileDetails, handleDelete }) => {
   return (
     <div className={styles.usersContainer} data-testid="usersList">
       {users.length &&
@@ -10,6 +10,7 @@ const Users = ({ users, showProfileDetails }) => {
             <User
               user={user}
               showProfileDetails={showProfileDetails}
+              handleDelete={handleDelete}
               key={user.id}
             />
           );

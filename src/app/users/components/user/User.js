@@ -1,14 +1,20 @@
-import { Avatar } from '../../../library/index';
+import { useState } from 'react';
+import { Avatar, Button, Dialog } from '../../../library/index';
 import styles from './User.module.scss';
 
-const User = ({ user, showProfileDetails }) => {
+const User = ({ user, showProfileDetails, handleDelete }) => {
+  const [dialog, setDialog] = useState(false);
+  const handleDeleteUser = (e) => {
+    e.stopPropagation();
+    setDialog(true);
+  };
   return (
     <div
-      className={styles.userProfile}
+      className={styles.container}
       onClick={() => showProfileDetails(user)}
       data-testid="userDetails"
     >
-      <div className={styles.userProfileContainer}>
+      <div className={styles.userProfile}>
         <div>
           <Avatar alt={user.first_name} src={user.avatar} />
           <div className={styles.textProfile}>
@@ -17,15 +23,17 @@ const User = ({ user, showProfileDetails }) => {
             </div>
             <div className={styles.cardText}>{user.description}</div>
           </div>
-        </div>
-        <div className={styles.footerProfile}>
-          <div className={styles.cardFooter}>
-            <i className={'fa-regular fa-envelope'}></i>
-            <i className={'fa-regular fa-star'}></i>
-            <i className={'fa-brands fa-whatsapp'}></i>
+          <div className={styles.cardAction}>
+            <Button
+              type="quaternary"
+              text="Delete"
+              actionButton={handleDeleteUser}
+              dataTestId="submitForm"
+            />
           </div>
         </div>
       </div>
+      {dialog && <Dialog />}
     </div>
   );
 };

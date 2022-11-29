@@ -53,3 +53,13 @@
     background-color: #c1ffce;
   }
 }
+
+.quaternary {
+  @extend .button;
+  background-color: #ea5f4c;
+
+  &:hover,
+  &:focus {
+    background-color: #ffaea3;
+  }
+}
