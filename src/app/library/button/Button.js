@@ -5,7 +5,8 @@ export const Button = ({ actionButton, text, type, dataTestId }) => {
     primary: styles.primary,
     secondary: styles.secondary,
     tertiary: styles.tertiary,
-    quaternary: styles.quaternary
+    quaternary: styles.quaternary,
+    quinary: styles.quinary
   };
   return (
     <button

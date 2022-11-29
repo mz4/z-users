@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { Avatar, Button, Dialog } from '../../../library/index';
 import styles from './User.module.scss';
 
-const User = ({ user, showProfileDetails, handleDelete }) => {
-  const [dialog, setDialog] = useState(false);
-  const handleDeleteUser = (e) => {
+const User = ({ user, showProfileDetails, dialog }) => {
+  const [modalDialog, setModalDialog] = useState(false);
+  const handleDelete = (e) => {
     e.stopPropagation();
-    setDialog(true);
+    setModalDialog(true);
   };
   return (
     <div
@@ -25,15 +25,15 @@ const User = ({ user, showProfileDetails, handleDelete }) => {
           </div>
           <div className={styles.cardAction}>
             <Button
-              type="quaternary"
+              type="quinary"
               text="Delete"
-              actionButton={handleDeleteUser}
+              actionButton={handleDelete}
               dataTestId="submitForm"
             />
           </div>
         </div>
       </div>
-      {dialog && <Dialog />}
+      {modalDialog && dialog}
     </div>
   );
 };

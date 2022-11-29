@@ -1,15 +1,25 @@
-import { Button } from '../index';
+import { Button, Title, Subtitle } from '../index';
 import styles from './Dialog.module.scss';
 
-export const Dialog = () => {
-  console.log('dialog');
+export const Dialog = ({
+  textHeader,
+  textBody,
+  textAction,
+  textDismiss,
+  handleAction,
+  handleDismiss
+}) => {
   return (
     <div className={styles.container}>
-      <div className={styles.header}>aaa</div>
-      <div className={styles.body}>bbb</div>
+      <div className={styles.header}>
+        <Title text={textHeader} customClassName={styles.centerText} />
+      </div>
+      <div className={styles.body}>
+        <Subtitle text={textBody} customClassName={styles.centerText} />
+      </div>
       <div className={styles.footer}>
-        <Button>Confirm</Button>
-        <Button>Dismiss</Button>
+        <Button type="quaternary" text={textAction} onClick={handleAction} />
+        <Button type="tertiary" text={textDismiss} onClick={handleDismiss} />
       </div>
     </div>
   );

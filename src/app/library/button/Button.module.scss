@@ -63,3 +63,13 @@
     background-color: #ffaea3;
   }
 }
+
+.quinary {
+  @extend .button;
+  background-color: #ffaea3;
+
+  &:hover,
+  &:focus {
+    background-color: #ea5f4c;
+  }
+}
