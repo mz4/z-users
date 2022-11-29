@@ -11,7 +11,7 @@
   border: 2px solid #ccc;
   border-radius: 8px;
   z-index: 1;
-  transform: translateY(-100%);
+  //transform: translateY(-100%);
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -26,8 +26,4 @@
     justify-content: center;
     gap: 16px;
   }
-}
-
-.centerText {
-  text-align: center;
 }

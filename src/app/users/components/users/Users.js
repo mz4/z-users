@@ -1,12 +1,14 @@
 import User from '../user/User';
-import { Dialog } from '../../../library/index';
+import { Dialog, Button, Title, Subtitle } from '../../../library/index';
 import styles from './Users.module.scss';
 
-const Users = ({ users, showProfileDetails, handleAction, handleDismiss }) => {
-  const textHeader = 'Delete User';
-  const textBody = 'Are you sure you want to delete user?';
-  const textAction = 'Delete';
-  const textDismiss = 'Dismiss';
+const Users = ({
+  users,
+  showProfileDetails,
+  handleAction,
+  handleDismiss,
+  handleClickOutside
+}) => {
   return (
     <div className={styles.usersContainer} data-testid="usersList">
       {users.length &&
@@ -18,12 +20,33 @@ const Users = ({ users, showProfileDetails, handleAction, handleDismiss }) => {
               key={user.id}
               dialog={
                 <Dialog
-                  textHeader={textHeader}
-                  textBody={textBody}
-                  textAction={textAction}
-                  textDismiss={textDismiss}
-                  handleAction={handleAction}
-                  handleDismiss={handleDismiss}
+                  header={
+                    <Title
+                      text={'Delete User'}
+                      customClassName={styles.centerText}
+                    />
+                  }
+                  body={
+                    <Subtitle
+                      text={'Are you sure you want to delete user?'}
+                      customClassName={styles.centerText}
+                    />
+                  }
+                  footer={
+                    <>
+                      <Button
+                        type="quaternary"
+                        text={'Delete'}
+                        actionButton={handleAction}
+                      />
+                      <Button
+                        type="tertiary"
+                        text={'Dismiss'}
+                        actionButton={handleDismiss}
+                      />
+                    </>
+                  }
+                  handleClickOutside={handleClickOutside}
                 />
               }
             />

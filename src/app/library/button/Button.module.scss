@@ -21,7 +21,8 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 140px;
+  max-width: 140px;
+  width: 100%;
 }
 
 .primary {

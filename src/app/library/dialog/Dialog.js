@@ -1,26 +1,15 @@
-import { Button, Title, Subtitle } from '../index';
+import { useRef } from 'react';
+import { useClickOutside } from '../../hooks';
 import styles from './Dialog.module.scss';
 
-export const Dialog = ({
-  textHeader,
-  textBody,
-  textAction,
-  textDismiss,
-  handleAction,
-  handleDismiss
-}) => {
+export const Dialog = ({ header, body, footer, handleClickOutside }) => {
+  const dialogRef = useRef();
+  useClickOutside(dialogRef, handleClickOutside);
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <Title text={textHeader} customClassName={styles.centerText} />
-      </div>
-      <div className={styles.body}>
-        <Subtitle text={textBody} customClassName={styles.centerText} />
-      </div>
-      <div className={styles.footer}>
-        <Button type="quaternary" text={textAction} onClick={handleAction} />
-        <Button type="tertiary" text={textDismiss} onClick={handleDismiss} />
-      </div>
+    <div className={styles.container} ref={dialogRef}>
+      <div className={styles.header}>{header}</div>
+      <div className={styles.body}>{body}</div>
+      <div className={styles.footer}>{footer}</div>
     </div>
   );
 };

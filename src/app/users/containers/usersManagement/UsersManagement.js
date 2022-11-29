@@ -24,6 +24,7 @@ const UsersManagement = () => {
   const { sortByName } = useSort(USERS_ENDPOINT);
 
   const showProfileDetails = (user) => {
+    console.log('action4 showprofiledetails');
     setUser(user);
     setProfileDetails(true);
   };
@@ -41,9 +42,19 @@ const UsersManagement = () => {
     dispatch(usersListSort(dataSorted));
   };
 
-  const handleDelete = (e) => {
-    e.stopPropagation();
+  const handleAction = () => {
+    console.log('action1 delete');
     alert('delete');
+  };
+
+  const handleDismiss = () => {
+    console.log('action2 dismiss');
+    alert('dismiss');
+  };
+
+  const handleClickOutside = (e) => {
+    console.log('action3 outside');
+    alert('click outside');
   };
 
   const submit = (data) => {
@@ -87,7 +98,9 @@ const UsersManagement = () => {
         <Users
           users={users}
           showProfileDetails={showProfileDetails}
-          handleDelete={handleDelete}
+          handleAction={handleAction}
+          handleDismiss={handleDismiss}
+          handleClickOutside={handleClickOutside}
         />
       )}
       {profileDetails && (
