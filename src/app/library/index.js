@@ -9,6 +9,7 @@ import { Label } from './typography/Label';
 import { Input } from './form/Input';
 import { Field } from './form/Field';
 import { Item } from './details/Item';
+import { Dialog } from './dialog/Dialog';
 
 export {
   Avatar,
@@ -21,5 +22,6 @@ export {
   Label,
   Input,
   Field,
-  Item
+  Item,
+  Dialog
 };

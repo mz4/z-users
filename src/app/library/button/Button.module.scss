@@ -21,7 +21,8 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 140px;
+  max-width: 140px;
+  width: 100%;
 }
 
 .primary {
@@ -51,5 +52,25 @@
   &:hover,
   &:focus {
     background-color: #c1ffce;
+  }
+}
+
+.quaternary {
+  @extend .button;
+  background-color: #ea5f4c;
+
+  &:hover,
+  &:focus {
+    background-color: #ffaea3;
+  }
+}
+
+.quinary {
+  @extend .button;
+  background-color: #ffaea3;
+
+  &:hover,
+  &:focus {
+    background-color: #ea5f4c;
   }
 }

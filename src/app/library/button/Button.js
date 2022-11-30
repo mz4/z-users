@@ -4,7 +4,9 @@ export const Button = ({ actionButton, text, type, dataTestId }) => {
   const buttonType = {
     primary: styles.primary,
     secondary: styles.secondary,
-    tertiary: styles.tertiary
+    tertiary: styles.tertiary,
+    quaternary: styles.quaternary,
+    quinary: styles.quinary
   };
   return (
     <button

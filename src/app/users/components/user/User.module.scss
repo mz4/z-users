@@ -1,28 +1,14 @@
-.userProfile {
+.container {
   padding: 1em;
   border-radius: 0.8em;
+  border: 1px solid transparent;
   background-color: #fefefe;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
-    rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
-    rgba(0, 0, 0, 0.07) 0px 16px 16px;
   position: relative;
-  width: 23%;
-  min-width: 240px;
-  height: 320px;
   box-sizing: border-box;
+  width: 23%;
   cursor: pointer;
 
-  /* Grow */
-  display: inline-block;
-  vertical-align: middle;
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  transition-duration: 0.3s;
-  transition-property: transform;
-
-  .userProfileContainer {
+  .userProfile {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -48,33 +34,20 @@
         font-size: 0.8rem;
         font-weight: 400;
         color: #999;
+        text-align: left;
       }
     }
 
-    .footerProfile {
-      .cardFooter {
-        display: flex;
-        justify-content: space-evenly;
-        padding: 8px;
-      }
+    .cardAction {
+      padding: 8px;
     }
   }
 }
 
-.userProfile:after {
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: var(--small-green-circle);
-  top: 25px;
-  right: 85px;
-  border: 2px solid white;
-}
-
-.userProfile:hover,
-.userProfile:focus,
-.userProfile:active {
-  transform: scale(1.1);
+.container:hover {
+  box-sizing: border-box;
+  border: 1px solid #e9e9e9;
+  box-shadow: 1px 10px 15px -3px rgba(66, 65, 65, 0.38);
+  -webkit-box-shadow: 1px 10px 15px -3px rgba(66, 65, 65, 0.38);
+  -moz-box-shadow: 1px 10px 15px -3px rgba(66, 65, 65, 0.38);
 }

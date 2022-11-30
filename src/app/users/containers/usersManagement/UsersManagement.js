@@ -8,10 +8,16 @@ import {
   AVATAR_LINK
 } from '../../../constants/constants';
 import { useFetch, useSort } from '../../../hooks/index';
-import { Button, Loader, Modal, Title } from '../../../library/index';
+import { Button, Loader, Modal, Title, Avatar } from '../../../library/index';
 import Request from '../../../service/request';
 import { AddUser, Details, Header, Users } from '../../components/index';
-import { getUsers, usersList, usersListSort } from '../../store/usersSlice';
+import Personal from '../../components/details/Personal';
+import {
+  getUsers,
+  usersList,
+  usersListSort,
+  deleteUser
+} from '../../store/usersSlice';
 import styles from './UsersManagement.module.scss';
 
 const UsersManagement = () => {
@@ -22,6 +28,7 @@ const UsersManagement = () => {
   const [newUser, setNewUser] = useState(false);
   const { getData, data, loading } = useFetch(USERS_ENDPOINT);
   const { sortByName } = useSort(USERS_ENDPOINT);
+  const { first_name, avatar } = user;
 
   const showProfileDetails = (user) => {
     setUser(user);
@@ -39,6 +46,10 @@ const UsersManagement = () => {
   const sortUsers = () => {
     const dataSorted = sortByName(users);
     dispatch(usersListSort(dataSorted));
+  };
+
+  const handleDeleteAction = (userId) => {
+    dispatch(deleteUser(userId));
   };
 
   const submit = (data) => {
@@ -79,11 +90,18 @@ const UsersManagement = () => {
       {loading ? (
         <Loader />
       ) : (
-        <Users users={users} showProfileDetails={showProfileDetails} />
+        <Users
+          users={users}
+          showProfileDetails={showProfileDetails}
+          handleDeleteAction={handleDeleteAction}
+        />
       )}
       {profileDetails && (
         <Modal action={hideProfileDetails} modalType={PRIMARY}>
-          <Details user={user} />
+          <Details
+            avatar={<Avatar alt={first_name} src={avatar} />}
+            personal={<Personal user={user} />}
+          />
         </Modal>
       )}
       {newUser && (
