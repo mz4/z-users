@@ -8,17 +8,14 @@ import {
 } from '../../../library/index';
 import styles from './User.module.scss';
 
-const User = ({ user, showProfileDetails, handleAction }) => {
+const User = ({ user, showProfileDetails, handleDeleteAction }) => {
   const [state, toggleState] = useState();
 
   const handleShowDialog = (e) => {
     e.stopPropagation();
-    toggleState((prevState) => !prevState);
+    toggleState(true);
   };
 
-  const handleClickOutside = () => {
-    toggleState(false);
-  };
   return (
     <>
       <div
@@ -62,16 +59,16 @@ const User = ({ user, showProfileDetails, handleAction }) => {
               <Button
                 type="quaternary"
                 text={'Delete'}
-                actionButton={handleAction}
+                actionButton={() => handleDeleteAction(user.id)}
               />
               <Button
                 type="tertiary"
                 text={'Dismiss'}
-                actionButton={(e) => handleShowDialog(e)}
+                actionButton={() => toggleState(false)}
               />
             </>
           }
-          handleClickOutside={handleClickOutside}
+          handleClickOutside={() => toggleState(false)}
         />
       )}
     </>

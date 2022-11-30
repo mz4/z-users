@@ -30,4 +30,13 @@ export default class Request {
       return e.message;
     }
   }
+  async delete() {
+    try {
+      const response = await fetch(this.endpoint, this.settings);
+      const responseJSON = await response.json();
+      return responseJSON;
+    } catch (e) {
+      return e;
+    }
+  }
 }

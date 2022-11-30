@@ -12,7 +12,12 @@ import { Button, Loader, Modal, Title, Avatar } from '../../../library/index';
 import Request from '../../../service/request';
 import { AddUser, Details, Header, Users } from '../../components/index';
 import Personal from '../../components/details/Personal';
-import { getUsers, usersList, usersListSort } from '../../store/usersSlice';
+import {
+  getUsers,
+  usersList,
+  usersListSort,
+  deleteUser
+} from '../../store/usersSlice';
 import styles from './UsersManagement.module.scss';
 
 const UsersManagement = () => {
@@ -43,19 +48,8 @@ const UsersManagement = () => {
     dispatch(usersListSort(dataSorted));
   };
 
-  const handleAction = () => {
-    console.log('action1 delete');
-    alert('delete');
-  };
-
-  const handleDismiss = () => {
-    console.log('action2 dismiss');
-    alert('dismiss');
-  };
-
-  const handleClickOutside = (e) => {
-    console.log('action3 outside');
-    alert('click outside');
+  const handleDeleteAction = (userId) => {
+    dispatch(deleteUser(userId));
   };
 
   const submit = (data) => {
@@ -99,9 +93,7 @@ const UsersManagement = () => {
         <Users
           users={users}
           showProfileDetails={showProfileDetails}
-          handleAction={handleAction}
-          handleDismiss={handleDismiss}
-          handleClickOutside={handleClickOutside}
+          handleDeleteAction={handleDeleteAction}
         />
       )}
       {profileDetails && (
