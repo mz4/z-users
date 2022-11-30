@@ -1,12 +1,23 @@
 import { useState } from 'react';
-import { Avatar, Button } from '../../../library/index';
+import {
+  Avatar,
+  Button,
+  Dialog,
+  Title,
+  Subtitle
+} from '../../../library/index';
 import styles from './User.module.scss';
 
-const User = ({ user, showProfileDetails, dialog }) => {
-  const [modalDialog, setModalDialog] = useState(false);
-  const handleDelete = (e) => {
+const User = ({ user, showProfileDetails, handleAction }) => {
+  const [state, toggleState] = useState();
+
+  const handleShowDialog = (e) => {
     e.stopPropagation();
-    setModalDialog(true);
+    toggleState((prevState) => !prevState);
+  };
+
+  const handleClickOutside = () => {
+    toggleState(false);
   };
   return (
     <>
@@ -28,14 +39,41 @@ const User = ({ user, showProfileDetails, dialog }) => {
               <Button
                 type="quinary"
                 text="Delete"
-                actionButton={handleDelete}
+                actionButton={(e) => handleShowDialog(e)}
                 dataTestId="submitForm"
               />
             </div>
           </div>
         </div>
       </div>
-      {modalDialog && dialog}
+      {state && (
+        <Dialog
+          header={
+            <Title text={'Delete User'} customClassName={styles.centerText} />
+          }
+          body={
+            <Subtitle
+              text={'Are you sure you want to delete user?'}
+              customClassName={styles.centerText}
+            />
+          }
+          footer={
+            <>
+              <Button
+                type="quaternary"
+                text={'Delete'}
+                actionButton={handleAction}
+              />
+              <Button
+                type="tertiary"
+                text={'Dismiss'}
+                actionButton={(e) => handleShowDialog(e)}
+              />
+            </>
+          }
+          handleClickOutside={handleClickOutside}
+        />
+      )}
     </>
   );
 };
