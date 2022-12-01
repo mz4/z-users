@@ -3,9 +3,14 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  align-content: flex-start;
   gap: 24px 32px;
   padding-top: 32px;
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
+  @media (min-width: 769px) and (max-width: 992px) {
+    gap: 24px 45px;
+  }
 }
 
 .usersContainer > div {

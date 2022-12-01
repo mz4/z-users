@@ -5,8 +5,17 @@
   background-color: #fefefe;
   position: relative;
   box-sizing: border-box;
-  width: 23%;
+  width: calc(min(100%, 276px));
   cursor: pointer;
+  @media (max-width: 576px) {
+    width: calc(min(100%, 576px));
+  }
+  @media (min-width: 577px) and (max-width: 768px) {
+    width: calc(min(100%, 336px));
+  }
+  @media (min-width: 769px) and (max-width: 992px) {
+    width: calc(min(100%, 269px));
+  }
 
   .userProfile {
     display: flex;
