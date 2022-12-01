@@ -1,15 +1,16 @@
+* {
+  box-sizing: border-box;
+}
 .usersContainer {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: flex-start;
-  align-items: center;
-  gap: 24px 32px;
+  align-items: stretch;
   padding-top: 32px;
+  column-gap: 1%;
+  row-gap: 16px;
   @media (max-width: 576px) {
     flex-direction: column;
-  }
-  @media (min-width: 769px) and (max-width: 992px) {
-    gap: 24px 45px;
   }
 }
 
