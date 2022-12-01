@@ -53,11 +53,14 @@ const UsersManagement = () => {
   };
 
   const submit = (data) => {
+    const { email, firstName, lastName, favorite, description } = data;
     const newUser = {
-      email: data.email,
-      first_name: data.firstName,
-      last_name: data.lastName,
-      avatar: AVATAR_LINK
+      email: email,
+      first_name: firstName,
+      last_name: lastName,
+      description: description,
+      avatar: AVATAR_LINK,
+      favorite: favorite
     };
     const submitPost = new Request(newUser, USERS_ENDPOINT, POST);
     submitPost.post().then(() => {

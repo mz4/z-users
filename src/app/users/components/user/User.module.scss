@@ -5,8 +5,19 @@
   background-color: #fefefe;
   position: relative;
   box-sizing: border-box;
-  width: 23%;
   cursor: pointer;
+  max-width: 300px;
+  flex: 0 0 24.2%;
+  @media (max-width: 576px) {
+    max-width: 576px;
+    flex: 0 0 100%;
+  }
+  @media (min-width: 577px) and (max-width: 768px) {
+    flex: 0 0 49%;
+  }
+  @media (min-width: 769px) and (max-width: 992px) {
+    flex: 0 0 32%;
+  }
 
   .userProfile {
     display: flex;

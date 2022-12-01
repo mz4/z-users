@@ -1,7 +1,21 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Title, Label, Input, Button, Field } from '../../../library/index';
-import { EMAIL, FIRST_NAME, LAST_NAME } from '../../../constants/constants';
+import {
+  Title,
+  Label,
+  Input,
+  Button,
+  Field,
+  Checkbox
+} from '../../../library/index';
+import {
+  EMAIL,
+  FIRST_NAME,
+  LAST_NAME,
+  DESCRIPTION,
+  GENDER,
+  FAVORITE
+} from '../../../constants/constants';
 import { AddUserSchema } from './Schema';
 import styles from './AddUser.module.scss';
 
@@ -12,7 +26,10 @@ const AddUser = ({ submit }) => {
     defaultValues: {
       [EMAIL]: '',
       [FIRST_NAME]: '',
-      [LAST_NAME]: ''
+      [LAST_NAME]: '',
+      [DESCRIPTION]: '',
+      [GENDER]: '',
+      [FAVORITE]: false
     }
   });
 
@@ -64,6 +81,28 @@ const AddUser = ({ submit }) => {
           errors={errors}
           disabled={false}
           dataTestId={LAST_NAME}
+        />
+      </Field>
+      <Field>
+        <Label text="Description" />
+        <Input
+          control={control}
+          defaultValue=""
+          placeholder="Description"
+          name={DESCRIPTION}
+          errors={errors}
+          disabled={false}
+          dataTestId={DESCRIPTION}
+        />
+      </Field>
+      <Field>
+        <Label text="Favorite" />
+        <Checkbox
+          control={control}
+          name={FAVORITE}
+          errors={errors}
+          disabled={false}
+          dataTestId={FAVORITE}
         />
       </Field>
       <Button

@@ -7,6 +7,7 @@ import { Title } from './typography/Title';
 import { Text } from './typography/Text';
 import { Label } from './typography/Label';
 import { Input } from './form/Input';
+import { Checkbox } from './form/Checkbox';
 import { Field } from './form/Field';
 import { Item } from './details/Item';
 import { Dialog } from './dialog/Dialog';
@@ -21,6 +22,7 @@ export {
   Loader,
   Label,
   Input,
+  Checkbox,
   Field,
   Item,
   Dialog
