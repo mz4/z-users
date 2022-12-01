@@ -7,6 +7,9 @@ export const GET = 'GET';
 export const EMAIL = 'email';
 export const FIRST_NAME = 'firstName';
 export const LAST_NAME = 'lastName';
+export const DESCRIPTION = 'description';
+export const GENDER = 'gender';
+export const FAVORITE = 'favorite';
 
 export const PRIMARY = 'primary';
 export const SECONDARY = 'secondary';
