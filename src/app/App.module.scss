@@ -1,6 +1,11 @@
 * {
   margin: 0px;
   padding: 0px;
+  font-family: sans-serif;
+}
+
+body > iframe {
+  pointer-events: none;
 }
 
 h1 {
@@ -8,8 +13,6 @@ h1 {
 }
 
 .App {
-  font-family: sans-serif;
   background-color: #f5f5f5;
   padding: 24px;
-  height: 100%;
 }

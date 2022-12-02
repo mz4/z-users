@@ -8,15 +8,22 @@ import {
   AVATAR_LINK
 } from '../../../constants/constants';
 import { useFetch, useSort } from '../../../hooks/index';
-import { Button, Loader, Modal, Title, Avatar } from '../../../library/index';
+import { Loader, Modal, Title, Avatar } from '../../../library/index';
 import Request from '../../../service/request';
-import { AddUser, Details, Header, Users } from '../../components/index';
+import {
+  AddUser,
+  Details,
+  Header,
+  Users,
+  Filters
+} from '../../components/index';
 import Personal from '../../components/details/Personal';
 import {
   getUsers,
   usersList,
   usersListSort,
-  deleteUser
+  deleteUser,
+  filterUsers
 } from '../../store/usersSlice';
 import styles from './UsersManagement.module.scss';
 
@@ -52,6 +59,10 @@ const UsersManagement = () => {
     dispatch(deleteUser(userId));
   };
 
+  const handleFilterAction = (filter) => {
+    dispatch(filterUsers(filter));
+  };
+
   const submit = (data) => {
     const { email, firstName, lastName, favorite, description } = data;
     const newUser = {
@@ -76,29 +87,21 @@ const UsersManagement = () => {
   return (
     <div className={styles.pageContainer}>
       <Title text="Users List" />
-      <Header>
-        <Button
-          actionButton={sortUsers}
-          text={'Sort By Name'}
-          type="primary"
-          dataTestId="btnSort"
-        />
-        <Button
-          actionButton={() => toggleNewUser(true)}
-          text={'Add new'}
-          type="secondary"
-          dataTestId="btnNew"
-        />
-      </Header>
-      {loading ? (
-        <Loader />
-      ) : (
-        <Users
-          users={users}
-          showProfileDetails={showProfileDetails}
-          handleDeleteAction={handleDeleteAction}
-        />
-      )}
+      <Header sortUsers={sortUsers} toggleNewUser={toggleNewUser} />
+      <div className={styles.bodyContainer}>
+        <Filters handleFilterAction={handleFilterAction} />
+        <div>
+          {loading ? (
+            <Loader />
+          ) : (
+            <Users
+              users={users}
+              showProfileDetails={showProfileDetails}
+              handleDeleteAction={handleDeleteAction}
+            />
+          )}
+        </div>
+      </div>
       {profileDetails && (
         <Modal action={hideProfileDetails} modalType={PRIMARY}>
           <Details

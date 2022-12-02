@@ -14,6 +14,17 @@ export const deleteUser = createAsyncThunk(
   }
 );
 
+export const filterUsers = createAsyncThunk('users', async (filter) => {
+  const ret = await fetch(
+    `http://www.localhost:3001/users?favorite=${filter.favorite}`,
+    {
+      method: 'GET'
+    }
+  );
+  const data = await ret.json();
+  return data;
+});
+
 const initialState = {
   users: []
 };
@@ -34,6 +45,9 @@ const usersSlice = createSlice({
       const { users } = state;
       const index = users.findIndex(({ id }) => id === action.payload.userId);
       users.splice(index, 1);
+    });
+    builder.addCase(filterUsers.fulfilled, (state, action) => {
+      state.users = action.payload;
     });
   }
 });
