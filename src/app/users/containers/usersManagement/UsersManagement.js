@@ -7,7 +7,7 @@ import {
   SECONDARY,
   AVATAR_LINK
 } from '../../../constants/constants';
-import { useFetch, useSort } from '../../../hooks/index';
+import { useFetch } from '../../../hooks/index';
 import { Loader, Modal, Title, Avatar } from '../../../library/index';
 import Request from '../../../service/request';
 import {
@@ -20,6 +20,7 @@ import {
 import Personal from '../../components/details/Personal';
 import {
   getUsers,
+  getUsersFilters,
   usersList,
   usersListSort,
   deleteUser,
@@ -30,11 +31,11 @@ import styles from './UsersManagement.module.scss';
 const UsersManagement = () => {
   const dispatch = useDispatch();
   const users = useSelector(getUsers);
+  const filters = useSelector(getUsersFilters);
   const [user, setUser] = useState({});
   const [profileDetails, setProfileDetails] = useState(false);
   const [newUser, setNewUser] = useState(false);
   const { getData, data, loading } = useFetch(USERS_ENDPOINT);
-  const { sortByName } = useSort(USERS_ENDPOINT);
   const { first_name, avatar } = user;
 
   const showProfileDetails = (user) => {
@@ -51,8 +52,7 @@ const UsersManagement = () => {
   };
 
   const sortUsers = () => {
-    const dataSorted = sortByName(users);
-    dispatch(usersListSort(dataSorted));
+    dispatch(usersListSort());
   };
 
   const handleDeleteAction = (userId) => {
@@ -98,6 +98,7 @@ const UsersManagement = () => {
               users={users}
               showProfileDetails={showProfileDetails}
               handleDeleteAction={handleDeleteAction}
+              filters={filters}
             />
           )}
         </div>

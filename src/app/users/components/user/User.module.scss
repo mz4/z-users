@@ -20,10 +20,17 @@
   }
 
   .userProfile {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+
+    .userIcon {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+    }
 
     .imageProfile {
       .image {

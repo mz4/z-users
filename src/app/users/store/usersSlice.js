@@ -14,19 +14,12 @@ export const deleteUser = createAsyncThunk(
   }
 );
 
-export const filterUsers = createAsyncThunk('users', async (filter) => {
-  const ret = await fetch(
-    `http://www.localhost:3001/users?favorite=${filter.favorite}`,
-    {
-      method: 'GET'
-    }
-  );
-  const data = await ret.json();
-  return data;
-});
-
 const initialState = {
-  users: []
+  users: [],
+  filters: {
+    sorting: { asc: true },
+    parameters: { favorite: false }
+  }
 };
 
 const usersSlice = createSlice({
@@ -36,8 +29,11 @@ const usersSlice = createSlice({
     usersList(state, action) {
       state.users = action.payload;
     },
-    usersListSort(state, action) {
-      state.users = action.payload;
+    usersListSort(state) {
+      state.filters.sorting.asc = !state.filters.sorting.asc;
+    },
+    filterUsers(state, action) {
+      state.filters.parameters.favorite = action.payload.favorite;
     }
   },
   extraReducers: (builder) => {
@@ -46,13 +42,10 @@ const usersSlice = createSlice({
       const index = users.findIndex(({ id }) => id === action.payload.userId);
       users.splice(index, 1);
     });
-    builder.addCase(filterUsers.fulfilled, (state, action) => {
-      state.users = action.payload;
-    });
   }
 });
 
-export const { usersList, usersListSort } = usersSlice.actions;
+export const { usersList, usersListSort, filterUsers } = usersSlice.actions;
 
 export default usersSlice.reducer;
 
@@ -67,5 +60,12 @@ export const getTotalUsers = createSelector(
   (state) => state.users.users,
   (users) => {
     return users.length;
+  }
+);
+
+export const getUsersFilters = createSelector(
+  (state) => state.users.filters,
+  (filters) => {
+    return filters;
   }
 );

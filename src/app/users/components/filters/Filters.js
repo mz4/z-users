@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Title } from '../../../library/index';
+import { Title, Text } from '../../../library/index';
+import classNames from 'classnames';
 import styles from './Filters.module.scss';
 
 const Filters = ({ handleFilterAction }) => {
@@ -14,15 +15,15 @@ const Filters = ({ handleFilterAction }) => {
   return (
     <div className={styles.filterContainer}>
       <Title text="Filters" />
-      <label>
+      <div className={classNames(styles.filters, styles.content)}>
         <input
           name="example_1"
           type="checkbox"
           onChange={handleChange}
           checked={filter.favorite}
         />
-        Starred
-      </label>
+        <Text text="Favorites" />
+      </div>
     </div>
   );
 };
