@@ -3,6 +3,7 @@ export const USERS_ENDPOINT = BASE_ENDPOINT + 'users';
 
 export const POST = 'POST';
 export const GET = 'GET';
+export const DELETE = 'DELETE';
 
 export const EMAIL = 'email';
 export const FIRST_NAME = 'firstName';

@@ -32,7 +32,7 @@ const User = ({ user, showProfileDetails, handleDeleteAction }) => {
             <IconStar
               size={16}
               fill={favorite ? 'yellow' : 'none'}
-              stroke-width="1"
+              strokeWidth="1"
               className={styles.userIcon}
             />
             <div className={styles.textProfile}>
