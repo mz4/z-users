@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { IconStar } from '@tabler/icons';
 import {
   Avatar,
   Button,
@@ -16,6 +17,8 @@ const User = ({ user, showProfileDetails, handleDeleteAction }) => {
     toggleState(true);
   };
 
+  const { id, avatar, description, first_name, last_name, favorite } = user;
+
   return (
     <>
       <div
@@ -25,12 +28,18 @@ const User = ({ user, showProfileDetails, handleDeleteAction }) => {
       >
         <div className={styles.userProfile}>
           <div>
-            <Avatar alt={user.first_name} src={user.avatar} />
+            <Avatar alt={first_name} src={avatar} />
+            <IconStar
+              size={16}
+              fill={favorite ? 'yellow' : 'none'}
+              stroke-width="1"
+              className={styles.userIcon}
+            />
             <div className={styles.textProfile}>
               <div className={styles.cardName}>
-                {user.first_name} {user.last_name}
+                {first_name} {last_name}
               </div>
-              <div className={styles.cardText}>{user.description}</div>
+              <div className={styles.cardText}>{description}</div>
             </div>
             <div className={styles.cardAction}>
               <Button
@@ -59,7 +68,7 @@ const User = ({ user, showProfileDetails, handleDeleteAction }) => {
               <Button
                 type="quaternary"
                 text={'Delete'}
-                actionButton={() => handleDeleteAction(user.id)}
+                actionButton={() => handleDeleteAction(id)}
               />
               <Button
                 type="tertiary"

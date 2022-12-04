@@ -4,8 +4,18 @@ exports[`Render title component Create a snapshot 1`] = `
 <div
   className="header"
 >
-  <div>
-    child component
-  </div>
+  <button
+    className="primary"
+    data-testid="btnSort"
+  >
+    Sort By Name
+  </button>
+  <button
+    className="secondary"
+    data-testid="btnNew"
+    onClick={[Function]}
+  >
+    Add new
+  </button>
 </div>
 `;

@@ -7,27 +7,35 @@ import {
   SECONDARY,
   AVATAR_LINK
 } from '../../../constants/constants';
-import { useFetch, useSort } from '../../../hooks/index';
-import { Button, Loader, Modal, Title, Avatar } from '../../../library/index';
+import { useFetch } from '../../../hooks/index';
+import { Loader, Modal, Title, Avatar } from '../../../library/index';
 import Request from '../../../service/request';
-import { AddUser, Details, Header, Users } from '../../components/index';
+import {
+  AddUser,
+  Details,
+  Header,
+  Users,
+  Filters
+} from '../../components/index';
 import Personal from '../../components/details/Personal';
 import {
   getUsers,
+  getUsersFilters,
   usersList,
   usersListSort,
-  deleteUser
+  deleteUser,
+  filterUsers
 } from '../../store/usersSlice';
 import styles from './UsersManagement.module.scss';
 
 const UsersManagement = () => {
   const dispatch = useDispatch();
   const users = useSelector(getUsers);
+  const filters = useSelector(getUsersFilters);
   const [user, setUser] = useState({});
   const [profileDetails, setProfileDetails] = useState(false);
   const [newUser, setNewUser] = useState(false);
   const { getData, data, loading } = useFetch(USERS_ENDPOINT);
-  const { sortByName } = useSort(USERS_ENDPOINT);
   const { first_name, avatar } = user;
 
   const showProfileDetails = (user) => {
@@ -44,12 +52,15 @@ const UsersManagement = () => {
   };
 
   const sortUsers = () => {
-    const dataSorted = sortByName(users);
-    dispatch(usersListSort(dataSorted));
+    dispatch(usersListSort());
   };
 
   const handleDeleteAction = (userId) => {
     dispatch(deleteUser(userId));
+  };
+
+  const handleFilterAction = (filter) => {
+    dispatch(filterUsers(filter));
   };
 
   const submit = (data) => {
@@ -76,29 +87,22 @@ const UsersManagement = () => {
   return (
     <div className={styles.pageContainer}>
       <Title text="Users List" />
-      <Header>
-        <Button
-          actionButton={sortUsers}
-          text={'Sort By Name'}
-          type="primary"
-          dataTestId="btnSort"
-        />
-        <Button
-          actionButton={() => toggleNewUser(true)}
-          text={'Add new'}
-          type="secondary"
-          dataTestId="btnNew"
-        />
-      </Header>
-      {loading ? (
-        <Loader />
-      ) : (
-        <Users
-          users={users}
-          showProfileDetails={showProfileDetails}
-          handleDeleteAction={handleDeleteAction}
-        />
-      )}
+      <Header sortUsers={sortUsers} toggleNewUser={toggleNewUser} />
+      <div className={styles.bodyContainer}>
+        <Filters handleFilterAction={handleFilterAction} />
+        <div>
+          {loading ? (
+            <Loader />
+          ) : (
+            <Users
+              users={users}
+              showProfileDetails={showProfileDetails}
+              handleDeleteAction={handleDeleteAction}
+              filters={filters}
+            />
+          )}
+        </div>
+      </div>
       {profileDetails && (
         <Modal action={hideProfileDetails} modalType={PRIMARY}>
           <Details

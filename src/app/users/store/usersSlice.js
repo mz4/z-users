@@ -15,7 +15,11 @@ export const deleteUser = createAsyncThunk(
 );
 
 const initialState = {
-  users: []
+  users: [],
+  filters: {
+    sorting: { asc: true },
+    parameters: { favorite: false }
+  }
 };
 
 const usersSlice = createSlice({
@@ -25,8 +29,11 @@ const usersSlice = createSlice({
     usersList(state, action) {
       state.users = action.payload;
     },
-    usersListSort(state, action) {
-      state.users = action.payload;
+    usersListSort(state) {
+      state.filters.sorting.asc = !state.filters.sorting.asc;
+    },
+    filterUsers(state, action) {
+      state.filters.parameters.favorite = action.payload.favorite;
     }
   },
   extraReducers: (builder) => {
@@ -38,7 +45,7 @@ const usersSlice = createSlice({
   }
 });
 
-export const { usersList, usersListSort } = usersSlice.actions;
+export const { usersList, usersListSort, filterUsers } = usersSlice.actions;
 
 export default usersSlice.reducer;
 
@@ -53,5 +60,12 @@ export const getTotalUsers = createSelector(
   (state) => state.users.users,
   (users) => {
     return users.length;
+  }
+);
+
+export const getUsersFilters = createSelector(
+  (state) => state.users.filters,
+  (filters) => {
+    return filters;
   }
 );
