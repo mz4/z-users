@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Avatar component Create a snapshot 1`] = `
+<div
+  className="pageContainer"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="header"
+    >
+      <div>
+        header
+      </div>
+    </div>
+    <div
+      className="body"
+    >
+      <div>
+        body
+      </div>
+    </div>
+    <div
+      className="footer"
+    >
+      <div>
+        footer
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -25,3 +25,8 @@ export const user = {
   avatar: 'https://reqres.in/img/faces/1-image.jpg',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
 };
+
+export const filters = {
+  parameters: { favorite: false },
+  sorting: { asc: true }
+};

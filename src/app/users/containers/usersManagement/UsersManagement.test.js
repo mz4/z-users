@@ -1,4 +1,4 @@
-import { users } from '../../../data/index';
+import { users, filters } from '../../../data/index';
 import { render } from '@testing-library/react';
 import { Provider, useSelector } from 'react-redux';
 import thunk from 'redux-thunk';
@@ -28,24 +28,20 @@ jest.mock('../../../hooks/index', () => ({
 
 const getStore = () => {
   const middlewares = [thunk];
-  const initialState = { users: [] };
+  const initialState = {
+    users: [],
+    filters: {
+      sorting: { asc: true },
+      parameters: { favorite: false }
+    }
+  };
   const mockStore = configureStore(middlewares);
   return mockStore(initialState);
 };
 
 describe('Render component', () => {
-  it.skip('Data is loading', () => {
-    const store = getStore();
-    const { getByText } = render(
-      <Provider store={store}>
-        <UsersManagement />
-      </Provider>
-    );
-    expect(getByText('Loading...')).toBeDefined();
-  });
-
   it.only('Data is loaded', () => {
-    useSelector.mockImplementation(() => users);
+    useSelector.mockReturnValueOnce(users).mockReturnValueOnce(filters);
     const store = getStore();
     const { getByText } = render(
       <Provider store={store}>

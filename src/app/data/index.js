@@ -1,4 +1,4 @@
 import { dataA, dataB } from './data';
-import { users, user } from './mockData';
+import { users, user, filters } from './mockData';
 
-export { dataA, dataB, users, user };
+export { dataA, dataB, users, user, filters };

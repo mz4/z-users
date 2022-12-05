@@ -3,16 +3,7 @@ import {
   createSelector,
   createAsyncThunk
 } from '@reduxjs/toolkit';
-
-export const deleteUser = createAsyncThunk(
-  'users/deleteUser',
-  async (userId) => {
-    await fetch(`http://www.localhost:3001/users/${userId}`, {
-      method: 'DELETE'
-    });
-    return { userId };
-  }
-);
+import { USERS_ENDPOINT, DELETE } from '../../constants/constants';
 
 const initialState = {
   users: [],
@@ -21,6 +12,16 @@ const initialState = {
     parameters: { favorite: false }
   }
 };
+
+export const deleteUser = createAsyncThunk(
+  'users/deleteUser',
+  async (userId) => {
+    await fetch(`${USERS_ENDPOINT}/${userId}`, {
+      method: DELETE
+    });
+    return { userId };
+  }
+);
 
 const usersSlice = createSlice({
   name: 'users',

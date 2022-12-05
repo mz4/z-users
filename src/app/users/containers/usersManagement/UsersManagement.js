@@ -51,7 +51,7 @@ const UsersManagement = () => {
     setNewUser(isNewUser);
   };
 
-  const sortUsers = () => {
+  const handleSortUsers = () => {
     dispatch(usersListSort());
   };
 
@@ -87,7 +87,7 @@ const UsersManagement = () => {
   return (
     <div className={styles.pageContainer}>
       <Title text="Users List" />
-      <Header sortUsers={sortUsers} toggleNewUser={toggleNewUser} />
+      <Header sortUsers={handleSortUsers} toggleNewUser={toggleNewUser} />
       <div className={styles.bodyContainer}>
         <Filters handleFilterAction={handleFilterAction} />
         <div>

@@ -26,9 +26,14 @@ test('Submit is called if form is complete without errors', async () => {
   const email = screen.getByPlaceholderText('email');
   const firstName = screen.getByPlaceholderText('First Name');
   const lastName = screen.getByPlaceholderText('Last Name');
+  const description = screen.getByPlaceholderText('Description');
+  const favorite = screen.getByTestId('favorite');
+
   fireEvent.change(email, { target: { value: 'emailx@gmail.com' } });
   fireEvent.change(firstName, { target: { value: 'John' } });
   fireEvent.change(lastName, { target: { value: 'White' } });
+  fireEvent.change(description, { target: { value: 'description test' } });
+  fireEvent.change(favorite, { target: { value: true } });
   act(() => {
     fireEvent.click(element);
   });
