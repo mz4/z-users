@@ -17,8 +17,8 @@
     left: 0;
     width: 480px;
     height: 160px;
-    background-color: #fff;
-    border: 2px solid #ccc;
+    background-color: var(--dialog);
+    border: 2px solid var(--border);
     border-radius: 8px;
     z-index: 2;
     padding: 24px;

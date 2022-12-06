@@ -6,8 +6,8 @@
   justify-content: right;
   z-index: 2;
   .modalBody {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
+    background-color: var(--sidebar);
+    border: 1px solid var(--border);
     overflow-y: auto;
     padding: 48px;
     transition: 0.5s;

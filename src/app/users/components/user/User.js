@@ -18,7 +18,6 @@ const User = ({ user, showProfileDetails, handleDeleteAction }) => {
   };
 
   const { id, avatar, description, first_name, last_name, favorite } = user;
-
   return (
     <>
       <div
