@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@craco/craco": "^6.4.3",
     "@faker-js/faker": "^7.6.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-regular-svg-icons": "^6.2.1",
@@ -45,12 +46,13 @@
   },
   "devDependencies": {
     "@babel/runtime": "7.13.8",
+    "craco-sass-resources-loader": "^1.1.0",
     "cypress": "^11.2.0",
     "nodemon": "^2.0.20"
   },
   "scripts": {
-    "test": "react-scripts test",
-    "client": "react-scripts start",
+    "test": "craco test",
+    "client": "craco start",
     "server": "json-server --watch db.json --port 3001 && nodemon server",
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc.json",

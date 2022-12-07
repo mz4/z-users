@@ -4,6 +4,10 @@
   font-family: sans-serif;
 }
 
+body {
+  background: var(--background);
+}
+
 body > iframe {
   pointer-events: none;
 }

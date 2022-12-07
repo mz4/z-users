@@ -1,0 +1,22 @@
+.filterContainer {
+  max-width: 180px;
+  width: 100%;
+  height: 400px;
+  background-color: var(--sidebar);
+  border-radius: 1rem;
+  padding: 1rem;
+  .content {
+    padding: 16px;
+  }
+  .filters {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .filterContainer {
+    display: none;
+  }
+}
