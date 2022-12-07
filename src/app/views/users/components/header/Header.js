@@ -1,4 +1,4 @@
-import { Button } from '../../../library/index';
+import { Button } from '../../../../library/index';
 
 import styles from './Header.module.scss';
 

@@ -1,4 +1,4 @@
-import { users, filters } from '../../../data/index';
+import { users, filters } from '../../../../data/index';
 import { render } from '@testing-library/react';
 import { Provider, useSelector } from 'react-redux';
 import thunk from 'redux-thunk';

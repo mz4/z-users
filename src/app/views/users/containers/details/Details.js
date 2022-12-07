@@ -1,4 +1,4 @@
-import { Title } from '../../../library/index';
+import { Title } from '../../../../library/index';
 import Charts from '../../components/details/Charts';
 import styles from './Details.module.scss';
 import Orders from '../../components/details/Orders';

@@ -3,7 +3,7 @@ import {
   createSelector,
   createAsyncThunk
 } from '@reduxjs/toolkit';
-import { USERS_ENDPOINT, DELETE } from '../../constants/constants';
+import { USERS_ENDPOINT, DELETE } from '../../../constants/constants';
 
 const initialState = {
   users: [],

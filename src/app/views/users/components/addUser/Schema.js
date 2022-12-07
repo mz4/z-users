@@ -3,7 +3,7 @@ import {
   FIRST_NAME,
   LAST_NAME,
   DESCRIPTION
-} from '../../../constants/constants';
+} from '../../../../constants/constants';
 import * as yup from 'yup';
 
 export const AddUserSchema = yup.object().shape({

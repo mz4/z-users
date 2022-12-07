@@ -1,13 +1,17 @@
-import UsersManagement from './users/containers/usersManagement/UsersManagement';
+import { Provider } from 'react-redux';
+import store from '../app/store/store';
 import styles from './App.module.scss';
-import UsersContextProvider from './users/context/Context';
+import UsersContextProvider from './views/context/Context';
+import UsersManagement from './views/users/containers/usersManagement/UsersManagement';
 
 export default function App() {
   return (
     <div className={styles.App}>
-      <UsersContextProvider>
-        <UsersManagement />
-      </UsersContextProvider>
+      <Provider store={store}>
+        <UsersContextProvider>
+          <UsersManagement />
+        </UsersContextProvider>
+      </Provider>
     </div>
   );
 }

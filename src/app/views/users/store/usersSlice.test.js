@@ -1,6 +1,6 @@
-import store from '../../store/store';
+import store from '../../../store/store';
 import { usersList } from './usersSlice';
-import { users } from '../../data/mockData';
+import { users } from '../../../data/mockData';
 
 describe('initial state', () => {
   it('should initially set users', () => {

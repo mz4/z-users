@@ -1,4 +1,4 @@
-import { Subtitle, Text, Item } from '../../../library/index';
+import { Subtitle, Text, Item } from '../../../../library/index';
 import styles from './Personal.module.scss';
 
 const Personal = ({ user }) => {

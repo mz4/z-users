@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Title, Text } from '../../../library/index';
+import { Title, Text } from '../../../../library/index';
 import classNames from 'classnames';
 import styles from './Filters.module.scss';
 

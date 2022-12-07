@@ -7,7 +7,7 @@ import {
   Button,
   Field,
   Checkbox
-} from '../../../library/index';
+} from '../../../../library/index';
 import {
   EMAIL,
   FIRST_NAME,
@@ -15,7 +15,7 @@ import {
   DESCRIPTION,
   GENDER,
   FAVORITE
-} from '../../../constants/constants';
+} from '../../../../constants/constants';
 import { AddUserSchema } from './Schema';
 import styles from './AddUser.module.scss';
 

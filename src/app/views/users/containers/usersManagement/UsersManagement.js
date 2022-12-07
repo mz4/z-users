@@ -1,16 +1,16 @@
 import { useEffect, useState, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { UsersContext } from '../../context/Context';
+import { UsersContext } from '../../../context/Context';
 import {
   USERS_ENDPOINT,
   POST,
   PRIMARY,
   SECONDARY,
   AVATAR_LINK
-} from '../../../constants/constants';
-import { useFetch } from '../../../hooks/index';
-import { Loader, Modal, Title, Avatar } from '../../../library/index';
-import Request from '../../../service/request';
+} from '../../../../constants/constants';
+import { useFetch } from '../../../../hooks/index';
+import { Loader, Modal, Title, Avatar } from '../../../../library/index';
+import Request from '../../../../service/request';
 import {
   AddUser,
   Details,

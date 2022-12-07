@@ -6,7 +6,7 @@ import {
   Dialog,
   Title,
   Subtitle
-} from '../../../library/index';
+} from '../../../../library/index';
 import styles from './User.module.scss';
 
 const User = ({ user, showProfileDetails, handleDeleteAction }) => {

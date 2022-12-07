@@ -8,8 +8,8 @@ import {
   RadarChart,
   ResponsiveContainer
 } from 'recharts';
-import { dataA, dataB } from '../../../data';
-import { Subtitle } from '../../../library/index';
+import { dataA, dataB } from '../../../../data';
+import { Subtitle } from '../../../../library/index';
 import styles from './Charts.module.scss';
 
 const Charts = () => {

@@ -1,4 +1,4 @@
-import { Subtitle } from '../../../library/index';
+import { Subtitle } from '../../../../library/index';
 import styles from './Orders.module.scss';
 
 const Orders = () => {
