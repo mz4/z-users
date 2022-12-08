@@ -32,7 +32,6 @@ import styles from './UsersManagement.module.scss';
 const UsersManagement = () => {
   const dispatch = useDispatch();
   const usersContext = useContext(UsersContext);
-  console.log('usersContext: ', usersContext);
   const users = useSelector(getUsers);
   const filters = useSelector(getUsersFilters);
   const [user, setUser] = useState({});

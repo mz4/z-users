@@ -6,7 +6,7 @@ import { EMAIL, PASSWORD } from '../../../constants/constants';
 import { LoginFormSchema } from './LoginFormSchema';
 import styles from './LoginForm.module.scss';
 
-const LoginForm = () => {
+const LoginForm = ({ submit }) => {
   const methods = useForm({
     mode: 'all',
     resolver: yupResolver(LoginFormSchema),
@@ -24,8 +24,7 @@ const LoginForm = () => {
   } = methods;
 
   const onSubmit = () => {
-    console.log('submit! yyy');
-    //submit(getValues());
+    submit(getValues());
   };
 
   return (
