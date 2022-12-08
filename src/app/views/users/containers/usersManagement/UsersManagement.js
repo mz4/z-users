@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { UsersContext } from '../../../context/Context';
+import { UsersContext } from '../../../../context/Context';
 import {
   USERS_ENDPOINT,
   POST,
