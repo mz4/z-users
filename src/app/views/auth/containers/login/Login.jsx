@@ -8,7 +8,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const submit = (data) => {
-    dispatch(loginSucess(data))
+    dispatch(loginSucess(true))
   }
 
   return (<div className={styles.container}>
