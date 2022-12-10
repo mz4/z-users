@@ -13,7 +13,7 @@ const Filters = ({ handleFilterAction }) => {
     handleFilterAction({ ...filter, favorite: e.target.checked });
   };
   return (
-    <div className={styles.filterContainer}>
+    <div className={styles.container}>
       <Title text="Filters" />
       <div className={classNames(styles.filters, styles.content)}>
         <input

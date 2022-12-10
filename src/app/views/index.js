@@ -1,11 +1,16 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { isAuthenticated } from '../views/auth/store/authSlice';
+import Layout from './layout/containers/Layout';
 import Login from './auth/containers/login/Login';
 import Users from './users/containers/usersManagement/UsersManagement';
 
 const PrivateRoute = ({ isAuth, component }) => {
-  return isAuth ? component : <Navigate replace to="/login" />;
+  return isAuth ? (
+    <Layout>{component}</Layout>
+  ) : (
+    <Navigate replace to="/login" />
+  );
 };
 
 const AuthRoute = ({ isAuth, component }) => {

@@ -1,0 +1,9 @@
+.container {
+  width: 290px;
+  min-width: 290px;
+  height: 100vh;
+  background-color: var(--sidebar);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+}
