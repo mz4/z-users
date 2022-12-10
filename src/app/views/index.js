@@ -4,8 +4,12 @@ import { isAuthenticated } from '../views/auth/store/authSlice';
 import Login from './auth/containers/login/Login';
 import Users from './users/containers/usersManagement/UsersManagement';
 
-const RouteInterceptor = ({ isAuth, componentAuth, componentNotAuth }) => {
-  return isAuth ? componentAuth : componentNotAuth;
+const PrivateRoute = ({ isAuth, component }) => {
+  return isAuth ? component : <Navigate replace to="/login" />;
+};
+
+const AuthRoute = ({ isAuth, component }) => {
+  return isAuth ? <Navigate replace to="/users" /> : component;
 };
 
 export const Views = () => {
@@ -16,24 +20,12 @@ export const Views = () => {
       <Route
         exact
         path="/login"
-        element={
-          <RouteInterceptor
-            isAuth={isAuth}
-            componentAuth={<Navigate replace to="/users" />}
-            componentNotAuth={<Login />}
-          />
-        }
+        element={<AuthRoute isAuth={isAuth} component={<Login />} />}
       />
       <Route
         exact
         path="/users"
-        element={
-          <RouteInterceptor
-            isAuth={isAuth}
-            componentAuth={<Users />}
-            componentNotAuth={<Navigate replace to="/login" />}
-          />
-        }
+        element={<PrivateRoute isAuth={isAuth} component={<Users />} />}
       />
     </Routes>
   );
