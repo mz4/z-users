@@ -11,8 +11,8 @@ const LoginForm = ({ submit }) => {
     mode: 'all',
     resolver: yupResolver(LoginFormSchema),
     defaultValues: {
-      [EMAIL]: 'admin@gmail.com',
-      [PASSWORD]: '123abc'
+      [EMAIL]: 'johndoeb@example.com',
+      [PASSWORD]: 'password123'
     }
   });
 

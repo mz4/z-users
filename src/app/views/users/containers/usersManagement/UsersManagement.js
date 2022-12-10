@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { UsersContext } from '../../../../context/Context';
 import {
-  USERS_ENDPOINT,
+  PROFILES_ENDPOINT,
   POST,
   PRIMARY,
   SECONDARY,
@@ -37,7 +37,7 @@ const UsersManagement = () => {
   const [user, setUser] = useState({});
   const [profileDetails, setProfileDetails] = useState(false);
   const [newUser, setNewUser] = useState(false);
-  const { getData, data, loading } = useFetch(USERS_ENDPOINT);
+  const { getData, data, loading } = useFetch(PROFILES_ENDPOINT);
   const { first_name, avatar } = user;
 
   const showProfileDetails = (user) => {
@@ -79,10 +79,10 @@ const UsersManagement = () => {
       avatar: AVATAR_LINK,
       favorite: favorite
     };
-    const submitPost = new Request(newUser, USERS_ENDPOINT, POST);
+    const submitPost = new Request(newUser, PROFILES_ENDPOINT, POST);
     submitPost.post().then(() => {
       toggleNewUser(false);
-      getData(USERS_ENDPOINT);
+      getData(PROFILES_ENDPOINT);
     });
   };
 

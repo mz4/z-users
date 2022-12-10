@@ -1,11 +1,4 @@
 {
-  "users": [
-    {
-      "email": "johndoeb@example.com",
-      "password": "$2a$10$lW5zkyU/V1nf0WfRRaiYguU6KrrzySpOL2wvO9u2.53k7KH934wYS",
-      "id": 2
-    }
-  ],
   "profiles": [
     {
       "id": 1,
