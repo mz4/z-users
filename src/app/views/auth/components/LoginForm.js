@@ -11,8 +11,8 @@ const LoginForm = ({ submit }) => {
     mode: 'all',
     resolver: yupResolver(LoginFormSchema),
     defaultValues: {
-      [EMAIL]: '',
-      [PASSWORD]: ''
+      [EMAIL]: 'admin@gmail.com',
+      [PASSWORD]: '123abc'
     }
   });
 
@@ -36,7 +36,6 @@ const LoginForm = ({ submit }) => {
           <Label text="Email" />
           <Input
             control={control}
-            defaultValue=""
             placeholder="E-mail"
             name={EMAIL}
             errors={errors}
@@ -48,12 +47,12 @@ const LoginForm = ({ submit }) => {
           <Label text="Password" />
           <Input
             control={control}
-            defaultValue=""
             placeholder="Password"
             name={PASSWORD}
             errors={errors}
             disabled={false}
             dataTestId={PASSWORD}
+            type="password"
           />
         </Field>
         <Button
