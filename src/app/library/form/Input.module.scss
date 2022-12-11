@@ -7,6 +7,9 @@ input[type='password'] {
   box-sizing: border-box;
   border-radius: 4px;
   border: 1px solid #f3f2ef;
+  @media (max-width: 768px) {
+    max-width: 280px;
+  }
 }
 
 .error {

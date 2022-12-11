@@ -7,6 +7,9 @@
   padding: 1rem;
   position: sticky;
   top: 0;
+  @media (max-width: 576px) {
+    display: none;
+  }
   .menu {
     display: flex;
     flex-direction: column;

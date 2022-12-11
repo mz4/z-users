@@ -9,6 +9,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     flex: 1;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
   .right {
     background: #ffffff;
@@ -17,5 +20,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 24px;
   }
 }

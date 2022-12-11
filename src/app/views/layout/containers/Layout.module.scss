@@ -4,17 +4,5 @@
   flex: 1 1 auto;
   .contentContainer {
     width: 100%;
-    .header {
-      height: 4rem;
-      background-color: var(--header);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding: 0 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 888;
-    }
   }
 }
