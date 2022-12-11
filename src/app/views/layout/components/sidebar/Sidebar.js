@@ -1,4 +1,5 @@
-import { Title } from '../../../../library';
+import { Title, Label } from '../../../../library';
+import { Link } from 'react-router-dom';
 import styles from './Sidebar.module.scss';
 
 const Sidebar = () => {
@@ -6,11 +7,11 @@ const Sidebar = () => {
     <div className={styles.container}>
       <Title text="Menu" />
       <div className={styles.menu}>
-        <ul>
-          <li>
-            <a href="/users">Users</a>
-          </li>
-        </ul>
+        <div className={styles.menuItem}>
+          <Link to="/users">
+            <Label text="Users" />
+          </Link>
+        </div>
       </div>
     </div>
   );

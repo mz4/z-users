@@ -8,3 +8,8 @@
   --dialog: #ffff;
   --border: #f3f2ef;
 }
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}

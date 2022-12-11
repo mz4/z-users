@@ -7,4 +7,9 @@
   padding: 1rem;
   position: sticky;
   top: 0;
+  .menu {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
 }

@@ -8,7 +8,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const submit = (data) => {
-    dispatch(login({email: 'johndoeb@example.com', password: "password123"}))
+    dispatch(login(data))
   }
 
   return (<div className={styles.container}>

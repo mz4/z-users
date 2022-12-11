@@ -33,7 +33,7 @@ const Users = ({ users, showProfileDetails, handleDeleteAction, filters }) => {
             );
           })
       ) : (
-        <>No users found</>
+        <div className={styles.noUsersFound}>No users found</div>
       )}
     </div>
   );

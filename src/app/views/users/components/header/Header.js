@@ -2,7 +2,7 @@ import { Button } from '../../../../library/index';
 
 import styles from './Header.module.scss';
 
-const Header = ({ sortUsers, toggleNewUser, setTheme }) => {
+const Header = ({ sortUsers, toggleNewUser }) => {
   return (
     <div className={styles.header}>
       <Button
@@ -16,12 +16,6 @@ const Header = ({ sortUsers, toggleNewUser, setTheme }) => {
         text={'Add new'}
         type="secondary"
         dataTestId="btnNew"
-      />
-      <Button
-        actionButton={setTheme}
-        text={'Toggle Theme'}
-        type="primary"
-        dataTestId="btnSort"
       />
     </div>
   );

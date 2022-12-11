@@ -1,6 +1,5 @@
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { UsersContext } from '../../../../context/Context';
 import {
   PROFILES_ENDPOINT,
   POST,
@@ -31,7 +30,6 @@ import styles from './UsersManagement.module.scss';
 
 const UsersManagement = () => {
   const dispatch = useDispatch();
-  const usersContext = useContext(UsersContext);
   const users = useSelector(getUsers);
   const filters = useSelector(getUsersFilters);
   const [user, setUser] = useState({});
@@ -55,10 +53,6 @@ const UsersManagement = () => {
 
   const handleSortUsers = () => {
     dispatch(usersListSort());
-  };
-
-  const setTheme = () => {
-    usersContext.toggleTheme();
   };
 
   const handleDeleteAction = (userId) => {
@@ -93,11 +87,7 @@ const UsersManagement = () => {
   return (
     <div className={styles.pageContainer}>
       <Title text="Users List" />
-      <Header
-        sortUsers={handleSortUsers}
-        toggleNewUser={toggleNewUser}
-        setTheme={setTheme}
-      />
+      <Header sortUsers={handleSortUsers} toggleNewUser={toggleNewUser} />
       <div className={styles.bodyContainer}>
         <Filters handleFilterAction={handleFilterAction} />
         <div>
