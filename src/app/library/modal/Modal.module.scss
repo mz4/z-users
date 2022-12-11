@@ -4,9 +4,9 @@
   background-color: #f3f3f321;
   display: flex;
   justify-content: right;
-  z-index: 2;
+  z-index: 999;
   .modalBody {
-    background-color: var(--sidebar);
+    background-color: var(--modal);
     border: 1px solid var(--border);
     overflow-y: auto;
     padding: 48px;

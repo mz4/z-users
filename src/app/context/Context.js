@@ -9,19 +9,23 @@ const darkTheme = `:root {
   --header: #323232;
   --sidebar: #323232;
   --filters: #323232;
+  --modal: #323232;
   --card: #323232;
+  --dialog: #323232;
   --border: #1b1b1b;
   --dialog: #323232;
+  --border: #f3f3f32b;
 }`;
 
 const lightTheme = `:root {
-  --background: #f3f2ef;
-  --header: #ffff;
-  --sidebar: #ffff;
+  --background: #ffffff;
+  --header: #ffffff;
+  --sidebar: #f3f2ef;
   --filters: #ffff;
-  --card: #ffffff;
-  --border: #e9e9e9;
+  --modal: #ffff;
+  --card: #ffff;
   --dialog: #ffff;
+  --border: #f3f2ef;
 }`;
 
 export const UsersContext = createContext(initialState);

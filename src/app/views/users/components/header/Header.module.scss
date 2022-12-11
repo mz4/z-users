@@ -10,6 +10,7 @@
   padding: 16px;
   background-color: var(--header);
   border-radius: 1rem;
+  border: 1px solid var(--border);
   @media (max-width: 576px) {
     flex-direction: column;
   }
