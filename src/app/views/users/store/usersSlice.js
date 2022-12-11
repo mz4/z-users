@@ -3,7 +3,7 @@ import {
   createSelector,
   createAsyncThunk
 } from '@reduxjs/toolkit';
-import { USERS_ENDPOINT, DELETE } from '../../../constants/constants';
+import { PROFILES_ENDPOINT, DELETE } from '../../../constants/constants';
 
 const initialState = {
   users: [],
@@ -16,7 +16,7 @@ const initialState = {
 export const deleteUser = createAsyncThunk(
   'users/deleteUser',
   async (userId) => {
-    await fetch(`${USERS_ENDPOINT}/${userId}`, {
+    await fetch(`${PROFILES_ENDPOINT}/${userId}`, {
       method: DELETE
     });
     return { userId };

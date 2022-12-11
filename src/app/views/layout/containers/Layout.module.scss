@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  .contentContainer {
+    width: 100%;
+  }
+}

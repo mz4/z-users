@@ -1,5 +1,6 @@
 export const BASE_ENDPOINT = 'http://localhost:3001/';
-export const USERS_ENDPOINT = BASE_ENDPOINT + 'users';
+export const PROFILES_ENDPOINT = BASE_ENDPOINT + 'profiles';
+export const LOGIN_ENDPOINT = BASE_ENDPOINT + 'login';
 
 export const POST = 'POST';
 export const GET = 'GET';
@@ -11,6 +12,7 @@ export const LAST_NAME = 'lastName';
 export const DESCRIPTION = 'description';
 export const GENDER = 'gender';
 export const FAVORITE = 'favorite';
+export const PASSWORD = 'password';
 
 export const PRIMARY = 'primary';
 export const SECONDARY = 'secondary';

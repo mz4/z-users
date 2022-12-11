@@ -1,0 +1,18 @@
+.container {
+  width: 290px;
+  min-width: 290px;
+  height: 100vh;
+  background-color: var(--sidebar);
+  border-right: 1px solid var(--border);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  @media (max-width: 576px) {
+    display: none;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+}

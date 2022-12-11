@@ -1,8 +1,7 @@
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { UsersContext } from '../../../context/Context';
 import {
-  USERS_ENDPOINT,
+  PROFILES_ENDPOINT,
   POST,
   PRIMARY,
   SECONDARY,
@@ -31,14 +30,12 @@ import styles from './UsersManagement.module.scss';
 
 const UsersManagement = () => {
   const dispatch = useDispatch();
-  const usersContext = useContext(UsersContext);
-  console.log('usersContext: ', usersContext);
   const users = useSelector(getUsers);
   const filters = useSelector(getUsersFilters);
   const [user, setUser] = useState({});
   const [profileDetails, setProfileDetails] = useState(false);
   const [newUser, setNewUser] = useState(false);
-  const { getData, data, loading } = useFetch(USERS_ENDPOINT);
+  const { getData, data, loading } = useFetch(PROFILES_ENDPOINT);
   const { first_name, avatar } = user;
 
   const showProfileDetails = (user) => {
@@ -56,10 +53,6 @@ const UsersManagement = () => {
 
   const handleSortUsers = () => {
     dispatch(usersListSort());
-  };
-
-  const setTheme = () => {
-    usersContext.toggleTheme();
   };
 
   const handleDeleteAction = (userId) => {
@@ -80,10 +73,10 @@ const UsersManagement = () => {
       avatar: AVATAR_LINK,
       favorite: favorite
     };
-    const submitPost = new Request(newUser, USERS_ENDPOINT, POST);
+    const submitPost = new Request(newUser, PROFILES_ENDPOINT, POST);
     submitPost.post().then(() => {
       toggleNewUser(false);
-      getData(USERS_ENDPOINT);
+      getData(PROFILES_ENDPOINT);
     });
   };
 
@@ -94,11 +87,7 @@ const UsersManagement = () => {
   return (
     <div className={styles.pageContainer}>
       <Title text="Users List" />
-      <Header
-        sortUsers={handleSortUsers}
-        toggleNewUser={toggleNewUser}
-        setTheme={setTheme}
-      />
+      <Header sortUsers={handleSortUsers} toggleNewUser={toggleNewUser} />
       <div className={styles.bodyContainer}>
         <Filters handleFilterAction={handleFilterAction} />
         <div>

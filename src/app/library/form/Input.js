@@ -9,7 +9,8 @@ export const Input = ({
   name,
   errors,
   disabled,
-  dataTestId
+  dataTestId,
+  type = 'text'
 }) => {
   return (
     <div className={styles.inputContainer}>
@@ -21,7 +22,7 @@ export const Input = ({
           <input
             disabled={disabled}
             placeholder={placeholder}
-            type="text"
+            type={type}
             value={value}
             onChange={(evt) => {
               return onChange(evt);

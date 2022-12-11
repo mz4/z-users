@@ -1,8 +1,9 @@
-.filterContainer {
+.container {
   max-width: 180px;
   width: 100%;
   height: 400px;
-  background-color: var(--sidebar);
+  background-color: var(--filters);
+  border: 1px solid var(--border);
   border-radius: 1rem;
   padding: 1rem;
   .content {
@@ -16,7 +17,7 @@
 }
 
 @media (max-width: 576px) {
-  .filterContainer {
+  .container {
     display: none;
   }
 }

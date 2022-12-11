@@ -1,0 +1,19 @@
+.header {
+  height: 4rem;
+  background-color: var(--header);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 888;
+  gap: 16px;
+  @media (max-width: 576px) {
+    align-items: flex-start;
+    height: 8rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
