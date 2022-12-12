@@ -9,6 +9,11 @@ Sample React app, with unit tests and e2e tests.
 - Sort list
 - Add new users
 
+## Demo
+
+![demo](https://user-images.githubusercontent.com/17081903/207028855-3a0dea99-bbd8-4ba5-98c0-080ed3cd656a.gif)
+
+
 ## Run project
 
 To run this project
