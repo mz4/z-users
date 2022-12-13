@@ -1,45 +1,58 @@
 import { BrowserRouter as Router } from 'react-router-dom';
-import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
+import { renderWithProviders } from '../utils/tests/tests';
 import Views from './index';
 
-const middlewares = [thunk];
-const mockStore = configureStore(middlewares);
-
-describe('test app', () => {
-  const renderWithStore = ({ children }) => {
-    let store;
-
-    const initialState = {
-      users: {
-        users: [],
-        filters: {
-          sorting: { asc: true },
-          parameters: { favorite: false }
-        }
-      },
-      auth: {
-        user: null,
-        isAuthenticated: false,
-        error: null
-      }
-    };
-    store = mockStore(initialState);
-
-    return (
-      <Provider store={store}>
-        <Router>{children}</Router>
-      </Provider>
-    );
-  };
-  it('renders without crashing', () => {
-    const { debug } = render(
-      <renderWithStore>
+describe('Test index', () => {
+  it('Render login', () => {
+    const { getByText } = renderWithProviders(
+      <Router>
         <Views />
-      </renderWithStore>
+      </Router>,
+      {
+        preloadedState: {
+          users: {
+            users: [],
+            filters: {
+              sorting: { asc: true },
+              parameters: { favorite: false }
+            }
+          },
+          auth: {
+            user: null,
+            isAuthenticated: false,
+            error: null
+          }
+        }
+      }
     );
-    console.log(debug());
+    expect(getByText(/Email/)).toBeDefined();
+    expect(getByText(/Password/)).toBeDefined();
+    expect(getByText(/Submit/)).toBeDefined();
+  });
+  it('Render users page', () => {
+    const { getByText } = renderWithProviders(
+      <Router>
+        <Views />
+      </Router>,
+      {
+        preloadedState: {
+          users: {
+            users: [],
+            filters: {
+              sorting: { asc: true },
+              parameters: { favorite: false }
+            }
+          },
+          auth: {
+            user: null,
+            isAuthenticated: true,
+            error: null
+          }
+        }
+      }
+    );
+    expect(getByText(/Menu/)).toBeDefined();
+    expect(getByText(/Users List/)).toBeDefined();
+    expect(getByText(/Favorites/)).toBeDefined();
   });
 });
