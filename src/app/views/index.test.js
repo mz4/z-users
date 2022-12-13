@@ -9,8 +9,9 @@ const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
 describe('test app', () => {
-  let store;
-  const setup = () => {
+  const renderWithStore = ({ children }) => {
+    let store;
+
     const initialState = {
       users: {
         users: [],
@@ -26,15 +27,18 @@ describe('test app', () => {
       }
     };
     store = mockStore(initialState);
+
+    return (
+      <Provider store={store}>
+        <Router>{children}</Router>
+      </Provider>
+    );
   };
   it('renders without crashing', () => {
-    setup();
     const { debug } = render(
-      <Provider store={store}>
-        <Router>
-          <Views />
-        </Router>
-      </Provider>
+      <renderWithStore>
+        <Views />
+      </renderWithStore>
     );
     console.log(debug());
   });

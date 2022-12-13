@@ -1,10 +1,19 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import usersReducer from '../views/users/store/usersSlice';
 import authReducer from '../views/auth/store/authSlice';
 
-export default configureStore({
-  reducer: {
-    users: usersReducer,
-    auth: authReducer
-  }
+const rootReducer = combineReducers({
+  users: usersReducer,
+  auth: authReducer
 });
+
+export default configureStore({
+  reducer: rootReducer
+});
+
+export const setupStore = (preloadedState) => {
+  return configureStore({
+    reducer: rootReducer,
+    preloadedState
+  });
+};
