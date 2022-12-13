@@ -8,6 +8,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const submit = (data) => {
+    console.log('ooooooooooooooooooooooooooooooooooooooooooooooooooo')
     dispatch(login(data))
   }
 

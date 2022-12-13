@@ -21,7 +21,7 @@ jest.mock('react-redux', () => ({
   useSelector: jest.fn()
 }));
 
-jest.mock('../../../hooks/index', () => ({
+jest.mock('../../../../hooks/index', () => ({
   useFetch: () => mockUseFetchLoaded,
   useSort: () => mockUseSort
 }));

@@ -85,7 +85,7 @@ const UsersManagement = () => {
   }, [data, dispatch]);
 
   return (
-    <div className={styles.pageContainer}>
+    <div className={styles.pageContainer} datatestid="list">
       <Title text="Users List" />
       <Header sortUsers={handleSortUsers} toggleNewUser={toggleNewUser} />
       <div className={styles.bodyContainer}>
