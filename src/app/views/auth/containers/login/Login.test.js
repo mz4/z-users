@@ -1,23 +1,24 @@
+import React from 'react';
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { renderWithProviders } from '../../../../utils/tests/tests';
-import { useAppDispatch } from '../../../../utils/tests/redux-hooks';
 import Login from './Login';
 
-jest.mock('../../../../utils/tests/redux-hooks');
+const mockDispatch = jest.fn();
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useDispatch: () => mockDispatch
+  };
+});
 
 describe('Render login', () => {
-  const dispatch = jest.fn();
-  beforeEach(() => {
-    useAppDispatch.mockImplementation(() => dispatch);
-  });
-  test('render login', async () => {
+  it('render login', async () => {
     renderWithProviders(<Login />);
     const submit = screen.getByTestId('submitForm');
     expect(submit).toBeInTheDocument();
-    expect(useAppDispatch).toHaveBeenCalled();
-    expect(dispatch).not.toHaveBeenCalled();
     fireEvent.click(submit);
+    expect(mockDispatch).not.toHaveBeenCalled();
     await waitFor(() => screen.getByTestId('submitForm'));
-    expect(dispatch).toHaveBeenCalledWith(expect.any(Function));
+    expect(mockDispatch).toHaveBeenCalled();
   });
 });

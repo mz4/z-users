@@ -1,13 +1,14 @@
 import React from "react";
-import {
+/* import {
   useAppDispatch
-} from '../../../../utils/tests/redux-hooks';
+} from '../../../../store/redux-hooks'; */
+import { useDispatch } from "react-redux";
 import { login } from '../../store/authSlice';
 import LoginForm from "../../components/LoginForm";
 import styles from "./Login.module.scss";
 
 const Login = () => {
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
 
   const submit = (data) => {
     dispatch(login(data))
