@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1671041763070" clover="3.2.0">
+  <project timestamp="1671041763070" name="All files">
+    <metrics statements="286" coveredstatements="211" conditionals="46" coveredconditionals="28" methods="107" coveredmethods="70" elements="439" coveredelements="309" complexity="0" loc="286" ncloc="286" packages="35" files="51" classes="51"/>
+    <package name="src">
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.js" path="/home/matteo/code/users/src/index.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="App.js" path="/home/matteo/code/users/src/app/App.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="9" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.constants">
+      <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="constants.js" path="/home/matteo/code/users/src/app/constants/constants.js">
+        <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="17" type="stmt"/>
+        <line num="2" count="17" type="stmt"/>
+        <line num="3" count="17" type="stmt"/>
+        <line num="5" count="17" type="stmt"/>
+        <line num="6" count="17" type="stmt"/>
+        <line num="7" count="17" type="stmt"/>
+        <line num="9" count="17" type="stmt"/>
+        <line num="10" count="17" type="stmt"/>
+        <line num="11" count="17" type="stmt"/>
+        <line num="12" count="17" type="stmt"/>
+        <line num="13" count="17" type="stmt"/>
+        <line num="14" count="17" type="stmt"/>
+        <line num="15" count="17" type="stmt"/>
+        <line num="17" count="17" type="stmt"/>
+        <line num="18" count="17" type="stmt"/>
+        <line num="20" count="17" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.context">
+      <metrics statements="25" coveredstatements="9" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="Context.js" path="/home/matteo/code/users/src/app/context/Context.js">
+        <metrics statements="25" coveredstatements="9" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="51" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.data">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="data.js" path="/home/matteo/code/users/src/app/data/data.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="46" count="5" type="stmt"/>
+      </file>
+      <file name="index.js" path="/home/matteo/code/users/src/app/data/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="mockData.js" path="/home/matteo/code/users/src/app/data/mockData.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="29" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.hooks">
+      <metrics statements="27" coveredstatements="26" conditionals="4" coveredconditionals="3" methods="12" coveredmethods="11"/>
+      <file name="index.js" path="/home/matteo/code/users/src/app/hooks/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="useClickOutside.js" path="/home/matteo/code/users/src/app/hooks/useClickOutside.js">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="3" count="13" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+      </file>
+      <file name="useFetch.js" path="/home/matteo/code/users/src/app/hooks/useFetch.js">
+        <metrics statements="14" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+        <line num="5" count="13" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="24" count="6" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="28" count="6" type="stmt"/>
+      </file>
+      <file name="useSort.js" path="/home/matteo/code/users/src/app/hooks/useSort.js">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="1" count="13" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.library">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.js" path="/home/matteo/code/users/src/app/library/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.app.library.avatar">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Avatar.js" path="/home/matteo/code/users/src/app/library/avatar/Avatar.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="13" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.library.button">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Button.js" path="/home/matteo/code/users/src/app/library/button/Button.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="13" type="stmt"/>
+        <line num="4" count="30" type="stmt"/>
+        <line num="11" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.library.details">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Item.js" path="/home/matteo/code/users/src/app/library/details/Item.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.library.dialog">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Dialog.js" path="/home/matteo/code/users/src/app/library/dialog/Dialog.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="13" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.library.form">
+      <metrics statements="10" coveredstatements="9" conditionals="7" coveredconditionals="6" methods="7" coveredmethods="6"/>
+      <file name="Checkbox.js" path="/home/matteo/code/users/src/app/library/form/Checkbox.js">
+        <metrics statements="4" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+      </file>
+      <file name="Field.js" path="/home/matteo/code/users/src/app/library/form/Field.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="13" type="stmt"/>
+        <line num="5" count="37" type="stmt"/>
+      </file>
+      <file name="Input.js" path="/home/matteo/code/users/src/app/library/form/Input.js">
+        <metrics statements="4" coveredstatements="4" conditionals="5" coveredconditionals="5" methods="3" coveredmethods="3"/>
+        <line num="5" count="13" type="stmt"/>
+        <line num="15" count="32" type="stmt"/>
+        <line num="22" count="37" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.library.loader">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Loader.js" path="/home/matteo/code/users/src/app/library/loader/Loader.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="13" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.library.modal">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Modal.js" path="/home/matteo/code/users/src/app/library/modal/Modal.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.library.typography">
+      <metrics statements="13" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="4"/>
+      <file name="Label.js" path="/home/matteo/code/users/src/app/library/typography/Label.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="13" type="stmt"/>
+        <line num="4" count="37" type="stmt"/>
+      </file>
+      <file name="Subtitle.js" path="/home/matteo/code/users/src/app/library/typography/Subtitle.js">
+        <metrics statements="2" coveredstatements="2" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="4" count="13" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="21" type="stmt"/>
+      </file>
+      <file name="Text.jest.js" path="/home/matteo/code/users/src/app/library/typography/Text.jest.js">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+      <file name="Text.js" path="/home/matteo/code/users/src/app/library/typography/Text.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+      </file>
+      <file name="Title.js" path="/home/matteo/code/users/src/app/library/typography/Title.js">
+        <metrics statements="2" coveredstatements="2" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="4" count="13" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="19" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.service">
+      <metrics statements="19" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+      <file name="request.js" path="/home/matteo/code/users/src/app/service/request.js">
+        <metrics statements="19" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.store">
+      <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="redux-hooks.js" path="/home/matteo/code/users/src/app/store/redux-hooks.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="store.js" path="/home/matteo/code/users/src/app/store/store.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.utils.tests">
+      <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <file name="tests.js" path="/home/matteo/code/users/src/app/utils/tests/tests.js">
+        <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views">
+      <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="3"/>
+      <file name="index.js" path="/home/matteo/code/users/src/app/views/index.js">
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="3"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views.auth.components">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="LoginForm.js" path="/home/matteo/code/users/src/app/views/auth/components/LoginForm.js">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="26" count="5" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="30" count="5" type="stmt"/>
+      </file>
+      <file name="LoginFormSchema.js" path="/home/matteo/code/users/src/app/views/auth/components/LoginFormSchema.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views.auth.containers.login">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="Login.jsx" path="/home/matteo/code/users/src/app/views/auth/containers/login/Login.jsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views.auth.store">
+      <metrics statements="12" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+      <file name="authSlice.js" path="/home/matteo/code/users/src/app/views/auth/store/authSlice.js">
+        <metrics statements="12" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="32" count="5" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="38" count="5" type="stmt"/>
+        <line num="42" count="5" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views.layout.components.header">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Header.js" path="/home/matteo/code/users/src/app/views/layout/components/header/Header.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views.layout.components.sidebar">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Sidebar.js" path="/home/matteo/code/users/src/app/views/layout/components/sidebar/Sidebar.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views.layout.containers">
+      <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="Layout.js" path="/home/matteo/code/users/src/app/views/layout/containers/Layout.js">
+        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views.users.components">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.js" path="/home/matteo/code/users/src/app/views/users/components/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.app.views.users.components.addUser">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="AddUser.js" path="/home/matteo/code/users/src/app/views/users/components/addUser/AddUser.js">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="41" count="5" type="stmt"/>
+        <line num="43" count="5" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="47" count="5" type="stmt"/>
+      </file>
+      <file name="Schema.js" path="/home/matteo/code/users/src/app/views/users/components/addUser/Schema.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="9" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views.users.components.details">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="Charts.js" path="/home/matteo/code/users/src/app/views/users/components/details/Charts.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+      </file>
+      <file name="Orders.js" path="/home/matteo/code/users/src/app/views/users/components/details/Orders.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+      <file name="Personal.js" path="/home/matteo/code/users/src/app/views/users/components/details/Personal.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views.users.components.filters">
+      <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="Filters.js" path="/home/matteo/code/users/src/app/views/users/components/filters/Filters.js">
+        <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views.users.components.header">
+      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="Header.js" path="/home/matteo/code/users/src/app/views/users/components/header/Header.js">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views.users.components.user">
+      <metrics statements="12" coveredstatements="6" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="2"/>
+      <file name="User.js" path="/home/matteo/code/users/src/app/views/users/components/user/User.js">
+        <metrics statements="12" coveredstatements="6" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="2"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views.users.components.users">
+      <metrics statements="7" coveredstatements="7" conditionals="10" coveredconditionals="5" methods="4" coveredmethods="4"/>
+      <file name="Users.js" path="/home/matteo/code/users/src/app/views/users/components/users/Users.js">
+        <metrics statements="7" coveredstatements="7" conditionals="10" coveredconditionals="5" methods="4" coveredmethods="4"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views.users.containers.details">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Details.js" path="/home/matteo/code/users/src/app/views/users/containers/details/Details.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views.users.containers.usersManagement">
+      <metrics statements="33" coveredstatements="19" conditionals="6" coveredconditionals="4" methods="11" coveredmethods="2"/>
+      <file name="UsersManagement.js" path="/home/matteo/code/users/src/app/views/users/containers/usersManagement/UsersManagement.js">
+        <metrics statements="33" coveredstatements="19" conditionals="6" coveredconditionals="4" methods="11" coveredmethods="2"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="39" count="3" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="50" count="3" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="54" count="3" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="58" count="3" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="62" count="3" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="66" count="3" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="83" count="3" type="stmt"/>
+        <line num="84" count="2" type="stmt"/>
+        <line num="87" count="3" type="stmt"/>
+        <line num="115" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.views.users.store">
+      <metrics statements="22" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="13" coveredmethods="6"/>
+      <file name="usersSlice.js" path="/home/matteo/code/users/src/app/views/users/store/usersSlice.js">
+        <metrics statements="22" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="13" coveredmethods="6"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="26" count="5" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="41" count="4" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="49" count="5" type="stmt"/>
+        <line num="53" count="5" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="60" count="5" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="67" count="5" type="stmt"/>
+        <line num="68" count="2" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
