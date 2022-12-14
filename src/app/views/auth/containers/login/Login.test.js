@@ -1,11 +1,13 @@
-import { screen } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { renderWithProviders } from '../../../../utils/tests/tests';
 import Login from './Login';
 
 describe('Render login', () => {
-  it('render login', async () => {
+  test('render login', async () => {
     renderWithProviders(<Login />);
-    const submit = screen.getByRole('button', { name: /Submit/i });
+    const submit = screen.getByTestId('submitForm');
     expect(submit).toBeInTheDocument();
+    fireEvent.click(submit);
+    await waitFor(() => screen.getByTestId('submitForm'));
   });
 });

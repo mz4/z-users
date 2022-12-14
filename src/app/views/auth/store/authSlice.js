@@ -12,7 +12,6 @@ const initialState = {
 };
 
 export const login = createAsyncThunk('login', async (data) => {
-  console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
   await fetch(`${LOGIN_ENDPOINT}`, {
     method: POST,
     headers: { 'Content-Type': 'application/json' },
@@ -31,7 +30,6 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
-      console.log('zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz');
       return { ...state, isAuthenticated: true, user: action.payload };
     });
   }
