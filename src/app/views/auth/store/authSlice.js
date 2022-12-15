@@ -12,12 +12,16 @@ const initialState = {
 };
 
 export const login = createAsyncThunk('login', async (data) => {
-  await fetch(`${LOGIN_ENDPOINT}`, {
+  const response = await fetch(`${LOGIN_ENDPOINT}`, {
     method: POST,
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
-  return;
+  if (response.ok) {
+    return response.json();
+  } else {
+    return Promise.reject(response);
+  }
 });
 
 const authSlice = createSlice({

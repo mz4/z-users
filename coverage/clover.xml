@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1671041763070" clover="3.2.0">
-  <project timestamp="1671041763070" name="All files">
-    <metrics statements="286" coveredstatements="211" conditionals="46" coveredconditionals="28" methods="107" coveredmethods="70" elements="439" coveredelements="309" complexity="0" loc="286" ncloc="286" packages="35" files="51" classes="51"/>
+<coverage generated="1671097037900" clover="3.2.0">
+  <project timestamp="1671097037900" name="All files">
+    <metrics statements="286" coveredstatements="213" conditionals="46" coveredconditionals="28" methods="107" coveredmethods="71" elements="439" coveredelements="312" complexity="0" loc="286" ncloc="286" packages="35" files="51" classes="51"/>
     <package name="src">
       <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.js" path="/home/matteo/code/users/src/index.js">
@@ -331,13 +331,13 @@
       </file>
     </package>
     <package name="src.app.views.auth.store">
-      <metrics statements="12" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+      <metrics statements="12" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="5"/>
       <file name="authSlice.js" path="/home/matteo/code/users/src/app/views/auth/store/authSlice.js">
-        <metrics statements="12" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+        <metrics statements="12" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="5"/>
         <line num="8" count="5" type="stmt"/>
         <line num="14" count="5" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
         <line num="23" count="5" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
         <line num="32" count="5" type="stmt"/>

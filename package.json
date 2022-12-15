@@ -55,7 +55,8 @@
     "redux-mock-store": "^1.5.4"
   },
   "scripts": {
-    "test": "craco test --coverage --watchAll",
+    "test": "craco test",
+    "test:coverage": "craco test --coverage --watchAll",
     "client": "craco start",
     "server": "json-server --watch db.json -m ./node_modules/json-server-auth --port 3001 && nodemon server",
     "start": "concurrently \"npm run server\" \"npm run client\"",
