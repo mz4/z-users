@@ -1,3 +1,4 @@
+import store from '../../../store/store';
 import reducer, { logout, login } from './authSlice';
 
 describe('actions', () => {
@@ -51,5 +52,30 @@ describe('thunks', () => {
     expect(calls).toHaveLength(2);
     expect(calls[0][0].type).toEqual('login/pending');
     expect(calls[1][0].type).toEqual('login/rejected');
+  });
+});
+
+describe('login method 2', () => {
+  it('login rejected dispatch real store action', async () => {
+    await store.dispatch(
+      login({
+        email: 'wrongusername@gmail.com',
+        password: 'wrongpassword'
+      })
+    );
+    expect(store.getState().auth).toEqual({
+      user: null,
+      isAuthenticated: false,
+      error: null
+    });
+  });
+  it('login fulfilled dispatch real store action', async () => {
+    await store.dispatch(
+      login({
+        email: 'johndoeb@example.com',
+        password: 'password123'
+      })
+    );
+    expect(store.getState().auth.isAuthenticated).toBeTruthy();
   });
 });
