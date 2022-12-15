@@ -16,8 +16,8 @@ describe('Render login', () => {
     renderWithProviders(<Login />);
     const submit = screen.getByTestId('submitForm');
     expect(submit).toBeInTheDocument();
-    fireEvent.click(submit);
     expect(mockDispatch).not.toHaveBeenCalled();
+    fireEvent.click(submit);
     await waitFor(() => screen.getByTestId('submitForm'));
     expect(mockDispatch).toHaveBeenCalled();
   });
