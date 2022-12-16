@@ -1,30 +1,25 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  PROFILES_ENDPOINT,
-  POST,
-  PRIMARY,
-  SECONDARY
-} from '../../../../constants/constants';
+import { PRIMARY, SECONDARY } from '../../../../constants/constants';
+import { Avatar, Loader, Modal, Title } from '../../../../library/index';
 import { formatNewUSer } from '../../../../utils/common/common';
-import { Loader, Modal, Title, Avatar } from '../../../../library/index';
+import Personal from '../../components/details/Personal';
 import {
   AddUser,
   Details,
+  Filters,
   Header,
-  Users,
-  Filters
+  Users
 } from '../../components/index';
-import Personal from '../../components/details/Personal';
 import {
-  selectGetUsers,
-  selectLoading,
-  getUsersFilters,
-  getUsers,
-  usersListSort,
   deleteUser,
   filterUsers,
-  postUser
+  getUsers,
+  getUsersFilters,
+  postUser,
+  selectGetUsers,
+  selectLoading,
+  usersListSort
 } from '../../store/usersSlice';
 import styles from './UsersManagement.module.scss';
 
@@ -42,6 +37,12 @@ const UsersManagement = () => {
     dispatch(getUsers());
   }, [dispatch]);
 
+  const handleSubmit = (data) => {
+    const formatData = formatNewUSer(data);
+    dispatch(postUser(formatData));
+    toggleNewUser(false);
+  };
+
   const showProfileDetails = (user) => {
     setUser(user);
     setProfileDetails(true);
@@ -56,21 +57,6 @@ const UsersManagement = () => {
   const handleDeleteAction = async (userId) => dispatch(deleteUser(userId));
 
   const handleFilterAction = (filter) => dispatch(filterUsers(filter));
-
-  const handleSubmit = (data) => {
-    const formatData = formatNewUSer(data);
-    dispatch(postUser(formatData));
-    toggleNewUser(false);
-    /*     const submitPost = new Request(
-      formatNewUser(data),
-      PROFILES_ENDPOINT,
-      POST
-    );
-    submitPost.post().then(() => {
-      toggleNewUser(false);
-      dispatch(getUsers());
-    }); */
-  };
 
   return (
     <div className={styles.pageContainer} datatestid="list">
