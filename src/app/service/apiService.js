@@ -1,4 +1,5 @@
 export const apiService = async (endpoint, options = {}) => {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   const defaultOptions = {
     method: 'GET',
     headers: {
