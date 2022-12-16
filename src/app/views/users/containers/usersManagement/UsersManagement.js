@@ -57,7 +57,6 @@ const UsersManagement = () => {
 
   const handleDeleteAction = async (userId) => {
     dispatch(deleteUser(userId));
-    dispatch(getUsers());
   };
 
   const handleFilterAction = (filter) => {

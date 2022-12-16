@@ -19,7 +19,8 @@ export const getUsers = createAsyncThunk('getUsers', () => {
 });
 
 export const deleteUser = createAsyncThunk('deleteUser', (userId) => {
-  return deleteUserApi(userId);
+  deleteUserApi(userId);
+  return userId;
 });
 
 const usersSlice = createSlice({
@@ -35,17 +36,24 @@ const usersSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getUsers.fulfilled, (state, action) => {
-      state.loading = false;
-      state.users = action.payload;
+      return {
+        ...state,
+        loading: false,
+        users: action.payload
+      };
     });
     builder.addCase(getUsers.pending, (state, action) => {
-      state.loading = true;
-      state.users = [];
+      return {
+        ...state,
+        loading: true,
+        users: []
+      };
     });
     builder.addCase(deleteUser.fulfilled, (state, action) => {
-      const { users } = state;
-      const index = users.findIndex(({ id }) => id === action.payload.userId);
-      users.splice(index, 1);
+      return {
+        ...state,
+        users: state.users.filter((user) => user.id !== action.payload)
+      };
     });
   }
 });
