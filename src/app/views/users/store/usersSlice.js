@@ -18,9 +18,12 @@ export const getUsers = createAsyncThunk('getUsers', async () => {
   return await getUsersApi();
 });
 
-export const deleteUser = createAsyncThunk('deleteUser', async (userId) => {
-  return await deleteUserApi(userId);
-});
+export const deleteUser = createAsyncThunk(
+  'users/deleteUser',
+  async (userId) => {
+    return await deleteUserApi(userId);
+  }
+);
 
 const usersSlice = createSlice({
   name: 'users',
