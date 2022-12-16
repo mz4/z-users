@@ -4,11 +4,10 @@ import {
   PROFILES_ENDPOINT,
   POST,
   PRIMARY,
-  SECONDARY,
-  AVATAR_LINK
+  SECONDARY
 } from '../../../../constants/constants';
+import { formatNewUSer } from '../../../../utils/common/common';
 import { Loader, Modal, Title, Avatar } from '../../../../library/index';
-import Request from '../../../../service/request';
 import {
   AddUser,
   Details,
@@ -24,7 +23,8 @@ import {
   getUsers,
   usersListSort,
   deleteUser,
-  filterUsers
+  filterUsers,
+  postUser
 } from '../../store/usersSlice';
 import styles from './UsersManagement.module.scss';
 
@@ -38,50 +38,38 @@ const UsersManagement = () => {
   const [newUser, setNewUser] = useState(false);
   const { first_name, avatar } = user;
 
+  useEffect(() => {
+    dispatch(getUsers());
+  }, [dispatch]);
+
   const showProfileDetails = (user) => {
     setUser(user);
     setProfileDetails(true);
   };
 
-  const hideProfileDetails = () => {
-    setProfileDetails(false);
-  };
+  const hideProfileDetails = () => setProfileDetails(false);
 
-  const toggleNewUser = (isNewUser) => {
-    setNewUser(isNewUser);
-  };
+  const toggleNewUser = (isNewUser) => setNewUser(isNewUser);
 
-  const handleSortUsers = () => {
-    dispatch(usersListSort());
-  };
+  const handleSortUsers = () => dispatch(usersListSort());
 
-  const handleDeleteAction = async (userId) => {
-    dispatch(deleteUser(userId));
-  };
+  const handleDeleteAction = async (userId) => dispatch(deleteUser(userId));
 
-  const handleFilterAction = (filter) => {
-    dispatch(filterUsers(filter));
-  };
+  const handleFilterAction = (filter) => dispatch(filterUsers(filter));
 
-  useEffect(() => {
-    dispatch(getUsers());
-  }, [dispatch]);
-
-  const submit = (data) => {
-    const { email, firstName, lastName, favorite, description } = data;
-    const newUser = {
-      email: email,
-      first_name: firstName,
-      last_name: lastName,
-      description: description,
-      avatar: AVATAR_LINK,
-      favorite: favorite
-    };
-    const submitPost = new Request(newUser, PROFILES_ENDPOINT, POST);
+  const handleSubmit = (data) => {
+    const formatData = formatNewUSer(data);
+    dispatch(postUser(formatData));
+    toggleNewUser(false);
+    /*     const submitPost = new Request(
+      formatNewUser(data),
+      PROFILES_ENDPOINT,
+      POST
+    );
     submitPost.post().then(() => {
       toggleNewUser(false);
       dispatch(getUsers());
-    });
+    }); */
   };
 
   return (
@@ -113,7 +101,7 @@ const UsersManagement = () => {
       )}
       {newUser && (
         <Modal action={() => toggleNewUser(false)} modalType={SECONDARY}>
-          <AddUser submit={submit} />
+          <AddUser submit={handleSubmit} />
         </Modal>
       )}
     </div>

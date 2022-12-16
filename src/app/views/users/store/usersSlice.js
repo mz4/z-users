@@ -1,4 +1,8 @@
-import { getUsersApi, deleteUserApi } from '../../../service/users';
+import {
+  getUsersApi,
+  postUserApi,
+  deleteUserApi
+} from '../../../service/users';
 import {
   createSlice,
   createSelector,
@@ -16,6 +20,11 @@ const initialState = {
 
 export const getUsers = createAsyncThunk('getUsers', () => {
   return getUsersApi();
+});
+
+export const postUser = createAsyncThunk('postUser', (data) => {
+  postUserApi(data);
+  return data;
 });
 
 export const deleteUser = createAsyncThunk('deleteUser', (userId) => {
@@ -53,6 +62,12 @@ const usersSlice = createSlice({
       return {
         ...state,
         users: state.users.filter((user) => user.id !== action.payload)
+      };
+    });
+    builder.addCase(postUser.fulfilled, (state, action) => {
+      return {
+        ...state,
+        users: [...state.users, JSON.parse(action.payload)]
       };
     });
   }

@@ -1,8 +1,15 @@
 import { apiService } from './apiService';
-import { PROFILES_ENDPOINT, DELETE } from '../constants/constants';
+import { PROFILES_ENDPOINT, DELETE, POST } from '../constants/constants';
 
 export const getUsersApi = () => {
   return apiService(PROFILES_ENDPOINT);
+};
+
+export const postUserApi = (data) => {
+  return apiService(`${PROFILES_ENDPOINT}`, {
+    method: POST,
+    body: data
+  });
 };
 
 export const deleteUserApi = (userId) => {
