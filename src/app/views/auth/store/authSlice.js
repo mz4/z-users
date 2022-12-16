@@ -11,9 +11,8 @@ const initialState = {
   error: null
 };
 
-export const login = createAsyncThunk('login', async (data) => {
-  const response = await loginApi(data);
-  return response;
+export const login = createAsyncThunk('login', (data) => {
+  return loginApi(data);
 });
 
 const authSlice = createSlice({

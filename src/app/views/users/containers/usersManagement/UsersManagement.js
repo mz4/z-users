@@ -55,13 +55,18 @@ const UsersManagement = () => {
     dispatch(usersListSort());
   };
 
-  const handleDeleteAction = (userId) => {
+  const handleDeleteAction = async (userId) => {
     dispatch(deleteUser(userId));
+    dispatch(getUsers());
   };
 
   const handleFilterAction = (filter) => {
     dispatch(filterUsers(filter));
   };
+
+  useEffect(() => {
+    dispatch(getUsers());
+  }, [dispatch]);
 
   const submit = (data) => {
     const { email, firstName, lastName, favorite, description } = data;
@@ -79,10 +84,6 @@ const UsersManagement = () => {
       dispatch(getUsers());
     });
   };
-
-  useEffect(() => {
-    dispatch(getUsers());
-  }, [dispatch]);
 
   return (
     <div className={styles.pageContainer} datatestid="list">
