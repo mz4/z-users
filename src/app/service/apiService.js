@@ -1,8 +1,6 @@
-import { LOGIN_ENDPOINT, POST } from '../constants/constants';
-
-export const loginApi = async (data) => {
-  const response = await fetch(`${LOGIN_ENDPOINT}`, {
-    method: POST,
+export const apiService = async (method, data, endpoint) => {
+  const response = await fetch(`${endpoint}`, {
+    method: method,
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });

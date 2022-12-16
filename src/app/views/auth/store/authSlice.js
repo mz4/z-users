@@ -3,7 +3,7 @@ import {
   createSelector,
   createSlice
 } from '@reduxjs/toolkit';
-import { loginApi } from '../../../service/api';
+import { loginApi } from '../../../service/auth';
 
 const initialState = {
   user: null,

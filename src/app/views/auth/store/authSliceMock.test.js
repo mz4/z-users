@@ -1,7 +1,7 @@
 import store from '../../../store/store';
 import { login } from './authSlice';
 
-jest.mock('../../../service/api', () => {
+jest.mock('../../../service/auth', () => {
   return {
     async loginApi() {
       return { user: 'MOCKEDVALUE' };
