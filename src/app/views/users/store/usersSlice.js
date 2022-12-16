@@ -1,35 +1,31 @@
+import { getUsersApi, deleteUserApi } from '../../../service/users';
 import {
   createSlice,
   createSelector,
   createAsyncThunk
 } from '@reduxjs/toolkit';
-import { PROFILES_ENDPOINT, DELETE } from '../../../constants/constants';
 
 const initialState = {
   users: [],
+  loading: false,
   filters: {
     sorting: { asc: true },
     parameters: { favorite: false }
   }
 };
 
-export const deleteUser = createAsyncThunk(
-  'users/deleteUser',
-  async (userId) => {
-    await fetch(`${PROFILES_ENDPOINT}/${userId}`, {
-      method: DELETE
-    });
-    return { userId };
-  }
-);
+export const getUsers = createAsyncThunk('getUsers', async () => {
+  return await getUsersApi();
+});
+
+export const deleteUser = createAsyncThunk('deleteUser', async (userId) => {
+  return await deleteUserApi(userId);
+});
 
 const usersSlice = createSlice({
   name: 'users',
   initialState,
   reducers: {
-    usersList(state, action) {
-      state.users = action.payload;
-    },
     usersListSort(state) {
       state.filters.sorting.asc = !state.filters.sorting.asc;
     },
@@ -38,6 +34,14 @@ const usersSlice = createSlice({
     }
   },
   extraReducers: (builder) => {
+    builder.addCase(getUsers.fulfilled, (state, action) => {
+      state.loading = false;
+      state.users = action.payload;
+    });
+    builder.addCase(getUsers.pending, (state, action) => {
+      state.loading = true;
+      state.users = [];
+    });
     builder.addCase(deleteUser.fulfilled, (state, action) => {
       const { users } = state;
       const index = users.findIndex(({ id }) => id === action.payload.userId);
@@ -46,14 +50,21 @@ const usersSlice = createSlice({
   }
 });
 
-export const { usersList, usersListSort, filterUsers } = usersSlice.actions;
+export const { usersListSort, filterUsers } = usersSlice.actions;
 
 export default usersSlice.reducer;
 
-export const getUsers = createSelector(
+export const selectGetUsers = createSelector(
   (state) => state.users.users,
   (users) => {
     return users;
+  }
+);
+
+export const selectLoading = createSelector(
+  (state) => state.users.loading,
+  (loading) => {
+    return loading;
   }
 );
 

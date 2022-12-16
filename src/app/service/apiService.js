@@ -1,13 +1,15 @@
-export const apiService = async (method, data, endpoint) => {
-  const response = await fetch(`${endpoint}`, {
-    method: method,
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  });
+export const apiService = async (endpoint, options = {}) => {
+  const defaultOptions = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+  const opts = { ...defaultOptions, ...options };
+  const response = await fetch(`${endpoint}`, opts);
   if (response.ok) {
-    const dataRes = await response.json();
-    return dataRes;
+    return await response.json();
   } else {
-    return Promise.reject(response);
+    throw new Error(response.statusText);
   }
 };

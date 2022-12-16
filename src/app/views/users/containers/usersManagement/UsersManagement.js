@@ -7,7 +7,6 @@ import {
   SECONDARY,
   AVATAR_LINK
 } from '../../../../constants/constants';
-import { useFetch } from '../../../../hooks/index';
 import { Loader, Modal, Title, Avatar } from '../../../../library/index';
 import Request from '../../../../service/request';
 import {
@@ -19,9 +18,10 @@ import {
 } from '../../components/index';
 import Personal from '../../components/details/Personal';
 import {
-  getUsers,
+  selectGetUsers,
+  selectLoading,
   getUsersFilters,
-  usersList,
+  getUsers,
   usersListSort,
   deleteUser,
   filterUsers
@@ -30,12 +30,12 @@ import styles from './UsersManagement.module.scss';
 
 const UsersManagement = () => {
   const dispatch = useDispatch();
-  const users = useSelector(getUsers);
+  const users = useSelector(selectGetUsers);
+  const loading = useSelector(selectLoading);
   const filters = useSelector(getUsersFilters);
   const [user, setUser] = useState({});
   const [profileDetails, setProfileDetails] = useState(false);
   const [newUser, setNewUser] = useState(false);
-  const { getData, data, loading } = useFetch(PROFILES_ENDPOINT);
   const { first_name, avatar } = user;
 
   const showProfileDetails = (user) => {
@@ -76,13 +76,13 @@ const UsersManagement = () => {
     const submitPost = new Request(newUser, PROFILES_ENDPOINT, POST);
     submitPost.post().then(() => {
       toggleNewUser(false);
-      getData(PROFILES_ENDPOINT);
+      dispatch(getUsers());
     });
   };
 
   useEffect(() => {
-    dispatch(usersList(data));
-  }, [data, dispatch]);
+    dispatch(getUsers());
+  }, [dispatch]);
 
   return (
     <div className={styles.pageContainer} datatestid="list">
