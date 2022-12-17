@@ -1,6 +1,17 @@
 import store from '../../../store/store';
-import { usersList } from './usersSlice';
-import { users } from '../../../data/mockData';
+import { getUsers } from './usersSlice';
+//import { users } from '../../../data/mockData';
+
+jest.mock('../../../service/users', () => {
+  return {
+    async getUsersApi() {
+      return [
+        { id: 1, first_name: 'test' },
+        { id: 2, first_name: 'testb' }
+      ];
+    }
+  };
+});
 
 describe('initial state', () => {
   it('should initially set users', () => {
@@ -8,9 +19,10 @@ describe('initial state', () => {
     expect(state.users).toEqual([]);
   });
 
-  it('should set users', () => {
-    store.dispatch(usersList(users));
+  it('should set users', async () => {
+    await store.dispatch(getUsers());
     const state = store.getState().users;
-    expect(state.users).toEqual(users);
+    expect(state.users).toHaveLength(2);
+    expect(state.users[0].first_name).toBe('test');
   });
 });

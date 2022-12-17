@@ -1,91 +1,65 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  PROFILES_ENDPOINT,
-  POST,
-  PRIMARY,
-  SECONDARY,
-  AVATAR_LINK
-} from '../../../../constants/constants';
-import { useFetch } from '../../../../hooks/index';
-import { Loader, Modal, Title, Avatar } from '../../../../library/index';
-import Request from '../../../../service/request';
+import { PRIMARY, SECONDARY } from '../../../../constants/constants';
+import { Avatar, Loader, Modal, Title } from '../../../../library/index';
+import { formatNewUSer } from '../../../../utils/common/common';
+import Personal from '../../components/details/Personal';
 import {
   AddUser,
   Details,
+  Filters,
   Header,
-  Users,
-  Filters
+  Users
 } from '../../components/index';
-import Personal from '../../components/details/Personal';
 import {
+  deleteUser,
+  filterUsers,
   getUsers,
   getUsersFilters,
-  usersList,
-  usersListSort,
-  deleteUser,
-  filterUsers
+  postUser,
+  selectGetUsers,
+  selectLoading,
+  usersListSort
 } from '../../store/usersSlice';
 import styles from './UsersManagement.module.scss';
 
 const UsersManagement = () => {
   const dispatch = useDispatch();
-  const users = useSelector(getUsers);
+  const users = useSelector(selectGetUsers);
+  const loading = useSelector(selectLoading);
   const filters = useSelector(getUsersFilters);
   const [user, setUser] = useState({});
   const [profileDetails, setProfileDetails] = useState(false);
   const [newUser, setNewUser] = useState(false);
-  const { getData, data, loading } = useFetch(PROFILES_ENDPOINT);
   const { first_name, avatar } = user;
+
+  useEffect(() => {
+    dispatch(getUsers());
+  }, [dispatch]);
+
+  const handleSubmit = (data) => {
+    const formatData = formatNewUSer(data);
+    dispatch(postUser(formatData));
+    toggleNewUser(false);
+  };
 
   const showProfileDetails = (user) => {
     setUser(user);
     setProfileDetails(true);
   };
 
-  const hideProfileDetails = () => {
-    setProfileDetails(false);
-  };
+  const hideProfileDetails = () => setProfileDetails(false);
 
-  const toggleNewUser = (isNewUser) => {
-    setNewUser(isNewUser);
-  };
+  const toggleNewUser = (isNewUser) => setNewUser(isNewUser);
 
-  const handleSortUsers = () => {
-    dispatch(usersListSort());
-  };
+  const handleSortUsers = () => dispatch(usersListSort());
 
-  const handleDeleteAction = (userId) => {
-    dispatch(deleteUser(userId));
-  };
+  const handleDeleteAction = async (userId) => dispatch(deleteUser(userId));
 
-  const handleFilterAction = (filter) => {
-    dispatch(filterUsers(filter));
-  };
-
-  const submit = (data) => {
-    const { email, firstName, lastName, favorite, description } = data;
-    const newUser = {
-      email: email,
-      first_name: firstName,
-      last_name: lastName,
-      description: description,
-      avatar: AVATAR_LINK,
-      favorite: favorite
-    };
-    const submitPost = new Request(newUser, PROFILES_ENDPOINT, POST);
-    submitPost.post().then(() => {
-      toggleNewUser(false);
-      getData(PROFILES_ENDPOINT);
-    });
-  };
-
-  useEffect(() => {
-    dispatch(usersList(data));
-  }, [data, dispatch]);
+  const handleFilterAction = (filter) => dispatch(filterUsers(filter));
 
   return (
-    <div className={styles.pageContainer}>
+    <div className={styles.pageContainer} datatestid="list">
       <Title text="Users List" />
       <Header sortUsers={handleSortUsers} toggleNewUser={toggleNewUser} />
       <div className={styles.bodyContainer}>
@@ -113,7 +87,7 @@ const UsersManagement = () => {
       )}
       {newUser && (
         <Modal action={() => toggleNewUser(false)} modalType={SECONDARY}>
-          <AddUser submit={submit} />
+          <AddUser submit={handleSubmit} />
         </Modal>
       )}
     </div>

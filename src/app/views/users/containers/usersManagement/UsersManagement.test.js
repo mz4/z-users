@@ -21,7 +21,7 @@ jest.mock('react-redux', () => ({
   useSelector: jest.fn()
 }));
 
-jest.mock('../../../hooks/index', () => ({
+jest.mock('../../../../hooks/index', () => ({
   useFetch: () => mockUseFetchLoaded,
   useSort: () => mockUseSort
 }));
@@ -29,10 +29,24 @@ jest.mock('../../../hooks/index', () => ({
 const getStore = () => {
   const middlewares = [thunk];
   const initialState = {
-    users: [],
-    filters: {
-      sorting: { asc: true },
-      parameters: { favorite: false }
+    users: {
+      users: [],
+      loading: false,
+      filters: {
+        sorting: { asc: true },
+        parameters: { favorite: false }
+      }
+    },
+    auth: {
+      user: {
+        accessToken: 'eyJhbG',
+        user: {
+          email: 'john@example.com',
+          id: 2
+        }
+      },
+      isAuthenticated: true,
+      error: null
     }
   };
   const mockStore = configureStore(middlewares);
@@ -41,7 +55,10 @@ const getStore = () => {
 
 describe('Render component', () => {
   it.only('Data is loaded', () => {
-    useSelector.mockReturnValueOnce(users).mockReturnValueOnce(filters);
+    useSelector
+      .mockReturnValueOnce(users)
+      .mockReturnValueOnce(false)
+      .mockReturnValueOnce(filters);
     const store = getStore();
     const { getByText } = render(
       <Provider store={store}>
@@ -50,5 +67,18 @@ describe('Render component', () => {
     );
     expect(getByText(/Georgie/)).toBeDefined();
     expect(getByText(/Weaver/)).toBeDefined();
+  });
+  it.only('Data is loading', () => {
+    useSelector
+      .mockReturnValueOnce([])
+      .mockReturnValueOnce(true)
+      .mockReturnValueOnce(filters);
+    const store = getStore();
+    const { getByText } = render(
+      <Provider store={store}>
+        <UsersManagement />
+      </Provider>
+    );
+    expect(getByText(/Loading.../)).toBeDefined();
   });
 });

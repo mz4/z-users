@@ -3,7 +3,7 @@ import {
   createSelector,
   createSlice
 } from '@reduxjs/toolkit';
-import { LOGIN_ENDPOINT, POST } from '../../../constants/constants';
+import { loginApi } from '../../../service/auth';
 
 const initialState = {
   user: null,
@@ -11,13 +11,8 @@ const initialState = {
   error: null
 };
 
-export const login = createAsyncThunk('login', async (data) => {
-  await fetch(`${LOGIN_ENDPOINT}`, {
-    method: POST,
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  });
-  return;
+export const login = createAsyncThunk('login', (data) => {
+  return loginApi(data);
 });
 
 const authSlice = createSlice({
@@ -30,7 +25,11 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
-      return { ...state, isAuthenticated: true, user: action.payload };
+      return {
+        ...state,
+        isAuthenticated: true,
+        user: action.payload
+      };
     });
   }
 });

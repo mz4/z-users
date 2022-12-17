@@ -1,35 +1,41 @@
 import {
+  getUsersApi,
+  postUserApi,
+  deleteUserApi
+} from '../../../service/users';
+import {
   createSlice,
   createSelector,
   createAsyncThunk
 } from '@reduxjs/toolkit';
-import { PROFILES_ENDPOINT, DELETE } from '../../../constants/constants';
 
 const initialState = {
   users: [],
+  loading: false,
   filters: {
     sorting: { asc: true },
     parameters: { favorite: false }
   }
 };
 
-export const deleteUser = createAsyncThunk(
-  'users/deleteUser',
-  async (userId) => {
-    await fetch(`${PROFILES_ENDPOINT}/${userId}`, {
-      method: DELETE
-    });
-    return { userId };
-  }
-);
+export const getUsers = createAsyncThunk('getUsers', () => {
+  return getUsersApi();
+});
+
+export const postUser = createAsyncThunk('postUser', (data) => {
+  postUserApi(data);
+  return data;
+});
+
+export const deleteUser = createAsyncThunk('deleteUser', (userId) => {
+  deleteUserApi(userId);
+  return userId;
+});
 
 const usersSlice = createSlice({
   name: 'users',
   initialState,
   reducers: {
-    usersList(state, action) {
-      state.users = action.payload;
-    },
     usersListSort(state) {
       state.filters.sorting.asc = !state.filters.sorting.asc;
     },
@@ -38,22 +44,50 @@ const usersSlice = createSlice({
     }
   },
   extraReducers: (builder) => {
+    builder.addCase(getUsers.fulfilled, (state, action) => {
+      return {
+        ...state,
+        loading: false,
+        users: action.payload
+      };
+    });
+    builder.addCase(getUsers.pending, (state, action) => {
+      return {
+        ...state,
+        loading: true,
+        users: []
+      };
+    });
     builder.addCase(deleteUser.fulfilled, (state, action) => {
-      const { users } = state;
-      const index = users.findIndex(({ id }) => id === action.payload.userId);
-      users.splice(index, 1);
+      return {
+        ...state,
+        users: state.users.filter((user) => user.id !== action.payload)
+      };
+    });
+    builder.addCase(postUser.fulfilled, (state, action) => {
+      return {
+        ...state,
+        users: [...state.users, JSON.parse(action.payload)]
+      };
     });
   }
 });
 
-export const { usersList, usersListSort, filterUsers } = usersSlice.actions;
+export const { usersListSort, filterUsers } = usersSlice.actions;
 
 export default usersSlice.reducer;
 
-export const getUsers = createSelector(
+export const selectGetUsers = createSelector(
   (state) => state.users.users,
   (users) => {
     return users;
+  }
+);
+
+export const selectLoading = createSelector(
+  (state) => state.users.loading,
+  (loading) => {
+    return loading;
   }
 );
 
