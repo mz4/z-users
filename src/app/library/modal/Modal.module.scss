@@ -1,7 +1,19 @@
+@keyframes example {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .modalContainer {
+  animation-name: example;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
   position: fixed;
   inset: 0;
-  background-color: #f3f3f321;
+  background-color: #66666681;
   display: flex;
   justify-content: right;
   z-index: 999;
