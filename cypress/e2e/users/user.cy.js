@@ -11,7 +11,7 @@ import {
 
 describe('Add a new user ', () => {
   before(() => {
-    cy.visit('/');
+    cy.visit('/users');
   });
   it('Show error in the email field', () => {
     cy.get(btnNew).click();

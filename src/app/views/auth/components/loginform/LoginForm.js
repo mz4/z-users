@@ -1,8 +1,15 @@
 import React from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { Title, Subtitle, Label, Input, Button, Field } from '../../../library';
-import { EMAIL, PASSWORD } from '../../../constants/constants';
+import {
+  Title,
+  Subtitle,
+  Label,
+  Input,
+  Button,
+  Field
+} from '../../../../library';
+import { EMAIL, PASSWORD } from '../../../../constants/constants';
 import { LoginFormSchema } from './LoginFormSchema';
 import styles from './LoginForm.module.scss';
 

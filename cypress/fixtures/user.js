@@ -7,6 +7,8 @@ const btnSubmit = '[data-testid="submitForm"]';
 const inputEmail = '[data-testid="email"]';
 const inputFirstName = '[data-testid="firstName"]';
 const inputLastName = '[data-testid="lastName"]';
+const loginEmail = '[data-testid="email"]';
+const loginPassword = '[data-testid="password"]';
 
 export {
   userDetails,
@@ -17,5 +19,7 @@ export {
   btnSubmit,
   inputEmail,
   inputFirstName,
-  inputLastName
+  inputLastName,
+  loginEmail,
+  loginPassword
 };

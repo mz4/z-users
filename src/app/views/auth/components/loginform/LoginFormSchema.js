@@ -1,4 +1,4 @@
-import { EMAIL, PASSWORD } from '../../../constants/constants';
+import { EMAIL, PASSWORD } from '../../../../constants/constants';
 import * as yup from 'yup';
 
 export const LoginFormSchema = yup.object().shape({

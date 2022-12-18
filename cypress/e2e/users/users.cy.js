@@ -2,7 +2,7 @@ import { userDetails, modal, btnClose, btnSort } from '../../fixtures/user';
 
 describe('Users list', () => {
   before(() => {
-    cy.visit('/');
+    cy.visit('/users');
   });
   it('Load page successfully', () => {
     cy.get(userDetails).should('have.length', 15);
