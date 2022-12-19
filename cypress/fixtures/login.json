@@ -1,0 +1,12 @@
+{
+  "wronguser": {
+    "email": "wrong",
+    "password": "123456",
+    "emailError1": "Please enter a valid email",
+    "passwordError1": "Please enter a password"
+  },
+  "rightuser": {
+    "email": "johndoeb@example.com",
+    "password": "password123"
+  }
+}
