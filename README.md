@@ -17,6 +17,10 @@ Cypress
 
 ![cyoress](https://user-images.githubusercontent.com/17081903/209122452-7ff57e98-dfd4-4ced-85df-651484c9af77.gif)
 
+Unit tests
+
+![unittests](https://user-images.githubusercontent.com/17081903/209123654-69ec1adc-efe1-4cc2-975b-b0b8656934c4.gif)
+
 
 ## Run project
 
