@@ -5,12 +5,12 @@ describe('Users list', () => {
     cy.login();
   });
   it('Load page successfully', () => {
-    cy.get(userDetails).should('have.length', 15);
+    cy.get(userDetails).should('have.length.greaterThan', 10);
   });
   it('sort users', () => {
-    cy.get(userDetails).first().contains('Georgie');
-    cy.get(btnSort).click();
     cy.get(userDetails).first().contains('Byron');
+    cy.get(btnSort).click();
+    cy.get(userDetails).first().contains('Tracey');
   });
   it('open and close side panel details', () => {
     cy.get(userDetails).first().click();

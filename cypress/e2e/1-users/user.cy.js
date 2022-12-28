@@ -3,10 +3,11 @@ import {
   userDetails,
   btnClose,
   btnNew,
-  btnSubmit,
+  btnAddUserSubmit,
   inputEmail,
   inputFirstName,
-  inputLastName
+  inputLastName,
+  inputDescription
 } from '../../fixtures/user';
 
 describe('Add a new user ', () => {
@@ -40,7 +41,8 @@ describe('Add a new user ', () => {
     cy.get(inputEmail).type(user.email2);
     cy.get(inputFirstName).type(user.firstName1);
     cy.get(inputLastName).type(user.lastName1);
-    cy.get(btnSubmit).click();
-    cy.get(userDetails).last().contains(user.firstName1);
+    cy.get(inputDescription).type(user.description1);
+    cy.get(btnAddUserSubmit).click();
+    cy.get(userDetails).contains(user.firstName1);
   });
 });
