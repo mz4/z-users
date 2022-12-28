@@ -12,7 +12,7 @@ const submit = jest.fn();
 describe('test addUser form', () => {
   test('Submit is not called if form is not filled', async () => {
     render(<AddUser submit={submit} />);
-    const element = screen.getByTestId('submitForm');
+    const element = screen.getByTestId('addUserSubmitForm');
     act(() => {
       fireEvent.click(element);
     });
@@ -22,7 +22,7 @@ describe('test addUser form', () => {
 
 test('Submit is called if form is complete without errors', async () => {
   render(<AddUser submit={submit} />);
-  const element = screen.getByTestId('submitForm');
+  const element = screen.getByTestId('addUserSubmitForm');
   const email = screen.getByPlaceholderText('email');
   const firstName = screen.getByPlaceholderText('First Name');
   const lastName = screen.getByPlaceholderText('Last Name');

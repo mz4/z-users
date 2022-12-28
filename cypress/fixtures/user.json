@@ -1,10 +1,11 @@
 {
   "email1": "mark.knop.com",
   "emailError1": "Please insert a valid email",
-  "emailError2": "email is required",
+  "emailError2": "Email is required",
   "firstName1": "Mark",
   "firstNameError1": "Please enter first name",
   "lastName1": "Knop",
   "lastNameError1": "Please enter last name",
+  "description1": "this is a description",
   "email2": "mark.knop@gmail.com"
 }

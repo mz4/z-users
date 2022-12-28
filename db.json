@@ -105,6 +105,33 @@
       "avatar": "https://reqres.in/img/faces/12-image.jpg",
       "description": "Lorem ipsum dolor sit amet, cons ect etur adipiscing elit",
       "favorite": true
+    },
+    {
+      "email": "mark.knop@gmail.com",
+      "first_name": "Mark",
+      "last_name": "Knop",
+      "description": "this is a description",
+      "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
+      "favorite": false,
+      "id": 13
+    },
+    {
+      "email": "mark.knop@gmail.com",
+      "first_name": "Mark",
+      "last_name": "Knop",
+      "description": "this is a description",
+      "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
+      "favorite": false,
+      "id": 14
+    },
+    {
+      "email": "mark.knop@gmail.com",
+      "first_name": "Mark",
+      "last_name": "Knop",
+      "description": "this is a description",
+      "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
+      "favorite": false,
+      "id": 15
     }
   ]
 }
