@@ -4,6 +4,9 @@
   "description": "",
   "keywords": [],
   "main": "src/index.js",
+  "engines": {
+    "node": "16.18.1"
+  },
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
@@ -53,12 +56,14 @@
     "redux-mock-store": "^1.5.4"
   },
   "scripts": {
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:coverage": "yarn test --coverage --watchAll",
-    "client": "react-scripts start",
-    "server": "json-server --watch db.json -m ./node_modules/json-server-auth --port 3001 && nodemon server",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "json-server  --watch db.json --port 8000",
+    "serverb": "json-server --watch db.json -m ./node_modules/json-server-auth --port 3001 && nodemon server",
+    "dev": "concurrently \"npm run serverb\" \"npm run start\"",
+    "web": "node server.js",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc.json",
     "cypress:open": "cypress open"
   },
