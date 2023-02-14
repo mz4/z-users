@@ -17,7 +17,7 @@ const User = ({ user, showProfileDetails, handleDeleteAction }) => {
     toggleState(true);
   };
 
-  const { id, avatar, description, first_name, last_name, favorite } = user;
+  const { id, avatar, description, first_name, last_name, favorite, role } = user;
   return (
     <>
       <div
@@ -37,6 +37,9 @@ const User = ({ user, showProfileDetails, handleDeleteAction }) => {
             <div className={styles.textProfile}>
               <div className={styles.cardName}>
                 {first_name} {last_name}
+              </div>
+              <div className={styles.cardRole}>
+                {role}
               </div>
               <div className={styles.cardText}>{description}</div>
             </div>

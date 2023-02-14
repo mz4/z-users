@@ -14,7 +14,8 @@
       "last_name": "Bluth",
       "avatar": "https://reqres.in/img/faces/1-image.jpg",
       "description": "Lorem ipsum dolor sit amet, cons ect etur adipiscing elit",
-      "favorite": true
+      "favorite": true,
+      "role": "Backend"
     },
     {
       "id": 3,
@@ -23,7 +24,8 @@
       "last_name": "Wong",
       "avatar": "https://reqres.in/img/faces/3-image.jpg",
       "description": "Lorem ipsum dolor sit amet, cons ect etur adipiscing elit",
-      "favorite": true
+      "favorite": true,
+      "role": "Backend"
     },
     {
       "id": 4,
@@ -32,7 +34,8 @@
       "last_name": "Holt",
       "avatar": "https://reqres.in/img/faces/4-image.jpg",
       "description": "Lorem ipsum dolor sit amet, cons ect etur adipiscing elit",
-      "favorite": false
+      "favorite": false,
+      "role": "Frontend"
     },
     {
       "id": 5,
@@ -41,7 +44,8 @@
       "last_name": "Morris",
       "avatar": "https://reqres.in/img/faces/5-image.jpg",
       "description": "Lorem ipsum dolor sit amet, cons ect etur adipiscing elit",
-      "favorite": false
+      "favorite": false,
+      "role": "Frontend"
     },
     {
       "id": 6,
@@ -50,7 +54,8 @@
       "last_name": "Ramos",
       "avatar": "https://reqres.in/img/faces/6-image.jpg",
       "description": "Lorem ipsum dolor sit amet, cons ect etur adipiscing elit",
-      "favorite": false
+      "favorite": false,
+      "role": "Quality Analyst"
     },
     {
       "id": 7,
@@ -59,7 +64,8 @@
       "last_name": "Lawson",
       "avatar": "https://reqres.in/img/faces/7-image.jpg",
       "description": "Lorem ipsum dolor sit amet, cons ect etur adipiscing elit",
-      "favorite": true
+      "favorite": true,
+      "role": "Quality Analyst"
     },
     {
       "id": 8,
@@ -68,7 +74,8 @@
       "last_name": "Ferguson",
       "avatar": "https://reqres.in/img/faces/8-image.jpg",
       "description": "Lorem ipsum dolor sit amet, cons ect etur adipiscing elit",
-      "favorite": true
+      "favorite": true,
+      "role": "Product Owner"
     },
     {
       "id": 9,
@@ -77,7 +84,8 @@
       "last_name": "Funke",
       "avatar": "https://reqres.in/img/faces/9-image.jpg",
       "description": "Lorem ipsum dolor sit amet, cons ect etur adipiscing elit",
-      "favorite": true
+      "favorite": true,
+      "role": "UX/UI Designer"
     },
     {
       "id": 10,
@@ -86,7 +94,8 @@
       "last_name": "Fields",
       "avatar": "https://reqres.in/img/faces/10-image.jpg",
       "description": "Lorem ipsum dolor sit amet, cons ect etur adipiscing elit",
-      "favorite": true
+      "favorite": true,
+      "role": "UX/UI Designer"
     },
     {
       "id": 11,
@@ -95,7 +104,8 @@
       "last_name": "Edwards",
       "avatar": "https://reqres.in/img/faces/11-image.jpg",
       "description": "Lorem ipsum dolor sit amet, cons ect etur adipiscing elit",
-      "favorite": true
+      "favorite": true,
+      "role": "Data Analyst"
     },
     {
       "id": 12,
@@ -104,7 +114,8 @@
       "last_name": "Howell",
       "avatar": "https://reqres.in/img/faces/12-image.jpg",
       "description": "Lorem ipsum dolor sit amet, cons ect etur adipiscing elit",
-      "favorite": true
+      "favorite": true,
+      "role": "DevOps"
     },
     {
       "email": "mark.knop@gmail.com",
@@ -113,7 +124,8 @@
       "description": "this is a description",
       "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
       "favorite": false,
-      "id": 13
+      "id": 13,
+      "role": "Manager"
     },
     {
       "email": "mark.knop@gmail.com",
@@ -122,7 +134,8 @@
       "description": "this is a description",
       "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
       "favorite": false,
-      "id": 14
+      "id": 14,
+      "role": "Backend"
     },
     {
       "email": "mark.knop@gmail.com",
@@ -131,7 +144,8 @@
       "description": "this is a description",
       "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
       "favorite": false,
-      "id": 15
+      "id": 15,
+      "role": "Frontend"
     }
   ]
 }

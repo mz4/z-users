@@ -6,13 +6,13 @@
   border: 1px solid var(--border);
   border-radius: 1rem;
   padding: 1rem;
-  .content {
-    padding: 16px;
-  }
   .filters {
     display: flex;
     justify-content: flex-start;
     gap: 0.5rem;
+  }
+  .content {
+    padding: 16px;
   }
 }
 

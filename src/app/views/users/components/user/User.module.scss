@@ -7,14 +7,10 @@
   position: relative;
   box-sizing: border-box;
   cursor: pointer;
-  max-width: 325px;
-  flex: 0 0 24.2%;
-  @media (max-width: 768px) {
-    max-width: 576px;
-    flex: 0 0 100%;
-  }
-  @media (min-width: 769px) and (max-width: 992px) {
-    flex: 0 0 32%;
+  flex: 1 0 21%;
+  max-width: 329px;
+  @media (max-width: 1240px) {
+    flex: 1 0 33%;
   }
 
   .userProfile {
@@ -45,10 +41,16 @@
         font-weight: 400;
         color: #6f6f6f;
       }
+      .cardRole {
+        margin: 0.8rem;
+        font-size: 1rem;
+        font-weight: 300;
+        color: #b3b3b3;
+      }
       .cardText {
         margin: 0.8rem;
         font-size: 0.8rem;
-        font-weight: 400;
+        font-weight: 300;
         color: #999;
         text-align: left;
       }
