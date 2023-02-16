@@ -4,7 +4,7 @@
   justify-content: flex-start;
   align-items: stretch;
   gap: 8px;
-  @media (max-width: 480px) {
+  @media (max-width: 576px) {
     flex-direction: column;
   }
 }

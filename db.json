@@ -125,7 +125,7 @@
       "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
       "favorite": false,
       "id": 13,
-      "role": "Manager"
+      "role": "Scrum Master"
     },
     {
       "email": "mark.knop@gmail.com",
@@ -146,6 +146,42 @@
       "favorite": false,
       "id": 15,
       "role": "Frontend"
+    },
+    {
+      "email": "matteozaratti@gmail.com",
+      "first_name": "John",
+      "last_name": "Roy",
+      "description": "nn fsdf s fsd fs",
+      "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
+      "favorite": false,
+      "id": 16
+    },
+    {
+      "email": "matteozaratti@gmail.com",
+      "first_name": "hgfhgf",
+      "last_name": "hgfhfg",
+      "description": "hgfhfghgfhfghfg",
+      "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
+      "favorite": true,
+      "id": 17
+    },
+    {
+      "email": "matteozaratti@gmail.com",
+      "first_name": "jhgjhg",
+      "last_name": "jhgjgh",
+      "description": "jhgjhgjhgj gjgh jghjg hjhg",
+      "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
+      "favorite": true,
+      "id": 18
+    },
+    {
+      "email": "matteozaratti@gmail.com",
+      "first_name": "hgfh fh ",
+      "last_name": "hgf hgf hfg",
+      "description": "hgfhf hfg hfg hfg hfg hf",
+      "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
+      "favorite": true,
+      "id": 19
     }
   ]
 }

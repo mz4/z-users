@@ -6,15 +6,17 @@ import {
   Input,
   Button,
   Field,
-  Checkbox
+  Checkbox,
+  Select,
 } from '../../../../library/index';
 import {
   EMAIL,
   FIRST_NAME,
   LAST_NAME,
+  ROLE,
   DESCRIPTION,
   GENDER,
-  FAVORITE
+  FAVORITE,
 } from '../../../../constants/constants';
 import { AddUserSchema } from './Schema';
 import styles from './AddUser.module.scss';
@@ -29,36 +31,26 @@ const AddUser = ({ submit }) => {
       [LAST_NAME]: '',
       [DESCRIPTION]: '',
       [GENDER]: '',
-      [FAVORITE]: false
-    }
+      [FAVORITE]: false,
+      [ROLE]: '',
+    },
   });
 
   const {
     control,
     formState: { errors },
     handleSubmit,
-    getValues
+    getValues,
   } = methods;
 
   const onSubmit = () => {
+    console.log(JSON.stringify(getValues()));
     submit(getValues());
   };
 
   return (
     <>
       <Title text="Add User" customClassName={styles.title} />
-      <Field>
-        <Label text="Email" />
-        <Input
-          control={control}
-          defaultValue=""
-          placeholder="email"
-          name={EMAIL}
-          errors={errors}
-          disabled={false}
-          dataTestId={EMAIL}
-        />
-      </Field>
       <Field>
         <Label text="First Name" />
         <Input
@@ -81,6 +73,22 @@ const AddUser = ({ submit }) => {
           errors={errors}
           disabled={false}
           dataTestId={LAST_NAME}
+        />
+      </Field>
+      <Field>
+        <Label text="Role" />
+        <Select control={control} name={ROLE} errors={errors} />
+      </Field>
+      <Field>
+        <Label text="Email" />
+        <Input
+          control={control}
+          defaultValue=""
+          placeholder="email"
+          name={EMAIL}
+          errors={errors}
+          disabled={false}
+          dataTestId={EMAIL}
         />
       </Field>
       <Field>

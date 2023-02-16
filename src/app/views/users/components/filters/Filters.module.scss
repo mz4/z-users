@@ -6,6 +6,9 @@
   border: 1px solid var(--border);
   border-radius: 1rem;
   padding: 1rem;
+  @media (max-width: 768px) {
+    display: none;
+  }
   .filters {
     display: flex;
     justify-content: flex-start;
@@ -13,11 +16,5 @@
   }
   .content {
     padding: 16px;
-  }
-}
-
-@media (max-width: 576px) {
-  .container {
-    display: none;
   }
 }

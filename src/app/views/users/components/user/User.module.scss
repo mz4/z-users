@@ -12,6 +12,9 @@
   @media (max-width: 1240px) {
     flex: 1 0 33%;
   }
+  @media (max-width: 576px) {
+    flex: 1 0 auto;
+  }
 
   .userProfile {
     position: relative;

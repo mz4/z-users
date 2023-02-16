@@ -6,9 +6,10 @@ export const POST = 'POST';
 export const GET = 'GET';
 export const DELETE = 'DELETE';
 
-export const EMAIL = 'email';
 export const FIRST_NAME = 'firstName';
 export const LAST_NAME = 'lastName';
+export const ROLE = 'role';
+export const EMAIL = 'email';
 export const DESCRIPTION = 'description';
 export const GENDER = 'gender';
 export const FAVORITE = 'favorite';
