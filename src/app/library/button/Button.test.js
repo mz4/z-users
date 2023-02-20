@@ -4,16 +4,14 @@ import { Button } from './Button';
 
 describe('It renders a button component', () => {
   const handleClick = jest.fn();
-  const btn = (
-    <Button actionButton={handleClick} type="secondary" text="submit" />
-  );
+  const btn = <Button actionButton={handleClick} type="two" text="submit" />;
   it('Create a snapshot of the button', () => {
     const component = renderer.create(btn);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Render button with submit text', () => {
     const { getByText, getByRole, container } = render(btn);
-    const element = container.getElementsByClassName('secondary');
+    const element = container.getElementsByClassName('two');
     expect(element.length).toBe(1);
     expect(getByText('submit')).toBeTruthy();
     expect(getByRole('button')).toBeEnabled();

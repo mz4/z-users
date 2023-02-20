@@ -7,7 +7,7 @@ import {
   Label,
   Input,
   Button,
-  Field
+  Field,
 } from '../../../../library';
 import { EMAIL, PASSWORD } from '../../../../constants/constants';
 import { LoginFormSchema } from './LoginFormSchema';
@@ -19,15 +19,15 @@ const LoginForm = ({ submit }) => {
     resolver: yupResolver(LoginFormSchema),
     defaultValues: {
       [EMAIL]: 'johndoeb@example.com',
-      [PASSWORD]: 'password123'
-    }
+      [PASSWORD]: 'password123',
+    },
   });
 
   const {
     control,
     formState: { errors },
     handleSubmit,
-    getValues
+    getValues,
   } = methods;
 
   const onSubmit = () => {
@@ -63,7 +63,7 @@ const LoginForm = ({ submit }) => {
           />
         </Field>
         <Button
-          type="tertiary"
+          type="three"
           text="Submit"
           actionButton={handleSubmit(onSubmit)}
           dataTestId="submitForm"

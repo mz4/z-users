@@ -6,7 +6,7 @@ import styles from './Modal.module.scss';
 export const Modal = ({ action, children, modalType }) => {
   const type = {
     primary: styles.primary,
-    secondary: styles.secondary
+    secondary: styles.secondary,
   };
   const modalRef = useRef();
   useClickOutside(modalRef, action);
@@ -15,7 +15,7 @@ export const Modal = ({ action, children, modalType }) => {
       <div ref={modalRef} className={styles.modalBody}>
         <div className={styles.header}>
           <Button
-            type="secondary"
+            type="two"
             text="Close"
             actionButton={action}
             dataTestId="btnClose"

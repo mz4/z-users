@@ -9,7 +9,7 @@ import {
   Details,
   Filters,
   Header,
-  Users
+  Users,
 } from '../../components/index';
 import {
   deleteUser,
@@ -19,7 +19,7 @@ import {
   postUser,
   selectGetUsers,
   selectLoading,
-  usersListSort
+  usersListSort,
 } from '../../store/usersSlice';
 import styles from './UsersManagement.module.scss';
 
@@ -64,9 +64,11 @@ const UsersManagement = () => {
       <Header sortUsers={handleSortUsers} toggleNewUser={toggleNewUser} />
       <div className={styles.bodyContainer}>
         <Filters handleFilterAction={handleFilterAction} />
-        <div>
+        <div className={styles.users}>
           {loading ? (
-            <Loader />
+            <div className={styles.loaderContainer}>
+              <Loader />
+            </div>
           ) : (
             <Users
               users={users}

@@ -9,11 +9,14 @@
   cursor: pointer;
   flex: 1 0 21%;
   max-width: 329px;
+  min-width: 250px;
   @media (max-width: 1240px) {
     flex: 1 0 33%;
+    max-width: 100%;
   }
   @media (max-width: 576px) {
     flex: 1 0 auto;
+    max-width: 100%;
   }
 
   .userProfile {

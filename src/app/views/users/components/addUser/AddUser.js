@@ -114,7 +114,7 @@ const AddUser = ({ submit }) => {
         />
       </Field>
       <Button
-        type="tertiary"
+        type="three"
         text="Submit"
         actionButton={handleSubmit(onSubmit)}
         dataTestId="addUserSubmitForm"

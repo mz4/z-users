@@ -5,7 +5,7 @@ import {
   Button,
   Dialog,
   Title,
-  Subtitle
+  Subtitle,
 } from '../../../../library/index';
 import styles from './User.module.scss';
 
@@ -17,7 +17,8 @@ const User = ({ user, showProfileDetails, handleDeleteAction }) => {
     toggleState(true);
   };
 
-  const { id, avatar, description, first_name, last_name, favorite, role } = user;
+  const { id, avatar, description, first_name, last_name, favorite, role } =
+    user;
   return (
     <>
       <div
@@ -38,14 +39,12 @@ const User = ({ user, showProfileDetails, handleDeleteAction }) => {
               <div className={styles.cardName}>
                 {first_name} {last_name}
               </div>
-              <div className={styles.cardRole}>
-                {role}
-              </div>
+              <div className={styles.cardRole}>{role}</div>
               <div className={styles.cardText}>{description}</div>
             </div>
             <div className={styles.cardAction}>
               <Button
-                type="quinary"
+                type="five"
                 text="Delete"
                 actionButton={(e) => handleShowDialog(e)}
                 dataTestId="submitForm"
@@ -68,12 +67,12 @@ const User = ({ user, showProfileDetails, handleDeleteAction }) => {
           footer={
             <>
               <Button
-                type="quaternary"
+                type="four"
                 text={'Delete'}
                 actionButton={() => handleDeleteAction(id)}
               />
               <Button
-                type="tertiary"
+                type="three"
                 text={'Dismiss'}
                 actionButton={() => toggleState(false)}
               />

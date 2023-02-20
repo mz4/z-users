@@ -44,11 +44,24 @@
   },
   "devDependencies": {
     "@babel/runtime": "7.13.8",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/node-logger": "^6.5.16",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-plugin-named-exports-order": "^0.0.2",
     "cypress": "^11.2.0",
     "jest-fetch-mock": "^3.0.3",
     "msw": "^0.49.2",
     "nodemon": "^2.0.20",
-    "redux-mock-store": "^1.5.4"
+    "prop-types": "^15.8.1",
+    "redux-mock-store": "^1.5.4",
+    "webpack": "^5.75.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -60,7 +73,9 @@
     "dev": "concurrently \"npm run serverb\" \"npm run start\"",
     "web": "node server.js",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc.json",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "resolutions": {
     "react-error-overlay": "6.0.9"
@@ -70,5 +85,17 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  }
 }

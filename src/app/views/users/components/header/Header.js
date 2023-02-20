@@ -8,13 +8,13 @@ const Header = ({ sortUsers, toggleNewUser }) => {
       <Button
         actionButton={sortUsers}
         text={'Sort By Name'}
-        type="primary"
+        type="one"
         dataTestId="btnSort"
       />
       <Button
         actionButton={() => toggleNewUser(true)}
         text={'Add new'}
-        type="secondary"
+        type="two"
         dataTestId="btnNew"
       />
     </div>

@@ -2,11 +2,11 @@ import styles from './Button.module.scss';
 
 export const Button = ({ actionButton, text, type, dataTestId }) => {
   const buttonType = {
-    primary: styles.primary,
-    secondary: styles.secondary,
-    tertiary: styles.tertiary,
-    quaternary: styles.quaternary,
-    quinary: styles.quinary
+    one: styles.one,
+    two: styles.two,
+    three: styles.three,
+    four: styles.four,
+    five: styles.five,
   };
   return (
     <button

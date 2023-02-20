@@ -25,7 +25,7 @@
   width: 100%;
 }
 
-.primary {
+.one {
   @extend .button;
   background-color: #ea4c89;
 
@@ -35,7 +35,7 @@
   }
 }
 
-.secondary {
+.two {
   @extend .button;
   background-color: #4c96ea;
 
@@ -45,7 +45,7 @@
   }
 }
 
-.tertiary {
+.three {
   @extend .button;
   background-color: #4cea61;
 
@@ -55,7 +55,7 @@
   }
 }
 
-.quaternary {
+.four {
   @extend .button;
   background-color: #ea5f4c;
 
@@ -65,7 +65,7 @@
   }
 }
 
-.quinary {
+.five {
   @extend .button;
   background-color: #ffaea3;
 

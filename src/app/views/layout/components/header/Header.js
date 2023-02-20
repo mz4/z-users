@@ -7,13 +7,13 @@ const Header = ({ setTheme, handleLogout }) => {
       <Button
         actionButton={handleLogout}
         text={'Logout'}
-        type="primary"
+        type="one"
         dataTestId="btnLogout"
       />
       <Button
         actionButton={setTheme}
         text={'Toggle Theme'}
-        type="primary"
+        type="one"
         dataTestId="btnTheme"
       />
     </div>
