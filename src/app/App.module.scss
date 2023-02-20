@@ -6,6 +6,7 @@
 
 body {
   background: var(--background);
+  transition: background-color 500ms linear;
 }
 
 body > iframe {

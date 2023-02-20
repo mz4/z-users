@@ -6,6 +6,7 @@
   border: 1px solid var(--border);
   border-radius: 1rem;
   padding: 1rem;
+  transition: background-color 500ms linear;
   @media (max-width: 768px) {
     display: none;
   }

@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react';
 
 const initialState = {
-  theme: 'light'
+  theme: 'light',
 };
 
 const darkTheme = `:root {

@@ -10,6 +10,7 @@
   flex: 1 0 21%;
   max-width: 329px;
   min-width: 250px;
+  transition: background-color 500ms linear;
   @media (max-width: 1240px) {
     flex: 1 0 33%;
     max-width: 100%;
