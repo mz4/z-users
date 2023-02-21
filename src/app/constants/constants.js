@@ -14,6 +14,7 @@ export const DESCRIPTION = 'description';
 export const GENDER = 'gender';
 export const FAVORITE = 'favorite';
 export const PASSWORD = 'password';
+export const SEARCH = 'search';
 
 export const PRIMARY = 'primary';
 export const SECONDARY = 'secondary';

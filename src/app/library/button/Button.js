@@ -1,5 +1,5 @@
-import styles from './Button.module.scss';
 import PropTypes from 'prop-types';
+import styles from './Button.module.scss';
 
 export const Button = ({ actionButton, text, type, dataTestId }) => {
   const buttonType = {
@@ -9,6 +9,7 @@ export const Button = ({ actionButton, text, type, dataTestId }) => {
     four: styles.four,
     five: styles.five,
   };
+
   return (
     <button
       onClick={actionButton}
@@ -20,7 +21,6 @@ export const Button = ({ actionButton, text, type, dataTestId }) => {
   );
 };
 
-// Add prop types
 Button.propTypes = {
   actionButton: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,

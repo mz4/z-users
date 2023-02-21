@@ -1,5 +1,5 @@
 import { Button } from '../../../../library/index';
-
+import Search from '../search/Search';
 import styles from './Header.module.scss';
 
 const Header = ({ sortUsers, toggleNewUser }) => {
@@ -17,6 +17,7 @@ const Header = ({ sortUsers, toggleNewUser }) => {
         type="two"
         dataTestId="btnNew"
       />
+      <Search />
     </div>
   );
 };

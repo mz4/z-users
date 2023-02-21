@@ -1,4 +1,3 @@
 {
-  "extends": ["react-app", "react-app/jest", "prettier", "plugin:cypress/recommended"],
-  "import/no-anonymous-default-export": true
+  "extends": ["react-app", "react-app/jest", "prettier", "plugin:cypress/recommended"]
 }

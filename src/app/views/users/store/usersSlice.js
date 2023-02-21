@@ -1,12 +1,12 @@
 import {
   getUsersApi,
   postUserApi,
-  deleteUserApi
+  deleteUserApi,
 } from '../../../service/users';
 import {
   createSlice,
   createSelector,
-  createAsyncThunk
+  createAsyncThunk,
 } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -14,13 +14,21 @@ const initialState = {
   loading: false,
   filters: {
     sorting: { asc: true },
-    parameters: { favorite: false }
-  }
+    parameters: { favorite: false },
+  },
 };
 
 export const getUsers = createAsyncThunk('getUsers', () => {
   return getUsersApi();
 });
+
+export const searchUsers = createAsyncThunk(
+  'searchUsers',
+  (debouncedSearch) => {
+    console.log('debouncedSearch: ', debouncedSearch);
+    return getUsersApi();
+  }
+);
 
 export const postUser = createAsyncThunk('postUser', (data) => {
   postUserApi(data);
@@ -41,36 +49,55 @@ const usersSlice = createSlice({
     },
     filterUsers(state, action) {
       state.filters.parameters.favorite = action.payload.favorite;
-    }
+    },
   },
   extraReducers: (builder) => {
+    builder.addCase(searchUsers.fulfilled, (state, action) => {
+      const search = action.meta.arg;
+      const users = action.payload;
+      return {
+        ...state,
+        loading: false,
+        users: users.filter((user) => {
+          const lowerCaseName = user.first_name.toLowerCase();
+          return lowerCaseName.includes(search.toLowerCase());
+        }),
+      };
+    });
+    builder.addCase(searchUsers.pending, (state, action) => {
+      return {
+        ...state,
+        loading: true,
+        users: [],
+      };
+    });
     builder.addCase(getUsers.fulfilled, (state, action) => {
       return {
         ...state,
         loading: false,
-        users: action.payload
+        users: action.payload,
       };
     });
     builder.addCase(getUsers.pending, (state, action) => {
       return {
         ...state,
         loading: true,
-        users: []
+        users: [],
       };
     });
     builder.addCase(deleteUser.fulfilled, (state, action) => {
       return {
         ...state,
-        users: state.users.filter((user) => user.id !== action.payload)
+        users: state.users.filter((user) => user.id !== action.payload),
       };
     });
     builder.addCase(postUser.fulfilled, (state, action) => {
       return {
         ...state,
-        users: [...state.users, JSON.parse(action.payload)]
+        users: [...state.users, JSON.parse(action.payload)],
       };
     });
-  }
+  },
 });
 
 export const { usersListSort, filterUsers } = usersSlice.actions;
