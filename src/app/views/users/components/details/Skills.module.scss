@@ -2,10 +2,12 @@
   grid-column: span 12;
   margin: 1rem 0 2rem 0;
   .container {
+    background-color: var(--box);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 1rem;
+    padding: 1rem;
     .containerSkill {
       display: flex;
       flex-direction: row;

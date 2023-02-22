@@ -1,13 +1,15 @@
 .box {
   grid-column: span 4;
   margin-bottom: 48px;
-  background-color: #f3f3f3;
+  background-color: var(--box);
   padding: 24px;
+  border-radius: 4px;
   @media (min-width: 320px) and (max-width: 767px) {
+    background-color: var(--box);
     grid-column: span 12;
-    background-color: #f3aaf3;
   }
   .orderValue {
     font-size: 2rem;
+    color: #a0a0a0;
   }
 }
