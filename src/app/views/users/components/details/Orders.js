@@ -5,16 +5,16 @@ const Orders = () => {
   return (
     <>
       <div className={styles.box}>
-        <Subtitle text="Total Orders Today" />
-        <div className={styles.orderValue}>12.450 $</div>
+        <Subtitle text="Experience" />
+        <div className={styles.orderValue}>5 years</div>
       </div>
       <div className={styles.box}>
-        <Subtitle text="Total Clients Today" />
-        <div className={styles.orderValue}>25</div>
+        <Subtitle text="Level" />
+        <div className={styles.orderValue}>Senior</div>
       </div>
       <div className={styles.box}>
-        <Subtitle text="Revenue Day Ratio" />
-        <div className={styles.orderValue}>25%</div>
+        <Subtitle text="Projects" />
+        <div className={styles.orderValue}>5</div>
       </div>
     </>
   );

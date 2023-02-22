@@ -12,6 +12,7 @@
     "@hookform/resolvers": "^2.9.10",
     "@reduxjs/toolkit": "^1.9.0",
     "@tabler/icons": "^1.115.0",
+    "@tabler/icons-react": "^2.4.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "12.1.5",
     "@testing-library/react-hooks": "^8.0.1",

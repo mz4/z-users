@@ -2,34 +2,30 @@ import { Subtitle, Text, Item } from '../../../../library/index';
 import styles from './Personal.module.scss';
 
 const Personal = ({ user }) => {
-  const { first_name } = user;
+  const { first_name, last_name, role } = user;
+  const name = `${first_name} ${last_name}`;
   return (
     <div className={styles.detailsContainer}>
       <Item>
         <Subtitle text="Name" />
-        <Text text={first_name} />
+        <Text text={name} />
       </Item>
       <Item>
-        <Subtitle text="Request No." />
+        <Subtitle text="Employee ID" />
         <Text text="2000839625936" />
       </Item>
       <Item>
-        <Subtitle text="Connection Name" />
-        <Text text="Angela Valdez" />
+        <Subtitle text="Role" />
+        <Text text={role} />
       </Item>
       <Item>
-        <Subtitle text="Date Request" />
-        <Text text="23/10/2021" />
+        <Subtitle text="Length of Service" />
+        <Text text="1 year 3 months" />
       </Item>
       <div className={styles.description}>
         <Item>
           <Subtitle text="Description" />
-          <Text
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer ac ante varius, vestibulum urna id, tincidunt enim.
-                  Vestibulum maximus risus dolor, dapibus finibus velit euismod
-                  eget."
-          />
+          <Text text="Developer, experienced in data-driven enterprise applications" />
         </Item>
       </div>
     </div>

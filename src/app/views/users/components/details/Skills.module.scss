@@ -1,0 +1,36 @@
+.containerSpan {
+  grid-column: span 12;
+  margin: 1rem 0 2rem 0;
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    .containerSkill {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      .skill {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        .skillName {
+          font-size: 1.2rem;
+          font-weight: 600;
+          min-width: 7rem;
+        }
+        .skillLevel {
+          font-size: 1.2rem;
+          font-weight: 600;
+          .skillFilled {
+            color: yellow;
+          }
+        }
+      }
+    }
+  }
+}

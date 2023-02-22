@@ -6,7 +6,7 @@ import {
   PolarRadiusAxis,
   Radar,
   RadarChart,
-  ResponsiveContainer
+  ResponsiveContainer,
 } from 'recharts';
 import { dataA, dataB } from '../../../../data';
 import { Subtitle } from '../../../../library/index';
@@ -16,7 +16,7 @@ const Charts = () => {
   return (
     <>
       <div className={styles.charts}>
-        <Subtitle text="Chart Area" />
+        <Subtitle text="Commits" />
         <ResponsiveContainer width="100%" height="100%">
           <BarChart width={150} height={40} data={dataA}>
             <Bar dataKey="uv" fill="#8884d8" />
