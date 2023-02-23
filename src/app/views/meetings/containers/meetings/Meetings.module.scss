@@ -1,0 +1,19 @@
+.pageContainer {
+  margin: 0 auto;
+  padding: 2rem;
+  .bodyContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2%;
+    .users {
+      width: 100%;
+      .loaderContainer {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

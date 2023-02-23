@@ -1,4 +1,4 @@
-import { Title, Label } from '../../../../library';
+import { Title, Text } from '../../../../library';
 import { Link } from 'react-router-dom';
 import styles from './Sidebar.module.scss';
 
@@ -6,13 +6,18 @@ const Sidebar = () => {
   return (
     <div className={styles.container}>
       <Title text="Menu" />
-      <div className={styles.menu}>
-        <div className={styles.menuItem}>
-          <Link to="/users">
-            <Label text="Users" />
+      <ul className={styles.menu}>
+        <li>
+          <Link to="/users" className={styles.menuItem}>
+            <Text text="Users" />
           </Link>
-        </div>
-      </div>
+        </li>
+        <li>
+          <Link to="/meetings" className={styles.menuItem}>
+            <Text text="Meetings" />
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 };

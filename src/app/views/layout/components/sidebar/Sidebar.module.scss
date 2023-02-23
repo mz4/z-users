@@ -15,5 +15,28 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    .menuItem {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      transition: background-color 500ms linear;
+      &:hover {
+        background-color: var(--hover);
+      }
+      .icon {
+        margin-right: 0.5rem;
+      }
+      .label {
+        font-size: 1rem;
+        font-weight: 200;
+        color: #a7a7a7;
+      }
+    }
   }
 }
