@@ -29,16 +29,14 @@ const Search = () => {
   }, [debouncedSearch, dispatch]);
 
   return (
-    <div>
-      <Input
-        control={control}
-        placeholder="Search"
-        name={SEARCH}
-        errors={errors}
-        disabled={false}
-        dataTestId={SEARCH}
-      />
-    </div>
+    <Input
+      control={control}
+      placeholder="Search"
+      name={SEARCH}
+      errors={errors}
+      disabled={false}
+      dataTestId={SEARCH}
+    />
   );
 };
 
