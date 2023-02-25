@@ -4,7 +4,7 @@ import { isAuthenticated } from '../views/auth/store/authSlice';
 import Layout from './layout/containers/Layout';
 import Login from './auth/containers/login/Login';
 import Users from './users/containers/usersManagement/UsersManagement';
-import Meetings from './meetings/containers/meetings/Meetings';
+import Meetings from './meetings/containers/meetingsManagement/MeetingsManagement';
 
 const PrivateRoute = ({ isAuth, component }) => {
   return isAuth ? (

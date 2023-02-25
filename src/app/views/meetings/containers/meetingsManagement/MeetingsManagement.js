@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Loader, Title } from '../../../../library/index';
 import { Filters, Header } from '../../../users/components/index';
@@ -8,9 +8,10 @@ import {
   selectLoading,
   usersListSort,
 } from '../../store/usersSlice';
-import styles from './Meetings.module.scss';
+import Meetings from '../../components/meetings/Meetings';
+import styles from './MeetingsManagement.module.scss';
 
-const Meetings = () => {
+const MeetingsManagement = () => {
   const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
   const [user, setUser] = useState({});
@@ -18,8 +19,58 @@ const Meetings = () => {
   const [newUser, setNewUser] = useState(false);
   const { first_name, avatar } = user;
 
+  const columns = useMemo(
+    () => [
+      {
+        Header: 'Type',
+        accessor: 'type',
+      },
+      {
+        Header: 'Date',
+        accessor: 'date',
+      },
+      {
+        Header: 'Organizer',
+        accessor: 'organizer',
+      },
+      {
+        Header: 'Participants',
+        accessor: 'participant',
+      },
+      {
+        Header: 'ID',
+        accessor: 'id',
+      },
+      {
+        Header: 'Status',
+        accessor: 'status',
+      },
+    ],
+    []
+  );
+
+  const data = [
+    {
+      id: 81,
+      type: 'one-on-one',
+      date: '2021-09-01T00:00:00.000Z',
+      organizer: 'John Doe',
+      participants: 'Mary Jane',
+      status: 'complete',
+    },
+    {
+      id: 82,
+      type: 'one-on-one',
+      date: '2021-09-01T00:00:00.000Z',
+      organizer: 'Peter Parker',
+      participants: 'Mike Wazowski',
+      status: 'complete',
+    },
+  ];
+
   useEffect(() => {
     dispatch(getUsers());
+    return () => {};
   }, [dispatch]);
 
   const toggleNewUser = (isNewUser) => setNewUser(isNewUser);
@@ -30,7 +81,7 @@ const Meetings = () => {
 
   return (
     <div className={styles.pageContainer} datatestid="list">
-      <Title text="Users List" />
+      <Title text="Meetings List" />
       <Header sortUsers={handleSortUsers} toggleNewUser={toggleNewUser} />
       <div className={styles.bodyContainer}>
         <Filters handleFilterAction={handleFilterAction} />
@@ -40,11 +91,11 @@ const Meetings = () => {
               <Loader />
             </div>
           ) : (
-            <div>AAAA</div>
+            <Meetings columns={columns} data={data} />
           )}
         </div>
       </div>
     </div>
   );
 };
-export default Meetings;
+export default MeetingsManagement;

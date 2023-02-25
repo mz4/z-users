@@ -60,11 +60,12 @@ const usersSlice = createSlice({
         loading: false,
         users: users.filter((user) => {
           const lowerCaseName = user.first_name.toLowerCase();
-          return lowerCaseName.includes(search.toLowerCase());
+          const lowerCaseSearch = search.toLowerCase();
+          return lowerCaseName.includes(lowerCaseSearch);
         }),
       };
     });
-    builder.addCase(searchUsers.pending, (state, action) => {
+    builder.addCase(searchUsers.pending, (state) => {
       return {
         ...state,
         loading: true,
