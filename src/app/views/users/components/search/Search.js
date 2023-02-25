@@ -36,6 +36,7 @@ const Search = () => {
       errors={errors}
       disabled={false}
       dataTestId={SEARCH}
+      addEmptySpace={false}
     />
   );
 };

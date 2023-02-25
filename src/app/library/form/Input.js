@@ -10,7 +10,8 @@ export const Input = ({
   errors,
   disabled,
   dataTestId,
-  type = 'text'
+  type = 'text',
+  addEmptySpace = true,
 }) => {
   return (
     <div className={styles.inputContainer}>
@@ -35,7 +36,7 @@ export const Input = ({
       {errors[name] ? (
         <div className={styles.error}>{errors[name].message}</div>
       ) : (
-        <div className={styles.emptyError} />
+        addEmptySpace && <div className={styles.emptyError} />
       )}
     </div>
   );
