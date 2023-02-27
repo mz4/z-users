@@ -1,83 +1,32 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Loader, Title } from '../../../../library/index';
 import { Filters, Header } from '../../../users/components/index';
+import { Meetings } from '../../components/meetings/index';
+import { columnsTable } from '../../../../data/data';
 import {
-  filterUsers,
-  getUsers,
+  getMeetings,
+  selectGetMeetings,
   selectLoading,
-  usersListSort,
-} from '../../store/usersSlice';
-import Meetings from '../../components/meetings/Meetings';
+} from '../../store/meetingsSlice';
 import styles from './MeetingsManagement.module.scss';
 
 const MeetingsManagement = () => {
   const dispatch = useDispatch();
+  const meetings = useSelector(selectGetMeetings);
   const loading = useSelector(selectLoading);
-  const [user, setUser] = useState({});
-  const [profileDetails, setProfileDetails] = useState(false);
-  const [newUser, setNewUser] = useState(false);
-  const { first_name, avatar } = user;
-
-  const columns = useMemo(
-    () => [
-      {
-        Header: 'Type',
-        accessor: 'type',
-      },
-      {
-        Header: 'Date',
-        accessor: 'date',
-      },
-      {
-        Header: 'Organizer',
-        accessor: 'organizer',
-      },
-      {
-        Header: 'Participants',
-        accessor: 'participant',
-      },
-      {
-        Header: 'ID',
-        accessor: 'id',
-      },
-      {
-        Header: 'Status',
-        accessor: 'status',
-      },
-    ],
-    []
-  );
-
-  const data = [
-    {
-      id: 81,
-      type: 'one-on-one',
-      date: '2021-09-01T00:00:00.000Z',
-      organizer: 'John Doe',
-      participants: 'Mary Jane',
-      status: 'complete',
-    },
-    {
-      id: 82,
-      type: 'one-on-one',
-      date: '2021-09-01T00:00:00.000Z',
-      organizer: 'Peter Parker',
-      participants: 'Mike Wazowski',
-      status: 'complete',
-    },
-  ];
 
   useEffect(() => {
-    dispatch(getUsers());
-    return () => {};
+    dispatch(getMeetings());
   }, [dispatch]);
 
-  const toggleNewUser = (isNewUser) => setNewUser(isNewUser);
+  const columns = useMemo(() => columnsTable, []);
 
-  const handleSortUsers = () => dispatch(usersListSort());
+  const toggleNewUser = () => null;
 
-  const handleFilterAction = (filter) => dispatch(filterUsers(filter));
+  const handleSortUsers = () => null;
+
+  const handleFilterAction = () => null;
 
   return (
     <div className={styles.pageContainer} datatestid="list">
@@ -91,7 +40,7 @@ const MeetingsManagement = () => {
               <Loader />
             </div>
           ) : (
-            <Meetings columns={columns} data={data} />
+            <Meetings columns={columns} data={meetings} />
           )}
         </div>
       </div>

@@ -1,5 +1,6 @@
 export const BASE_ENDPOINT = 'http://localhost:3001/';
 export const PROFILES_ENDPOINT = BASE_ENDPOINT + 'profiles';
+export const MEETINGS_ENDPOINT = BASE_ENDPOINT + 'meetings';
 export const LOGIN_ENDPOINT = BASE_ENDPOINT + 'login';
 
 export const POST = 'POST';

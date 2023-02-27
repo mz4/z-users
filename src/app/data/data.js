@@ -69,3 +69,30 @@ export const dataB = [
     fullMark: 150,
   },
 ];
+
+export const columnsTable = [
+  {
+    Header: 'Type',
+    accessor: 'type',
+  },
+  {
+    Header: 'Date',
+    accessor: 'date',
+  },
+  {
+    Header: 'Organizer',
+    accessor: 'organizer',
+  },
+  {
+    Header: 'Participants',
+    accessor: 'participant',
+  },
+  {
+    Header: 'ID',
+    accessor: 'id',
+  },
+  {
+    Header: 'Status',
+    accessor: 'status',
+  },
+];

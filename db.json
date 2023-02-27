@@ -147,5 +147,23 @@
       "id": 15,
       "role": "Frontend"
     }
+  ],
+  "meetings": [
+    {
+      "id": 81,
+      "type": "one-on-one",
+      "date": "2021-09-01T00: 00: 00.000Z",
+      "organizer": "John Doe",
+      "participants": "Mary Jane",
+      "status": "complete"
+    },
+    {
+      "id": 82,
+      "type": "one-on-one",
+      "date": "2021-09-01T00: 00: 00.000Z",
+      "organizer": "Peter Parker",
+      "participants": "Mike Wazowski",
+      "status": "complete"
+    }
   ]
 }
