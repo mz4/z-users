@@ -14,8 +14,8 @@ const darkTheme = `:root {
   --dialog: #323232;
   --border: #1b1b1b;
   --dialog: #323232;
-  --border: #f3f3f32b;
   --box: #3d3d3d;
+  --table: #323232;
 }`;
 
 const lightTheme = `:root {
@@ -28,6 +28,7 @@ const lightTheme = `:root {
   --dialog: #ffff;
   --border: #f3f2ef;
   --box: #f3f2ef;
+  --table: #ffff;
 }`;
 
 export const UsersContext = createContext(initialState);

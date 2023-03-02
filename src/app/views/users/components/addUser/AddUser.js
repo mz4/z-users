@@ -17,6 +17,7 @@ import {
   DESCRIPTION,
   GENDER,
   FAVORITE,
+  ROLE_OPTIONS,
 } from '../../../../constants/constants';
 import { AddUserSchema } from './Schema';
 import styles from './AddUser.module.scss';
@@ -77,7 +78,12 @@ const AddUser = ({ submit }) => {
       </Field>
       <Field>
         <Label text="Role" />
-        <Select control={control} name={ROLE} errors={errors} />
+        <Select
+          control={control}
+          name={ROLE}
+          errors={errors}
+          options={ROLE_OPTIONS}
+        />
       </Field>
       <Field>
         <Label text="Email" />

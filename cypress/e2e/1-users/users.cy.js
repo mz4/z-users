@@ -1,3 +1,5 @@
+/// <reference types="Cypress" />
+
 import { userDetails, modal, btnClose, btnSort } from '../../fixtures/user';
 
 describe('Users list', () => {

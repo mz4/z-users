@@ -5,6 +5,7 @@ import Layout from './layout/containers/Layout';
 import Login from './auth/containers/login/Login';
 import Users from './users/containers/usersManagement/UsersManagement';
 import Meetings from './meetings/containers/meetingsManagement/MeetingsManagement';
+import Chat from './chat/containers/chatManagement/chatManagement';
 
 const PrivateRoute = ({ isAuth, component }) => {
   return isAuth ? (
@@ -37,6 +38,11 @@ export const Views = () => {
         exact
         path="/meetings"
         element={<PrivateRoute isAuth={isAuth} component={<Meetings />} />}
+      />
+      <Route
+        exact
+        path="/chat"
+        element={<PrivateRoute isAuth={isAuth} component={<Chat />} />}
       />
     </Routes>
   );

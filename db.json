@@ -155,7 +155,11 @@
       "date": "2021-09-01T00: 00: 00.000Z",
       "organizer": "John Doe",
       "participants": "Mary Jane",
-      "status": "complete"
+      "status": "complete",
+      "profileId": [
+        1,
+        2
+      ]
     },
     {
       "id": 82,
@@ -163,7 +167,10 @@
       "date": "2021-09-01T00: 00: 00.000Z",
       "organizer": "Peter Parker",
       "participants": "Mike Wazowski",
-      "status": "complete"
+      "status": "complete",
+      "profileId": [
+        3
+      ]
     }
   ]
 }

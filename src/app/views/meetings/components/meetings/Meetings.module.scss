@@ -1,15 +1,20 @@
 .table {
-  background-color: var(--header);
+  background-color: var(--table);
+  transition: background-color 500ms linear;
   table {
     border-spacing: 0;
     border: 1px solid var(--border);
-
+    width: 100%;
     tr {
       :last-child {
         td {
           border-bottom: 0;
         }
       }
+    }
+    tbody tr:hover {
+      background-color: #f7f7f7;
+      cursor: pointer;
     }
 
     th,
@@ -18,7 +23,7 @@
       padding: 0.5rem;
       border-bottom: 1px solid var(--border);
       border-right: 1px solid var(--border);
-
+      color: #999;
       :last-child {
         border-right: 0;
       }

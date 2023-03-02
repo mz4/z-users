@@ -2,7 +2,7 @@ import React from 'react';
 import { Controller } from 'react-hook-form';
 import styles from './Select.module.scss';
 
-export const Select = ({ control, name, errors }) => {
+export const Select = ({ control, name, errors, options }) => {
   return (
     <div className={styles.selectContainer}>
       <Controller
@@ -17,15 +17,13 @@ export const Select = ({ control, name, errors }) => {
             onBlur={onBlur}
             className={styles.select}
           >
-            <option value="">Select Role</option>
-            <option value="1">Backend</option>
-            <option value="2">Frontend</option>
-            <option value="3">Quality Analyst</option>
-            <option value="4">Product Owner</option>
-            <option value="5">UX/UI Designer</option>
-            <option value="6">Data Analyst</option>
-            <option value="7">DevOps</option>
-            <option value="8">Scrum Master</option>
+            {options.map((option) => {
+              return (
+                <option key={option.value} value={option.value}>
+                  {option.value}
+                </option>
+              );
+            })}
           </select>
         )}
       />

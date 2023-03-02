@@ -1,9 +1,12 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Loader, Title } from '../../../../library/index';
-import { Filters, Header } from '../../../users/components/index';
-import { Meetings } from '../../components/meetings/index';
+import { SECONDARY } from '../../../../constants/constants';
 import { columnsTable } from '../../../../data/data';
+import { Loader, Modal, Title } from '../../../../library/index';
+import { Header } from '../../../meetings/components/index';
+import { Filters } from '../../../users/components/index';
+import AddMeeting from '../../components/addMeeting/AddMeeting';
+import { Meetings } from '../../components/index';
 import {
   getMeetings,
   selectGetMeetings,
@@ -13,6 +16,7 @@ import styles from './MeetingsManagement.module.scss';
 
 const MeetingsManagement = () => {
   const dispatch = useDispatch();
+  const [newMeeting, setNewMeeting] = useState(false);
   const meetings = useSelector(selectGetMeetings);
   const loading = useSelector(selectLoading);
 
@@ -20,18 +24,20 @@ const MeetingsManagement = () => {
     dispatch(getMeetings());
   }, [dispatch]);
 
+  const handleSubmit = (data) => {
+    console.log(data);
+  };
+
   const columns = useMemo(() => columnsTable, []);
 
-  const toggleNewUser = () => null;
-
-  const handleSortUsers = () => null;
+  const toggleNewMeeting = (isNewMeeting) => setNewMeeting(isNewMeeting);
 
   const handleFilterAction = () => null;
 
   return (
     <div className={styles.pageContainer} datatestid="list">
       <Title text="Meetings List" />
-      <Header sortUsers={handleSortUsers} toggleNewUser={toggleNewUser} />
+      <Header toggleNewMeeting={toggleNewMeeting} />
       <div className={styles.bodyContainer}>
         <Filters handleFilterAction={handleFilterAction} />
         <div className={styles.users}>
@@ -44,6 +50,11 @@ const MeetingsManagement = () => {
           )}
         </div>
       </div>
+      {newMeeting && (
+        <Modal action={() => toggleNewMeeting(false)} modalType={SECONDARY}>
+          <AddMeeting submit={handleSubmit} />
+        </Modal>
+      )}
     </div>
   );
 };
