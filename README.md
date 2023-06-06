@@ -1,5 +1,4 @@
-
-# Users
+# Z-Users
 
 Sample React app, with unit tests and e2e tests.
 
@@ -21,7 +20,6 @@ Unit tests
 
 ![unittests](https://user-images.githubusercontent.com/17081903/209123654-69ec1adc-efe1-4cc2-975b-b0b8656934c4.gif)
 
-
 ## Run project
 
 To run this project
@@ -29,10 +27,10 @@ To run this project
 ```bash
     - Clone repo
     git clone https://github.com/mz4/users.git .
-    
+
     - Install dependencies
     yarn
-    
+
     - Start local server
     yarn start
 
@@ -46,4 +44,3 @@ To run this project
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
