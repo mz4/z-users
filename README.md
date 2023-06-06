@@ -1,4 +1,4 @@
-# Z-Users
+# Users
 
 Sample React app, with unit tests and e2e tests.
 
